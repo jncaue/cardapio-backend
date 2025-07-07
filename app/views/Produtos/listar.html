@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+#{set title:'Formulário' /}
+
+<ul>
+	#{list items: listaDeProdutos, as:'p'}
+		<li>${p.nome} (${p.tipo}) | 
+			<a href="@{Produtos.remover(p.id)}">Remover</a>
+		</li>
+	#{/list}
+</ul>

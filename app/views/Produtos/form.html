@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Formulário' /}
+
+
+<form action="@{Produtos.salvar}">
+
+	<label>Nome: </label>
+	<input type="text" name="produto.nome">
+
+	<label>Tipo: </label>
+	<input type="text" name="produto.tipo">
+
+	<input type="submit">
+</form>
