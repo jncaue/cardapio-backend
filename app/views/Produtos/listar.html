@@ -3,7 +3,7 @@
 
 <ul>
 	#{list items: listaDeProdutos, as:'p'}
-		<li>${p.nome} (${p.tipo}) | 
+		<li>${p.nome} (${p.preco}) | 
 			<a href="@{Produtos.remover(p.id)}">Remover</a>
 		</li>
 	#{/list}

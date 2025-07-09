@@ -30,4 +30,9 @@ public class Produtos extends Controller{
 		produto.delete();
 		listar();
 	}
+	
+	public static void editar(Long id) {
+		Produto p = Produto.findById(id);
+		renderTemplate("Produtos/form.html", p);
+	}
 }
