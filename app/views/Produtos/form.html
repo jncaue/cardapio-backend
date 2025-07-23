@@ -1,14 +1,40 @@
 #{extends 'main.html' /}
-#{set title:'Formulário' /}
 
+
+#{if p}
+	#{set title:'Edição de Produto' /}
+#{/if}
+#{else}
+	#{set title:'Cadastro de Produto' /}
+#{/else}
 
 <form action="@{Produtos.salvar}">
+	<input type="hidden" name="produto.id" value="${p?.id}" />
 
-	<label>Nome: </label>
-	<input type="text" name="produto.nome">
+	<div class="mb-3">
+		<label class="form-label">Nome:</label>
+		<input class="form-control" type="text"
+			name="produto.nome" value="${p?.nome}" />
+	</div>
 
-	<label>Categoria: </label>
-	<input type="text" name="produto.preco">
+<div class="mb-3">
+		<label class="form-label">Preço:</label>
+		<input class="form-control" type="text"
+			name="produto.preco" value="${p?.preco}" />
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Categoria:</label>
+		<select class="form-select" name="produto.categoria.id">
+			#{list items:listaDeCategoria, as:'c'}
+				<option value="${c.id}" 
+					${c.id == p?.categoria?.id ? 'selected' : ''}>
+						${c.nome}
+				</option>
+			#{/list}
+		</select>
+	</div>
 
-	<input type="submit">
+	<input class="btn btn-primary" type="submit"
+		value="${p ? 'Editar':'Cadastrar'}" />
 </form>

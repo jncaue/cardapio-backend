@@ -1,6 +1,6 @@
 package jobs;
 
-import model.Produto;
+import model.Categoria;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 
@@ -10,12 +10,18 @@ public class Inicializador extends Job{
 		@Override
 		public void doJob() throws Exception {
 			
-			if (Produto.count() == 0) {
-				Produto hamburguer = new Produto("Hamburger", 100, "rh");
-				hamburguer.save();
+		
+			if (Categoria.count() == 0) {
+				Categoria comida = new Categoria("Comida", 100);
+				comida.save();
 				
+				Categoria bebida = new Categoria("Bebida", 101);
+				bebida.save();
+				
+				Categoria sobremesa = new Categoria("Sobremesa", 102);
+				sobremesa.save();
+				
+				
+			}
 		}
-
-	}
-
 }

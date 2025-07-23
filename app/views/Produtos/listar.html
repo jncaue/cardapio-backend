@@ -1,10 +1,13 @@
 #{extends 'main.html' /}
-#{set title:'Formulário' /}
+#{set title:'Lista de produtos' /}
 
 <ul>
 	#{list items: listaDeProdutos, as:'p'}
-		<li>${p.nome} (${p.preco}) | 
-			<a href="@{Produtos.remover(p.id)}">Remover</a>
+		<li>${p.nome} - (R$ ${p.preco}) - ${p.categoria.nome}| 
+			<a href="@{Produtos.remover(p.id)}">Remover</a> 
+			<a href="@{Produtos.editar(p.id)}">| Editar</a> 
 		</li>
 	#{/list}
 </ul>
+
+<button class="btn btn-terciary"><a href="@{Produtos.form}">Formulário</a></button>

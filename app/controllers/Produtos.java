@@ -2,13 +2,18 @@ package controllers;
 
 import java.util.List;
 
+import model.Categoria;
 import model.Produto;
 import play.mvc.Controller;
 
 public class Produtos extends Controller{
 
+	
+	//Lista de categorias
 	public static void form() {
-		render();
+		List<Categoria> listaDeCategoria = Categoria.findAll();
+		render(listaDeCategoria);
+		
 	}
 	
 	public static void detalhar(Produto produto) {
@@ -33,6 +38,9 @@ public class Produtos extends Controller{
 	
 	public static void editar(Long id) {
 		Produto p = Produto.findById(id);
-		renderTemplate("Produtos/form.html", p);
+		List<Categoria> listaDeCategoria = Categoria.findAll();
+		
+		
+		renderTemplate("Produtos/form.html", p, listaDeCategoria);
 	}
 }
