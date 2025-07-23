@@ -1,6 +1,12 @@
 #{extends 'main.html' /}
 #{set title:'Lista de produtos' /}
 
+<form action="@{Produtos.listar}">
+	<label>Buscar produto por nome:</label>
+	<input type="text" name="termo" value="${termo}" />
+	<input type="submit" value="Buscar"/> 
+</form>
+
 <ul>
 	#{list items: listaDeProdutos, as:'p'}
 		<li>${p.nome} - (R$ ${p.preco}) - ${p.categoria.nome}| 
