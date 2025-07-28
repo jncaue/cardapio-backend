@@ -1,6 +1,5 @@
 #{extends 'main.html' /}
 
-
 #{if p}
 	#{set title:'Edição de Produto' /}
 #{/if}
@@ -8,7 +7,7 @@
 	#{set title:'Cadastro de Produto' /}
 #{/else}
 
-<form action="@{Produtos.salvar}">
+<form class="form" action="@{Produtos.salvar}">
 	<input type="hidden" name="produto.id" value="${p?.id}" />
 
 	<div class="mb-3">
@@ -35,6 +34,6 @@
 		</select>
 	</div>
 
-	<input class="btn btn-primary" type="submit"
+	<input class="btn" type="submit"
 		value="${p ? 'Editar':'Cadastrar'}" />
 </form>

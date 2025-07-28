@@ -12,17 +12,17 @@ public class Produto extends Model {
 
 	public String nome;
 	public int preco;
-	
-	//produto ativo e inativo
+
+	// produto ativo e inativo
 	@Enumerated(EnumType.STRING)
 	public Status status;
-	
+
+	//	construtor que inicializa o produto como ativo
 	public Produto() {
 		this.status = Status.ATIVO;
 	}
 
-	
-	//Relacionamento produto-categoria 
+	// Relacionamento produto --> categoria
 	@ManyToOne
 	public Categoria categoria;
 
@@ -31,6 +31,5 @@ public class Produto extends Model {
 		this.preco = preco;
 		this.categoria = categoria;
 	}
-	
-	
+
 }

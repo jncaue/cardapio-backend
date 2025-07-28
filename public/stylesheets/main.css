@@ -1,0 +1,76 @@
+/* Pressets gerais */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: calc(1em + 0.5rem);
+	font: inherit;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #fff;
+	font-family: 'Poppins', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	border: none;
+	background: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: -0.025em;
+}
+
+/* linha de testes */
+
+/* main */
+
+.form {
+	background-color: #DFDFDF;
+	/* 	border: 1px solid gray; */
+	border-radius: 10px;
+	padding: 2rem;
+}
+
+.btn {
+	background-color: #A0A0A0;
+	border: 1px solid black;
+	border-radius: 10px;
+	color: #000000;
+}
+
+.btn:hover {
+	background-color: #000;
+	border: 1px solid black;
+	border-radius: 10px;
+	color: #DFDFDF;
+	transform: scale(1.05);
+}
+
+.btn:active {
+	background-color: #000 !important; 
+	border: 1px solid black;
+	border-radius: 10px;
+	color: #DFDFDF;
+	transform: scale(1.05);
+}
+
+.btn:focus{
+	background-color: #000 ; 
+	border: 1px solid black;
+	border-radius: 10px;
+	color: #DFDFDF;
+	transform: scale(1.05);
+	
+}
