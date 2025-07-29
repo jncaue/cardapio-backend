@@ -1,0 +1,26 @@
+* {
+    /* border: 1px solid black; */
+}
+
+.header {
+     background-color: rgba(46, 95, 46, 0.39);
+     
+
+}
+
+.nav {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1rem;
+    padding-block: 1rem;
+}
+
+.ul-nav {
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}

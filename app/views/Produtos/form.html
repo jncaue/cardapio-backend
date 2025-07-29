@@ -7,33 +7,62 @@
 	#{set title:'Cadastro de Produto' /}
 #{/else}
 
-<form class="form" action="@{Produtos.salvar}">
-	<input type="hidden" name="produto.id" value="${p?.id}" />
-
-	<div class="mb-3">
-		<label class="form-label">Nome:</label>
-		<input class="form-control" type="text"
-			name="produto.nome" value="${p?.nome}" />
-	</div>
-
-<div class="mb-3">
-		<label class="form-label">Preço:</label>
-		<input class="form-control" type="text"
-			name="produto.preco" value="${p?.preco}" />
-	</div>
+<div class="hero-left">
+	<section>
+		<h1>Cadastro de produtos</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+			optio iste odit illo a quia, perferendis debitis placeat aliquid
+			enim nam deserunt? Minus amet quos iste labore commodi, beatae
+			natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+			Quia nemo doloribus expedita, deserunt, atque culpa eveniet
+			eligendi eius fuga commodi voluptatum reprehenderit porro magnam
+			non in, inventore autem beatae officia. Lorem ipsum dolor sit amet
+			consectetur adipisicing elit. Quae laborum nesciunt magni dolorem,
+			blanditiis temporibus reiciendis eveniet dicta consequatur fuga
+			cupiditate perferendis et nostrum aut tempore a, incidunt iure
+			eaque.</p>
+	</section>
 	
-	<div class="mb-3">
-		<label class="form-label">Categoria:</label>
-		<select class="form-select" name="produto.categoria.id">
-			#{list items:listaDeCategoria, as:'c'}
-				<option value="${c.id}" 
-					${c.id == p?.categoria?.id ? 'selected' : ''}>
-						${c.nome}
-				</option>
-			#{/list}
-		</select>
-	</div>
+	<section>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+			optio iste odit illo a quia, perferendis debitis placeat aliquid
+			enim nam deserunt? Minus amet quos iste labore commodi, beatae
+			natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+			Quia nemo doloribus expedita, deserunt, atque culpa eveniet
+			eligendi eius fuga commodi voluptatum reprehenderit porro magnam
+			non in, inventore autem beatae officia. Lorem ipsum dolor sit amet
+			consectetur adipisicing elit. Quae laborum nesciunt magni dolorem,
+			blanditiis temporibus reiciendis eveniet dicta consequatur fuga
+			cupiditate perferendis et nostrum aut tempore a, incidunt iure
+			eaque.</p>
+	</section>
+</div>
+	<div class="hero-right"> 
+		<form class="find-form" action="@{Produtos.salvar}">
+			<div>
+				<input type="hidden" name="produto.id" value="${p?.id}" />
+				<label class="label-form">Nome:</label>
+				<input class="input-form" type="text"
+					name="produto.nome" value="${p?.nome}" />
+			</div>
+				<label class="label-form">Preço:</label>
+				<input class="input-form" type="text"
+					name="produto.preco" value="${p?.preco}" />
+			<div>
+				<label class="label-form">Categoria:</label>
+				<select class="select-form" name="produto.categoria.id">
+					#{list items:listaDeCategoria, as:'c'}
+						<option value="${c.id}" 
+							${c.id == p?.categoria?.id ? 'selected' : ''}>
+								${c.nome}
+						</option>
+					#{/list}
+				</select>
+			<div>
+				<input class="input__submit-form" type="submit"
+					value="${p ? 'Editar':'Cadastrar'}" />
+			</div>
+	</form>
+</div>
 
-	<input class="btn" type="submit"
-		value="${p ? 'Editar':'Cadastrar'}" />
-</form>
+

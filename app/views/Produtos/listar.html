@@ -1,19 +1,28 @@
 #{extends 'main.html' /}
 #{set title:'Lista de produtos' /}
 
-<form action="@{Produtos.listar}">
-	<label>Buscar produto por nome:</label>
-	<input type="text" name="termo" value="${termo}" />
-	<input type="submit" value="Buscar"/> 
-</form>
+<div class="hero-left">
+	<form action="@{Produtos.listar}">
+		<label>Buscar produto por nome:</label>
+		<input type="text" name="termo" value="${termo}" />
+		<input type="submit" value="Buscar"/> 
+	</form>	
+</div>
+<div class="hero-right">
+	<ul>
+		#{list items: listaDeProdutos, as:'p'}
+			<li>${p.nome} - (R$ ${p.preco}) - ${p.categoria.nome}| 
+				<a href="@{Produtos.remover(p.id)}">Remover</a> 
+				<a href="@{Produtos.editar(p.id)}">| Editar</a> 
+			</li>
+		#{/list}
+	</ul>
+</div>
 
-<ul>
-	#{list items: listaDeProdutos, as:'p'}
-		<li>${p.nome} - (R$ ${p.preco}) - ${p.categoria.nome}| 
-			<a href="@{Produtos.remover(p.id)}">Remover</a> 
-			<a href="@{Produtos.editar(p.id)}">| Editar</a> 
-		</li>
-	#{/list}
-</ul>
 
-<a href="@{Produtos.form}"><button class="btn">Formulário</button></a>
+
+
+
+
+
+

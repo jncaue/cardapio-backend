@@ -1,4 +1,5 @@
 /* Pressets gerais */
+/* Pressets gerais */
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -11,9 +12,11 @@
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
-	background-color: #fff;
-	font-family: 'Poppins', sans-serif;
+	background-color: rgba(0, 253, 0, 0.158);
+	font-family: 'Poppins', serif;
 }
 
 img, picture, video, canvas, svg {
@@ -32,45 +35,11 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -0.025em;
 }
 
+.page-conteiner {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 /* linha de testes */
 
-/* main */
-
-.form {
-	background-color: #DFDFDF;
-	/* 	border: 1px solid gray; */
-	border-radius: 10px;
-	padding: 2rem;
-}
-
-.btn {
-	background-color: #A0A0A0;
-	border: 1px solid black;
-	border-radius: 10px;
-	color: #000000;
-}
-
-.btn:hover {
-	background-color: #000;
-	border: 1px solid black;
-	border-radius: 10px;
-	color: #DFDFDF;
-	transform: scale(1.05);
-}
-
-.btn:active {
-	background-color: #000 !important; 
-	border: 1px solid black;
-	border-radius: 10px;
-	color: #DFDFDF;
-	transform: scale(1.05);
-}
-
-.btn:focus{
-	background-color: #000 ; 
-	border: 1px solid black;
-	border-radius: 10px;
-	color: #DFDFDF;
-	transform: scale(1.05);
-	
-}
