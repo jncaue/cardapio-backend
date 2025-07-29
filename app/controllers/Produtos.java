@@ -22,7 +22,8 @@ public class Produtos extends Controller {
 
 	public static void salvar(Produto produto) {
 		produto.save();
-		listar(null);
+//		listar(null);
+		form();
 	}
 
 	public static void listar(String termo) {

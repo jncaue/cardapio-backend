@@ -15,7 +15,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: rgba(0, 253, 0, 0.158);
+	background-color: #ADDFC6;
 	font-family: 'Poppins', serif;
 }
 

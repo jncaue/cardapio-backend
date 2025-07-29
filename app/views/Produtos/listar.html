@@ -1,19 +1,41 @@
 #{extends 'main.html' /}
 #{set title:'Lista de produtos' /}
 
+
+<!-- lado esquerdo da seção -->
 <div class="hero-left">
-	<form action="@{Produtos.listar}">
+	<form class="form-search" action="@{Produtos.listar}">
 		<label>Buscar produto por nome:</label>
 		<input type="text" name="termo" value="${termo}" />
 		<input type="submit" value="Buscar"/> 
 	</form>	
-</div>
-<div class="hero-right">
-	<ul>
+	
+	<ul class="hero-ul">
 		#{list items: listaDeProdutos, as:'p'}
-			<li>${p.nome} - (R$ ${p.preco}) - ${p.categoria.nome}| 
-				<a href="@{Produtos.remover(p.id)}">Remover</a> 
-				<a href="@{Produtos.editar(p.id)}">| Editar</a> 
+			<li class="hero-li">${p.id}</li>
+			<li class="hero-li">${p.nome}</li>
+		#{/list}
+	</ul>		
+</div>
+
+
+
+<!-- . -->
+
+
+
+<!-- lado direito da seção -->
+<div class="hero-right">
+	<ul class="hero-ul">
+	<h1>Edição e remoção de produtos</h1>
+		#{list items: listaDeProdutos, as:'p'}
+			<li class="hero-li">${p.nome} 
+			<a class="a-ul" href="@{Produtos.remover(p.id)}">Remover</a> 
+			<a class="a-ul" href="@{Produtos.editar(p.id)}">Editar</a> 
+				<ul class="sub-ul">
+					<li class="sub-li">${p.categoria.nome}</li>
+					<li class="sub-li">(R$ ${p.preco})</li>
+				</ul>
 			</li>
 		#{/list}
 	</ul>

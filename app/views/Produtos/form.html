@@ -38,17 +38,20 @@
 	</section>
 </div>
 	<div class="hero-right"> 
-		<form class="find-form" action="@{Produtos.salvar}">
-			<div>
+		<form class="loggon-form" action="@{Produtos.salvar}">
+			<div class="field-container">			
 				<input type="hidden" name="produto.id" value="${p?.id}" />
+				
 				<label class="label-form">Nome:</label>
 				<input class="input-form" type="text"
 					name="produto.nome" value="${p?.nome}" />
 			</div>
+			<div class="field-container">
 				<label class="label-form">Preço:</label>
 				<input class="input-form" type="text"
 					name="produto.preco" value="${p?.preco}" />
-			<div>
+			</div>
+			<div class="field-container">
 				<label class="label-form">Categoria:</label>
 				<select class="select-form" name="produto.categoria.id">
 					#{list items:listaDeCategoria, as:'c'}
@@ -58,11 +61,13 @@
 						</option>
 					#{/list}
 				</select>
-			<div>
+			</div>
+			<div class="submit-container">
 				<input class="input__submit-form" type="submit"
 					value="${p ? 'Editar':'Cadastrar'}" />
 			</div>
-	</form>
+		</form>
+	</div>
 </div>
 
 
