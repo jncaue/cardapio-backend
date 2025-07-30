@@ -18,9 +18,43 @@
     padding-block: 1rem;
 }
 
+.logo a {
+/* 	border: 1px solid black; */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+.logo h1 {
+	color: #214538;
+	font-weight: 500;
+}
+
+
+.nav h1 {
+	font-size: 1.5rem;
+	color: #214538;
+	font-weight: 500;
+}
+
 .ul-nav {
     /* border: 1px solid black; */
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 2rem;
     list-style: none;
+    margin-inline: 2rem;
+    	
+}
+
+
+.li-ul{}
+
+.a-li{
+    text-decoration: none;
+   	color: #214538;
+   	font-weight: 500;
+   	font-size: 1.05rem;
 }

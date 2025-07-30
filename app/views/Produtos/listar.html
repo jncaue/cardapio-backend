@@ -4,37 +4,36 @@
 
 <!-- lado esquerdo da seção -->
 <div class="hero-left">
-	<form class="form-search" action="@{Produtos.listar}">
-		<label>Buscar produto por nome:</label>
-		<input type="text" name="termo" value="${termo}" />
-		<input type="submit" value="Buscar"/> 
+<h1>Lista de produtos</h1>
+	<form class="form_search" action="@{Produtos.listar}">
+		<input class="input-form_search" type="text" name="termo" value="${termo}" placeholder="Nome do produto"/>
+		<input class="submit-form_search" type="submit" value="Buscar"/> 
 	</form>	
 	
-	<ul class="hero-ul">
+	<hr>
+	
+	<ol class="ol-product">
 		#{list items: listaDeProdutos, as:'p'}
-			<li class="hero-li">${p.id}</li>
 			<li class="hero-li">${p.nome}</li>
 		#{/list}
-	</ul>		
+	</ol>		
 </div>
 
 
 
 <!-- . -->
 
-
-
 <!-- lado direito da seção -->
 <div class="hero-right">
-	<ul class="hero-ul">
 	<h1>Edição e remoção de produtos</h1>
-		#{list items: listaDeProdutos, as:'p'}
-			<li class="hero-li">${p.nome} 
-			<a class="a-ul" href="@{Produtos.remover(p.id)}">Remover</a> 
-			<a class="a-ul" href="@{Produtos.editar(p.id)}">Editar</a> 
+	<ul class="hero-ul">
+		#{list items: listaDeProdutos, as:'x'}
+			<li class="hero-li">${x.nome} 
+			<a class="a-ul" href="@{Produtos.remover(x.id)}">Remover</a> 
+			<a class="a-ul" href="@{Produtos.editar(x.id)}">Editar</a> 
 				<ul class="sub-ul">
-					<li class="sub-li">${p.categoria.nome}</li>
-					<li class="sub-li">(R$ ${p.preco})</li>
+					<li class="sub-li">${x.categoria.nome}</li>
+					<li class="sub-li">(R$ ${x.preco})</li>
 				</ul>
 			</li>
 		#{/list}

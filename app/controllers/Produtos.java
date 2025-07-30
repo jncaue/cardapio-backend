@@ -13,7 +13,7 @@ public class Produtos extends Controller {
 	public static void form() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		render(listaDeCategoria);
-
+		
 	}
 
 	public static void detalhar(Produto produto) {

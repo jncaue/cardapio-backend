@@ -19,11 +19,16 @@
 .hero-left, .hero-right {
 	background-color: #E1F1E4;
 	border-radius: 10px;
-	padding-block: 4rem;
+	margin-block: 4rem;
 	padding-inline: 1rem;
 	margin-top: 5rem;
 	text-align: justify;
-	padding-block: 4rem
+	padding-block: 1rem;
+}
+
+.hero-left h1, .hero-right h1 {
+	font-weight: 600;
+	font-size: 1.5rem;	
 }
 
 /* lado esquerdo da hero */
@@ -36,6 +41,36 @@
 	gap: 2rem;
 }
 
+.form_search {
+	/* 	border: 1px solid black; */
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem
+}
+
+.label-form_search {
+	flex: 0;
+}
+
+.input-form_search {
+	flex: 6;
+	/* 	margin-inline: 0.5rem; */
+	padding-left: 0.5rem;
+	border: 1px solid black;
+	border-radius: 8px;
+	height: 2rem;
+}
+
+.submit-form_search {
+	flex: 1;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+
+.ol-product {
+	list-style: decimal-leading-zero inside;
+}
+
 /* lado direito da hero */
 .hero-right {
 	/* border: 1px solid blue; */
@@ -43,7 +78,7 @@
 }
 
 .hero-ul {
-	border: 1px solid black;
+	/* 	border: 1px solid black; */
 	list-style-type: square;
 	list-style-position: inside;
 	margin-inline: 1rem;

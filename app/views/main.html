@@ -23,11 +23,16 @@
 <body>
 	<div class="header">
 		<nav class="nav">
-			<img src="#" alt="Icone logo" class="logo-nav">
+		<div class="logo">
+			<a href="@{Produtos.form}">
+				<img src="@{'/public/images/icons8-restaurante-48.png'}" alt="Icone logo" class="logo-nav">
+				<h1>MenuDev</h1>		
+			</a>
+		</div>
 			<h1>Administração</h1>
 			<ul class="ul-nav">
-				<li class="li-ul"><a href="@{Produtos.listar}">Listagem de produtos</a></li>
-				<li class="li-ul"><a href="@{Produtos.form}">Cadastro de produtos</a></li>
+				<li class="li-ul"><a class="a-li" href="@{Produtos.listar}">Listagem de produtos</a></li>
+				<li class="li-ul"><a class="a-li" href="@{Produtos.form}">Cadastro de produtos</a></li>
 			</ul>
 		</nav>
 	</div>
