@@ -79,15 +79,30 @@
 
 .hero-ul {
 	/* 	border: 1px solid black; */
-	list-style-type: square;
+	list-style-type: decimal;
 	list-style-position: inside;
 	margin-inline: 1rem;
+	margin-top: 1rem;
 }
 
 .ul-li {
 	
 }
 
+.a-ul {
+	background-color: #7CAD8B;
+	color: #000;
+	font-weight: 500;
+	border: 1px solid #ADDFC6;
+	border-radius: 10px;
+	margin: 0.5rem;
+	padding-block: 0.15rem;
+	padding-inline: 0.5rem;
+	font-size: 0.90rem;
+}
+
 .sub-ul {
 	list-style-type: none;
 }
+
+

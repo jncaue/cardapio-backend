@@ -27,13 +27,13 @@
 <div class="hero-right">
 	<h1>Edição e remoção de produtos</h1>
 	<ul class="hero-ul">
-		#{list items: listaDeProdutos, as:'x'}
-			<li class="hero-li">${x.nome} 
-			<a class="a-ul" href="@{Produtos.remover(x.id)}">Remover</a> 
-			<a class="a-ul" href="@{Produtos.editar(x.id)}">Editar</a> 
+		#{list items: listaDeProdutos, as:'p'}
+			<li class="ul-li">${p.nome} 
+			<a class="a-ul" href="@{Produtos.remover(p.id)}"><button>Remover</button></a> 
+			<a class="a-ul" href="@{Produtos.editar(p.id)}"><button>Editar</button></a> 
 				<ul class="sub-ul">
-					<li class="sub-li">${x.categoria.nome}</li>
-					<li class="sub-li">(R$ ${x.preco})</li>
+					<li class="sub-li">${p.categoria.nome}</li>
+					<li class="sub-li">(R$ ${p.preco})</li>
 				</ul>
 			</li>
 		#{/list}
