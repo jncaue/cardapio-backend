@@ -43,13 +43,14 @@
 }
 
 .loggon-form {
-	background-color: #ADDFC6;
+	background: linear-gradient(to bottom, #ADDFC6, #c0edd7);
+/* 	background-color: #ADDFC6; */
+	
 	color: #000;
-	border: 2px solid #ADDFC6;
+	border: 2px solid #000;
 	border-radius: 5px;
 	padding-block: 2rem;
 	padding-inline: 1rem;
-	border-radius: 5px;
 }
 
 .field-container {
@@ -115,7 +116,6 @@
 .input__submit-form:active {
 	background-color: #000 !important;
 	border: 1px solid black;
-	border-radius: 10px;
 	color: #DFDFDF;
 	transform: scale(1.05);
 }
@@ -136,4 +136,24 @@
     margin: 10px 0;
     border-radius: 5px;
     font-weight: bold;
+}
+
+.back-button {
+	background-color: #ADDFC6;
+	border: 1px solid #2B603A;
+	border-radius: 5px;
+	color: #000;
+	font-size: 1rem;
+	padding-inline: 0.8rem;
+	margin-block: 1rem;
+}
+
+.back-button:hover {
+	cursor: pointer;
+	background-color: #ADDFC6;
+	border: 1px solid #000;
+	border-radius: 5px;
+	color: #000;
+	transform: scale(1.05);
+	
 }

@@ -12,7 +12,7 @@
 }
 
 body {
-	background-color: #ADDFC6;
+	background: linear-gradient(to bottom, #ADDFC6, #95bfaa);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;

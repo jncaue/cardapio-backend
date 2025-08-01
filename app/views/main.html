@@ -24,20 +24,30 @@
 	<div class="header">
 		<nav class="nav">
 		<div class="logo">
-			<a href="@{Produtos.form}">
-				<img src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" class="logo-nav">
+			<a href="@{Produtos.home}">
+				<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
 				<h1>MenuDev</h1>		
 			</a>
 		</div>
-			<h1>Administração</h1>
-			<ul class="ul-nav">
-				<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
-				<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
+		
+<!-- 		se o cliente nao estiver na pagina home, a navbar não será visível-->
+		    #{if title != 'Home'}
+            	<h1>Admnistração</h1>
+            	<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
+					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
 			</ul>
 		</nav>
+        	#{/if}
+			#{else}
+			<h1>#{get 'title'/}</h1>
+            	<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admnistração</a></li>
+			</ul>
+			#{/else}
 	</div>
-
-
+	
+		
 	<div class="hero">
 		<div class="container">
 			#{doLayout /}
