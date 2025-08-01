@@ -10,26 +10,20 @@
 <div class="hero-left">
 	<section>
 		<h1>#{get 'title'/}</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-			optio iste odit illo a quia, perferendis debitis placeat aliquid
-			enim nam deserunt? Minus amet quos iste labore commodi, beatae
-			natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-			Quia nemo doloribus expedita, deserunt, atque culpa eveniet
-			eligendi eius fuga commodi voluptatum reprehenderit porro magnam
-			non in, inventore autem beatae officia. Lorem ipsum dolor sit amet
-			consectetur adipisicing elit. Quae laborum nesciunt magni dolorem,
-			blanditiis temporibus reiciendis eveniet dicta consequatur fuga
-			cupiditate perferendis et nostrum aut tempore a, incidunt iure
-			eaque.</p>
+		<p>Cadastro de produto
+Nesta seção, você pode cadastrar novos itens no cardápio de forma prática e rápida. Preencha as informações com atenção, incluindo o nome do produto, o preço e a categoria correspondente. Manter o cardápio sempre atualizado é essencial para garantir uma boa experiência ao cliente. Utilize nomes claros e objetivos, informe corretamente os valores e certifique-se de que cada item está vinculado à categoria certa. Isso facilitará a organização e a visualização dos produtos na plataforma. A imagem ao lado serve como inspiração visual para destacar a importância de uma apresentação atrativa dos produtos no sistema.</p>
 	 </section>
 	
 	<section>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+	<h2>Use o formulário ao lado para adicionar um novo item ao cardápio. Preencha todos os campos obrigatórios com atenção:</h2>
+	<ul style="list-style: inside;">
+		<li>Nome: insira o nome do produto exatamente como deseja que ele apareça no cardápio.</li>
+		<li>Preço: informe o valor numérico do produto, utilizando ponto (.) como separador decimal, se necessário.</li>
+		<li>Categoria: selecione a categoria correspondente ao tipo de produto. Isso ajuda na organização e facilita a busca pelos clientes.</li>
+	</ul>
+	<p>Após preencher todos os campos, clique no botão Cadastrar para salvar o produto. Certifique-se de que as informações estão corretas antes de enviar.</p>
 			<img alt="" src="@{'/public/images/ice-cream-5928048_1920.jpg'}">
-			optio iste odit illo a quia, perferendis debitis placeat aliquid
-			enim nam deserunt? Minus amet quos iste labore commodi, beatae
-			natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-			eaque.</p>
+			
 	</section>
 </div>
 	<div class="hero-right"> 
@@ -64,6 +58,13 @@
 					value="${p ? 'Editar':'Cadastrar'}" />
 			</div>
 		</form>
+	#{if flash.success}
+	    <div class="flash-success">
+	        ${flash.success}
+			<a href="@{Produtos.listar}">Conferir</a>
+	    </div>
+	#{/if}
+		
 	</div>
 </div>
 

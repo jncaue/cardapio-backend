@@ -1,25 +1,24 @@
 * {
-    /* border: 1px solid black; */
+	/* border: 1px solid black; */
+	
 }
 
 .header {
-     background-color: rgba(46, 95, 46, 0.39);
-     
-
+	background-color: rgba(46, 95, 46, 0.39);
 }
 
 .nav {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-inline: 1rem;
-    padding-block: 1rem;
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-inline: 1rem;
+	padding-block: 1rem;
 }
 
 .logo a {
-/* 	border: 1px solid black; */
+	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -32,7 +31,6 @@
 	font-weight: 500;
 }
 
-
 .nav h1 {
 	font-size: 1.5rem;
 	color: #214538;
@@ -40,21 +38,42 @@
 }
 
 .ul-nav {
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    list-style: none;
-    margin-inline: 2rem;
-    	
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	list-style: none;
+	margin-inline: 2rem;
+}
+
+.li-ul {
+	
+}
+
+.a-li {
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	justify-content: center;
+	align-items: baseline;	
+	color: #214538;
+	font-weight: 500;
+	font-size: 1.25rem;
+	padding-inline: 1rem;
+	
 }
 
 
-.li-ul{}
+.a-li:hover {
+	border: 1px solid #214538;
+	border-radius: 10px;
+	color: #214538;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.3rem;
+}
 
-.a-li{
-    text-decoration: none;
-   	color: #214538;
-   	font-weight: 500;
-   	font-size: 1.05rem;
+.icon-a {
+	height: auto;
+	width: 1.2rem;
 }

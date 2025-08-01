@@ -20,10 +20,10 @@ public class Produtos extends Controller {
 	}
 
 	public static void salvar(Produto produto) {
-		produto.save();
 //		listar(null);
+		flash.success(produto.nome + " foi cadastrada com sucesso.");
+		produto.save();
 		form();
-
 	}
 
 	public static void listar(String termo) {
@@ -32,7 +32,7 @@ public class Produtos extends Controller {
 		if (termo == null) {
 			listaDeProdutos = Produto.find("status <> ?1", Status.INATIVO).fetch();
 		} else {
-			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(nome) like ?1) and status <> ?2",
+			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
 

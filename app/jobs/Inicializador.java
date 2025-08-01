@@ -12,15 +12,14 @@ public class Inicializador extends Job {
 
 //		se o numero de categorias for 0, crie 3 categorias
 		if (Categoria.count() == 0) {
-			Categoria comida = new Categoria("Comida", 100);
+			Categoria comida = new Categoria("Comida");
 			comida.save();
 
-			Categoria bebida = new Categoria("Bebida", 101);
+			Categoria bebida = new Categoria("Bebida");
 			bebida.save();
 
-			Categoria sobremesa = new Categoria("Sobremesa", 102);
+			Categoria sobremesa = new Categoria("Sobremesa");
 			sobremesa.save();
-
 		}
 	}
 }
