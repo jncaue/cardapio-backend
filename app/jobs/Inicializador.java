@@ -1,6 +1,7 @@
 package jobs;
 
 import model.Categoria;
+import model.Produto;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 
@@ -20,6 +21,22 @@ public class Inicializador extends Job {
 
 			Categoria sobremesa = new Categoria("Sobremesa");
 			sobremesa.save();
+
+			if (Produto.count() == 0) {
+				Produto pepsi = new Produto();
+				pepsi.nome = "Pepsi";
+				pepsi.preco = 12;
+				pepsi.categoria = bebida;
+				pepsi.save();
+				
+				Produto hamburguer = new Produto();
+				hamburguer.nome = "Hamburguer ";
+				hamburguer.preco = 20;
+				hamburguer.categoria = comida;
+				hamburguer.save();
+			}
+
 		}
+
 	}
 }

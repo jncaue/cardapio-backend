@@ -21,7 +21,7 @@ public class Produto extends Model {
 	public Produto() {
 		this.status = Status.ATIVO;
 	}
-
+	
 	// Relacionamento produto --> categoria
 	@ManyToOne
 	public Categoria categoria;

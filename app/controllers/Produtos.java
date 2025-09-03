@@ -13,7 +13,7 @@ public class Produtos extends Controller {
 	public static void form() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		render(listaDeCategoria);
-	}
+	}	
 	
 	public static void home() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
@@ -41,9 +41,7 @@ public class Produtos extends Controller {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-
 		render(listaDeProdutos, termo);
-
 	}
 
 	public static void remover(Long id) {

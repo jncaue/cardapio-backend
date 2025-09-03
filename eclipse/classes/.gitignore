@@ -1,7 +1,11 @@
+/Application.test.html
+/ApplicationTest.class
+/BasicTest.class
 /DocViewerPlugin.class
 /controllers/
+/data.yml
 /helpers/
-/play.plugins
-/views/
 /jobs/
 /model/
+/play.plugins
+/views/
