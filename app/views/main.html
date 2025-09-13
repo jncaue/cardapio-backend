@@ -21,7 +21,10 @@
 #{get 'moreStyles' /}
 </head>
 <body>
+
+<!-- cabeçalho da pagina  -->
 	<div class="header">
+<!-- 	barra de navegação -->
 		<nav class="nav">
 		<div class="logo">
 			<a href="@{Produtos.home}">
@@ -30,8 +33,8 @@
 			</a>
 		</div>
 		
-<!-- 		se o cliente nao estiver na pagina home, a navbar não será visível-->
-		    #{if title != 'Home'}
+<!-- 		se o cliente nao estiver na pagina home, ele terá acesso ao gerenciamento de produtos, pois só haverá atalho para gereciamento na pagina administrativa @(produtos.form)-->
+		    #{if title != 'Home'}	
             	<h1>Admnistração</h1>
             	<ul class="ul-nav">
 					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
@@ -39,24 +42,28 @@
 			</ul>
 		</nav>
         	#{/if}
+        	
+        	<!-- caso contrario e ele esteja na pagina home, ele n -->
 			#{else}
+			
 			<h1>#{get 'title'/}</h1>
             	<ul class="ul-nav">
 					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admnistração</a></li>
+					<li class="li-ul"><a class="a-li" href="@{Login.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuário</a></li>
 			</ul>
 			#{/else}
 	</div>
 	
-		
+	<!-- miolo da página, lugar para postagem de informações -->
+	
 	<div class="hero">
 		<div class="container">
 			#{doLayout /}
 		</div>
 	</div>
 	
-	<div class="footer">
-		<p></p>
-	</div>
+	<!-- estrutura de final da página -->
+	<div class="footer"></div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

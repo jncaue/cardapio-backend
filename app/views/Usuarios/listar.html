@@ -1,14 +1,12 @@
 
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Listagem de usuarios' /}
 
-
+<h1>#{get 'title'/}</h1>
 
 #{list items:usuarios, as:'u'}
-	
 		<a href="@{Usuarios.editar(u.id)}">Editar</a>
 		<a href="@{Usuarios.remover(u.id)}">Remover</a>
-
 	${u.nome} ${u.matricula} <br/>
 	
 #{/list}
