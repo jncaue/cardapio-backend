@@ -13,8 +13,6 @@ public class Usuario extends Model{
 	public String senha;
 	
 	public void setSenha(String s){
-		//123456
-		//4QrcOUm6Wau+VuBX8g+IPg==
 		senha = Crypto.passwordHash(s);
 	}
 }

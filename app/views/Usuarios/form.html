@@ -3,14 +3,15 @@
 #{set title:'Home' /}
 
 <form action="@{Usuarios.salvar}">
-<!-- id escondido -->
+
+
 	<input type="hidden" name="usuario.id" value="${usuario?.id}" />
 
 	Nome: <input type="text" name="usuario.nome" value="${usuario?.nome}" /> <br/> 
 	
-	E-mail: <input type="text" name="usuario.matricula" value="${usuario?.matricula}" /> <br/>
+	Matrícula: <input type="text" name="usuario.matricula" value="${usuario?.matricula}" /> <br/>
 	
 	Senha: <input type="password" name="senha" value="" /> <br/>
 	
-	<button>Salvar</button>
+	<button>Cadastrar</button>
 </form>

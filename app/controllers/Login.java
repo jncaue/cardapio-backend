@@ -18,7 +18,7 @@ public class Login extends Controller{
 		if (usu == null){
 			form();
 		} else {
-			session.put("usuario.email", usu.matricula);
+			session.put("usuario.matricula", usu.matricula);
 			
 			Usuarios.listar();
 		}

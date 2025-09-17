@@ -7,6 +7,6 @@
 #{list items:usuarios, as:'u'}
 		<a href="@{Usuarios.editar(u.id)}">Editar</a>
 		<a href="@{Usuarios.remover(u.id)}">Remover</a>
-	${u.nome} ${u.matricula} <br/>
+	${u.nome} ${u.matricula}  ${u.senha}<br/>
 	
 #{/list}
