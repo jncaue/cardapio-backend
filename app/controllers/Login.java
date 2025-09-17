@@ -16,11 +16,14 @@ public class Login extends Controller{
 									matricula, Crypto.passwordHash(senha) ).first();
 		
 		if (usu == null){
+			
+			flash.error("Login ou senha inválidos");
 			form();
+			
 		} else {
 			session.put("usuario.matricula", usu.matricula);
-			
-			Usuarios.listar();
+			flash.success("Logado com sucesso!");
+		Produtos.home();
 		}
 	}
 	

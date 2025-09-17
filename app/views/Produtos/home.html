@@ -1,6 +1,12 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
+#{if flash.success}
+	    <div class="flash-success">
+	        ${flash.success}
+	    </div>
+	#{/if}
+
 <div class="header"></div>
 <div class="hero"></div>
 <div class="hero"></div>
