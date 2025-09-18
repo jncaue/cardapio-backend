@@ -1,14 +1,14 @@
 #{extends 'main.html' /} 
-#{set title:'Cadastro de pessoas' /}
+#{set title:'Login de usuário' /}
 
-<form action="@{Login.logar}">
+<form class="login-form" action="@{Login.logar}">
 
-	<div class="field-container">
+	<div class="info-input">
 		<label class="label-form">Matricula:</label> 
 		<input class="input-form" type="text" name="matricula" />
 	</div>
 
-	<div class="field-container">
+	<div class="password-input">
 		<label class="label-form">Senha:</label> 
 		<input class="input-form" type="password" name="senha" />
 	</div>

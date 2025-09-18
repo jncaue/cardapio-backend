@@ -2,6 +2,7 @@ package jobs;
 
 import model.Categoria;
 import model.Produto;
+import model.Usuario;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 
@@ -22,6 +23,7 @@ public class Inicializador extends Job {
 			Categoria sobremesa = new Categoria("Sobremesa");
 			sobremesa.save();
 
+//			inicia dois produtos para auxilio de execucao do site
 			if (Produto.count() == 0) {
 				Produto pepsi = new Produto();
 				pepsi.nome = "Pepsi";
@@ -34,6 +36,13 @@ public class Inicializador extends Job {
 				hamburguer.preco = 20;
 				hamburguer.categoria = comida;
 				hamburguer.save();
+				
+//				inicia um usuario raiz para acesso ao site
+			if (Usuario.count() == 0) {
+				Usuario raiz = new Usuario("Raiz", "123123", "1234");
+				raiz.save();
+				}
+			
 			}
 
 		}

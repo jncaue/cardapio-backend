@@ -15,4 +15,10 @@ public class Usuario extends Model{
 	public void setSenha(String s){
 		senha = Crypto.passwordHash(s);
 	}
+	
+	public Usuario (String nome, String matricula, String senha) {
+		this.nome = nome;
+		this.matricula = matricula;
+		this.senha = senha;
+	}
 }
