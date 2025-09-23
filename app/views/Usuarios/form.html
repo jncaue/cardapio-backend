@@ -1,17 +1,20 @@
 
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Cadastro de usuario' /}
 
-<form action="@{Usuarios.salvar}">
+<h1>#{get 'title'/}</h1>
 
+<!-- form para cadastro de usuarios -->
 
+<!-- usuario raiz -->
+<!-- nome: raiz -->
+<!-- mat: 123123 -->
+<!-- senha: 1234 -->
+
+<form action="@{Usuarios.salvar}" class="usu-form">
 	<input type="hidden" name="usuario.id" value="${usuario?.id}" />
-
 	Nome: <input type="text" name="usuario.nome" value="${usuario?.nome}" /> <br/> 
-	
 	Matrícula: <input type="text" name="usuario.matricula" value="${usuario?.matricula}" /> <br/>
-	
 	Senha: <input type="password" name="senha" value="" /> <br/>
-	
 	<button>Cadastrar</button>
 </form>

@@ -1,5 +1,4 @@
 /* Pressets gerais */
-/* Pressets gerais */
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -12,13 +11,21 @@
 }
 
 body {
-	background: linear-gradient(to bottom, #ADDFC6, #95bfaa);
+	
+/* 	tirei a paleta de cores gradiente do papel de parede porque ta ficando bugado */
+/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
+	background-color: #95bfaa;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	height: 100vh;
 	font-family: 'Poppins', serif;
-}
+	
+/* 	tag para tirar o scroll da pagina */
+	overflow: hidden;
+/* 	                                   */
+	
+	}
 
 img, picture, video, canvas, svg {
 	display: block;
@@ -36,11 +43,24 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -0.025em;
 }
 
-.page-conteiner {
+.page-container {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
+
+/* caixa para deixar um container flexivel e em linha (horizontalizado) */
+.container-flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+/* caixa para deixar um container flexivel e em coluna (verticalizado)*/
+.container-flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
 
 /* linha de testes */
 

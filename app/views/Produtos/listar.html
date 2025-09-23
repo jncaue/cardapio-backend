@@ -2,47 +2,42 @@
 #{set title:'Lista de produtos' /}
 
 
-<!-- lado esquerdo da seção -->
-<div class="hero-left">
-<h1>Lista de produtos</h1>
-	<form class="form_search" action="@{Produtos.listar}">
-		<input class="input-form_search" type="text" name="termo" value="${termo}" placeholder="Nome do produto"/>
-		<input class="input__submit-form" type="submit" value="Buscar"/> 
-	</form>	
+<div class="container">
+	<!-- lado esquerdo da seção -->
+	<div class="hero-left">
+	<h1>Lista de produtos</h1>
+		<form class="form_search" action="@{Produtos.listar}">
+			<input class="input-form_search" type="text" name="termo" value="${termo}" placeholder="Nome do produto"/>
+			<input class="input__submit-form" type="submit" value="Buscar"/> 
+		</form>	
+		
+		<hr>
+		
+		<ol class="ol-product">
+			#{list items: listaDeProdutos, as:'p'}
+				<li class="hero-li">${p.nome}</li>
+			#{/list}
+			<button class="back-button" onclick="history.back()">Voltar</button>
+		</ol>		
+	</div>
 	
-	<hr>
+	<!-- . -->
 	
-	<ol class="ol-product">
-		#{list items: listaDeProdutos, as:'p'}
-			<li class="hero-li">${p.nome}</li>
-		#{/list}
-		<button class="back-button" onclick="history.back()">Voltar</button>
-	</ol>		
+	<!-- lado direito da seção -->
+	<div class="hero-right">
+		<h1>Edição e remoção de produtos</h1>
+		<ul class="hero-ul">
+			#{list items: listaDeProdutos, as:'p'}
+				<li class="ul-li">${p.nome} 
+				<a class="a-ul" href="@{Produtos.remover(p.id)}"><button>Remover</button></a> 
+				<a class="a-ul" href="@{Produtos.editar(p.id)}"><button>Editar</button></a> 
+					<ul class="sub-ul">
+						<li class="sub-li">${p.categoria.nome}</li>
+						<li class="sub-li">(R$ ${p.preco})</li>
+					</ul>
+				</li>
+			#{/list}
+		</ul>
+	</div>
 </div>
-
-<!-- . -->
-
-<!-- lado direito da seção -->
-<div class="hero-right">
-	<h1>Edição e remoção de produtos</h1>
-	<ul class="hero-ul">
-		#{list items: listaDeProdutos, as:'p'}
-			<li class="ul-li">${p.nome} 
-			<a class="a-ul" href="@{Produtos.remover(p.id)}"><button>Remover</button></a> 
-			<a class="a-ul" href="@{Produtos.editar(p.id)}"><button>Editar</button></a> 
-				<ul class="sub-ul">
-					<li class="sub-li">${p.categoria.nome}</li>
-					<li class="sub-li">(R$ ${p.preco})</li>
-				</ul>
-			</li>
-		#{/list}
-	</ul>
-</div>
-
-
-
-
-
-
-
 

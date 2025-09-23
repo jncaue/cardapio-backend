@@ -1,18 +1,33 @@
 #{extends 'main.html' /} 
 #{set title:'Login de usuário' /}
 
-<form class="login-form" action="@{Login.logar}">
+<!-- <h1>#{get 'title'/}</h1> -->
 
-	<div class="info-input">
-		<label class="label-form">Matricula:</label> 
-		<input class="input-form" type="text" name="matricula" />
-	</div>
-
-	<div class="password-input">
-		<label class="label-form">Senha:</label> 
-		<input class="input-form" type="password" name="senha" />
+<!-- 	LOGIN para estabelecer um usuario dentro de uma sessao -->
+<div class="container-flex-column">
+	
+<!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
+	<div class="container-center">
+	
+		<form class="login-form" action="@{Login.logar}">
+		
+			<div class="info-input">
+				<h1 class="info-h1">Login</h1>
+			</div>
+		
+			<div class="info-input">
+				<label class="label-form">Matricula:</label> 
+				<input class="input-form" type="text" name="matricula" />
+			</div>
+		
+			<div class="info-input">
+				<label class="label-form">Senha:</label> 
+				<input class="input-form" type="password" name="senha" />
+			</div>
+			
+			<button class="login-form-btn">Logar</button>
+		</form>
+		
 	</div>
 	
-	<button>Entrar</button>
-	
-</form>
+</div>

@@ -7,65 +7,73 @@
 	#{set title:'Cadastro de produto' /}
 #{/else}
 
-<div class="hero-left">
-	<section>
-		<h1>#{get 'title'/}</h1>
-		<p>Cadastro de produto
-Nesta seção, você pode cadastrar novos itens no cardápio de forma prática e rápida. Preencha as informações com atenção, incluindo o nome do produto, o preço e a categoria correspondente. Manter o cardápio sempre atualizado é essencial para garantir uma boa experiência ao cliente. Utilize nomes claros e objetivos, informe corretamente os valores e certifique-se de que cada item está vinculado à categoria certa. Isso facilitará a organização e a visualização dos produtos na plataforma. A imagem ao lado serve como inspiração visual para destacar a importância de uma apresentação atrativa dos produtos no sistema.</p>
-	 </section>
-	
-	<section>
-	<h2>Use o formulário ao lado para adicionar um novo item ao cardápio. Preencha todos os campos obrigatórios com atenção:</h2>
-	<ul style="list-style: inside;">
-		<li>Nome: insira o nome do produto exatamente como deseja que ele apareça no cardápio.</li>
-		<li>Preço: informe o valor numérico do produto, utilizando ponto (.) como separador decimal, se necessário.</li>
-		<li>Categoria: selecione a categoria correspondente ao tipo de produto. Isso ajuda na organização e facilita a busca pelos clientes.</li>
-	</ul>
-	<p>Após preencher todos os campos, clique no botão Cadastrar para salvar o produto. Certifique-se de que as informações estão corretas antes de enviar.</p>
-			
-	</section>
-</div>
-	<div class="hero-right"> 
-		<form class="loggon-form" action="@{Produtos.salvar}">
-		<h1>#{get 'title'/}</h1>
-			<div class="field-container">			
-				<input type="hidden" name="produto.id" value="${p?.id}" />
-				
-				<label class="label-form">Nome:</label>
-				<input class="input-form" type="text"
-					name="produto.nome" value="${p?.nome}" />
-			</div>
-			<div class="field-container">
-				<label class="label-form">Preço:</label>
-				<input class="input-form" type="text"
-					name="produto.preco" value="${p?.preco}" />
-			</div>
-			<div class="select-container">
-				<label class="label-form">Categoria:</label>
-				<select class="select-form" name="produto.categoria.id">
-					#{list items:listaDeCategoria, as:'c'}
-						<option class="option-select" value="${c.id}" 
-							${c.id == p?.categoria?.id ? 'selected' : ''}>
-								${c.nome}
-						</option>
-					#{/list}
-				</select>
-			</div>
-			
-			<div class="submit-container">
-				<input class="input__submit-form" type="submit"
-					value="${p ? 'Editar':'Cadastrar'}" />
-			</div>
-		</form>
-	#{if flash.success}
-	    <div class="flash-success">
-	        ${flash.success}
-			<a href="@{Produtos.listar}">Conferir</a>
-	    </div>
-	#{/if}
+<div class="container">
+	<div class="hero-left">
+		<section>
+			<h1>#{get 'title'/}</h1>
+			<p>Cadastro de produto
+	Nesta seção, você pode cadastrar novos itens no cardápio de forma prática e rápida. Preencha as informações com atenção, incluindo o nome do produto, o preço e a categoria correspondente. Manter o cardápio sempre atualizado é essencial para garantir uma boa experiência ao cliente. Utilize nomes claros e objetivos, informe corretamente os valores e certifique-se de que cada item está vinculado à categoria certa. Isso facilitará a organização e a visualização dos produtos na plataforma. A imagem ao lado serve como inspiração visual para destacar a importância de uma apresentação atrativa dos produtos no sistema.</p>
+		 </section>
 		
-<button class="back-button" onclick="history.back()">Voltar</button>
+		<section>
+		<h2>Use o formulário ao lado para adicionar um novo item ao cardápio. Preencha todos os campos obrigatórios com atenção:</h2>
+		<ul style="list-style: inside;">
+			<li>Nome: insira o nome do produto exatamente como deseja que ele apareça no cardápio.</li>
+			<li>Preço: informe o valor numérico do produto, utilizando ponto (.) como separador decimal, se necessário.</li>
+			<li>Categoria: selecione a categoria correspondente ao tipo de produto. Isso ajuda na organização e facilita a busca pelos clientes.</li>
+		</ul>
+		<p>Após preencher todos os campos, clique no botão Cadastrar para salvar o produto. Certifique-se de que as informações estão corretas antes de enviar.</p>
+				
+		</section>
+	</div>
+	
+		<div class="hero-right"> 
+		
+			<form class="loggon-form" action="@{Produtos.salvar}">
+			<h1>#{get 'title'/}</h1>
+			
+				<div class="field-container">			
+					<input type="hidden" name="produto.id" value="${p?.id}" />
+					
+					<label class="label-form">Nome:</label>
+					<input class="input-form" type="text"
+						name="produto.nome" value="${p?.nome}" />
+				</div>
+				
+				<div class="field-container">
+					<label class="label-form">Preço:</label>
+					<input class="input-form" type="text"
+						name="produto.preco" value="${p?.preco}" />
+				</div>
+				
+				<div class="select-container">
+					<label class="label-form">Categoria:</label>
+					<select class="select-form" name="produto.categoria.id">
+						#{list items:listaDeCategoria, as:'c'}
+							<option class="option-select" value="${c.id}" 
+								${c.id == p?.categoria?.id ? 'selected' : ''}>
+									${c.nome}
+							</option>
+						#{/list}
+					</select>
+				</div>
+				
+				<div class="submit-container">
+					<input class="input__submit-form" type="submit"
+						value="${p ? 'Editar':'Cadastrar'}" />
+				</div>
+				
+			</form>
+			
+		#{if flash.success}
+		    <div class="flash-success">
+		        ${flash.success}
+				<a href="@{Produtos.listar}">Conferir</a>
+		    </div>
+		#{/if}
+			
+		<button class="back-button" onclick="history.back()">Voltar</button>
 	</div>
 </div>
-
+	
 

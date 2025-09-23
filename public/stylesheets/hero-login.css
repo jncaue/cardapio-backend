@@ -1,4 +1,45 @@
-.login-form {
+.container-center {
+	width: 100vw;
+	height: 100vh;
+/* 	border: 1px solid #fff; */
+	
+/* 	deixa o container flexivel */
 	display: flex;
 	
+/* 	direciona o conteudo do container horizontalmente */
+	flex-direction: row;
+	
+	align-items: center;
+	justify-content: center;
+	
 }
+
+
+.login-form {
+	width: 70rem;
+	height: auto;
+	padding: 30px;
+	background-color: #B8D8BF;
+/* 	border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+}
+
+.info-h1 {
+	font-size: 2rem;
+	
+}
+
+
+.info-input {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 1rem;
+}
+
+.login-form-btn {
+	background-color: #7BAC8A;
+	border-radius: 10px;
+	margin-top: auto;
+}
+

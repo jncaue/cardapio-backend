@@ -41,6 +41,10 @@
 	font-weight: 500;
 }
 
+.container-size {
+	
+}
+
 .ul-nav {
 	/* border: 1px solid black; */
 	display: flex;
@@ -59,22 +63,20 @@
 	flex-direction: row;
 	text-decoration: none;
 	justify-content: center;
-	align-items: baseline;	
+	align-items: baseline;
 	color: #214538;
 	font-weight: 500;
 	font-size: 1.25rem;
 	padding-inline: 1rem;
-	
 }
-
 
 .a-li:hover {
 	border: 1px solid #214538;
 	border-radius: 10px;
 	color: #214538;
 	text-decoration: none;
-	font-weight: 500;
-	font-size: 1.3rem;
+	/* 	font-weight: 500; */
+	/* 	font-size: 1.3rem; */
 }
 
 .icon-a {

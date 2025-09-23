@@ -10,8 +10,12 @@
 	href="@{'/public/stylesheets/header.css'}">
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-form.css'}">
-	<link rel="stylesheet" media="screen"
+<link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-listar.css'}">
+<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/hero-login.css'}">
+	
+	
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/footer.css'}">
 
@@ -26,40 +30,49 @@
 	<div class="header">
 <!-- 	barra de navegação -->
 		<nav class="nav">
-		<div class="logo">
-			<a href="@{Produtos.home}">
-				<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
-				<h1>MenuDev</h1>		
-			</a>
-		</div>
+			<div class="logo container-size">
+				<a href="@{Produtos.home}">
+					<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
+					<h1>MenuDev</h1>		
+				</a>
+			</div>
 		
-<!-- 		se o cliente nao estiver na pagina home, ele terá acesso ao gerenciamento de produtos, pois só haverá atalho para gereciamento na pagina administrativa @(produtos.form)-->
-		    #{if title != 'Home'}	
-            	<h1>Admnistração</h1>
-            	<ul class="ul-nav">
+			<!-- 		se o cliente nao estiver na pagina home, ele terá acesso ao gerenciamento de produtos, pois só haverá atalho para gereciamento na pagina administrativa @(produtos.form)-->
+		    #{if title != 'Home'}
+		    <div class="container-size">
+	            <h1>Admnistração</h1>
+	        </div>
+	        
+	        <div class="container-size">
+	            <ul class="ul-nav">
 					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
 					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
-			</ul>
+				</ul>
+			</div>
 		</nav>
         	#{/if}
         	
         	<!-- caso contrario e ele esteja na pagina home, ele n -->
 			#{else}
 			
-			<h1>#{get 'title'/}</h1>
-            	<ul class="ul-nav">
+			<div class="container-size">
+				<h1>#{get 'title'/}</h1>	
+			</div>
+			
+			<div class="container-size">
+	            <ul class="ul-nav">
 					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admnistração</a></li>
-					<li class="li-ul"><a class="a-li" href="@{Login.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuário</a></li>
-			</ul>
+					<li class="li-ul"><a class="a-li" href="@{Login.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Login de usuário</a></li>
+					<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuário</a></li>
+				</ul>
+			</div>
 			#{/else}
 	</div>
 	
 	<!-- miolo da página, lugar para postagem de informações -->
 	
 	<div class="hero">
-		<div class="container">
 			#{doLayout /}
-		</div>
 	</div>
 	
 	<!-- estrutura de final da página -->
