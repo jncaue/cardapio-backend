@@ -29,7 +29,6 @@ public class Usuario extends Model{
 	
 	
 	public Usuario (){
-		
 		this.perfil = Perfil.CLIENTE;
 		
 	}

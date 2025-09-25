@@ -2,7 +2,7 @@
 #{extends 'main.html' /}
 #{set title:'Cadastro de usuario' /}
 
-<h1>#{get 'title'/}</h1>
+<!-- <h1>#{get 'title'/}</h1> -->
 
 <!-- form para cadastro de usuarios -->
 
@@ -11,10 +11,39 @@
 <!-- mat: 123123 -->
 <!-- senha: 1234 -->
 
-<form action="@{Usuarios.salvar}" class="usu-form">
-	<input type="hidden" name="usuario.id" value="${usuario?.id}" />
-	Nome: <input type="text" name="usuario.nome" value="${usuario?.nome}" /> <br/> 
-	Matrícula: <input type="text" name="usuario.matricula" value="${usuario?.matricula}" /> <br/>
-	Senha: <input type="password" name="senha" value="" /> <br/>
-	<button>Cadastrar</button>
-</form>
+<div class="container-flex-column">
+<!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
+	<div class="container-center">
+	
+		<form class="login-form" action="@{Usuarios.salvar}">
+		
+			<div class="info-input">
+				<h1 class="info-h1">Cadastro</h1>
+			</div>
+		
+			<div class="info-input">
+			
+			<input type="hidden" name="usuario.id" value="${usuario?.id}" />
+			
+				<label class="label-form">Matricula:</label> 
+				<input class="input-form" type="text" name="usuario.matricula" value="${usuario?.matricula}" />
+			</div>
+			
+			<div class="info-input">
+				<label class="label-form">Nome:</label> 
+				<input class="input-form" type="text" name="usuario.nome" value="${usuario?.nome}" />
+			</div>
+		
+			<div class="info-input">
+				<label class="label-form">Senha:</label> 
+				<input class="input-form" type="password" name="senha" />
+			</div>
+			
+			<p>Já tem cadastro?  <a href="@{Login.form}">Clique aqui!</a></p>
+			
+			<button class="login-form-btn">Cadastre</button>
+		</form>
+		
+	</div>
+	
+</div>

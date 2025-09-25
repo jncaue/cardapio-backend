@@ -21,6 +21,7 @@ public class Usuarios extends Controller{
 			
 			usuario.save();
 			listar();
+			flash.success("Logado com sucesso!");
 		}
 		
 		public static void editar(Long id) {

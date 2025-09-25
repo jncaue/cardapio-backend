@@ -1,45 +1,48 @@
 .container-center {
 	width: 100vw;
 	height: 100vh;
-/* 	border: 1px solid #fff; */
-	
-/* 	deixa o container flexivel */
+	/* 	border: 1px solid #fff; */
+	/* 	deixa o container flexivel */
 	display: flex;
-	
-/* 	direciona o conteudo do container horizontalmente */
+	/* 	direciona o conteudo do container horizontalmente */
 	flex-direction: row;
-	
 	align-items: center;
 	justify-content: center;
-	
 }
 
-
 .login-form {
-	width: 70rem;
-	height: auto;
+	width: 50rem;
+	height: 20rem;
 	padding: 30px;
 	background-color: #B8D8BF;
-/* 	border: 1px solid black; */
+	
+	border-radius: 10px;
+	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
+	gap: 1rem;
 }
 
 .info-h1 {
 	font-size: 2rem;
-	
+	font-weight: 600;
 }
-
 
 .info-input {
 	display: flex;
 	flex-direction: row;
-	margin-bottom: 1rem;
 }
 
 .login-form-btn {
 	background-color: #7BAC8A;
 	border-radius: 10px;
-	margin-top: auto;
+	margin-top: 1rem;
+/* 	margin-bottom: auto; */
+	margin-top: 1rem; /* empurra o botão para o final do form */
 }
 
+.login-form p {
+	font-size: 0.8rem;
+	align-self: flex-end; /* opcional: alinha o botão à direita */
+	margin-top: auto; /* empurra o botão para o final do form */
+}
