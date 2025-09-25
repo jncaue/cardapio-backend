@@ -12,6 +12,7 @@ public class Usuarios extends Controller{
 			render();
 		}
 		
+		
 		public static void salvar(Usuario usuario, String senha) {
 			
 			if (senha.equals("") == false){

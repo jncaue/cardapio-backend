@@ -1,6 +1,8 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import play.db.jpa.Model;
 import play.libs.Crypto;
@@ -20,5 +22,15 @@ public class Usuario extends Model{
 		this.nome = nome;
 		this.matricula = matricula;
 		this.senha = senha;
+	}
+	
+	@Enumerated(EnumType.STRING)
+	public Perfil perfil;
+	
+	
+	public Usuario (){
+		
+		this.perfil = Perfil.CLIENTE;
+		
 	}
 }
