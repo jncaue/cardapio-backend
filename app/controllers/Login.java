@@ -4,7 +4,7 @@ import model.Usuario;
 import play.libs.Crypto;
 import play.mvc.Controller;
 
-public class Login extends Controller{
+public class Login extends Controller {
 	
 	public static void form(){
 		render();

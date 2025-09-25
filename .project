@@ -16,7 +16,6 @@
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
 	<linkedResources><link><name>docviewer</name><type>2</type><location>C:/Users/Juan/OneDrive/Documentos/play-1.5.3/modules/docviewer/app</location></link>
-<link><name>docviewer</name><type>2</type><location>C:/UsersIFJC/20221064010005/Documents/play-1.5.3/modules/docviewer/app</location></link>
-<link><name>public/docviewer</name><type>2</type><location>C:/UsersIFJC/20221064010005/Documents/play-1.5.3/modules/docviewer/public</location></link>
+<link><name>public/docviewer</name><type>2</type><location>C:/Users/Juan/OneDrive/Documentos/play-1.5.3/modules/docviewer/public</location></link>
 </linkedResources>
 </projectDescription>

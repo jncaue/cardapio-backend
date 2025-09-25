@@ -1,0 +1,53 @@
+.container-menu {
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	margin-top: 10rem;
+	margin-bottom: 5rem;
+	margin-inline: 5rem;
+}
+
+.produtos-table {
+	border-collapse: separate; /* necessário pra permitir espaçamento */
+ 	border-spacing: 2rem 1rem;    /* espaçamento entre as linhas */
+	background-color: #F9F9F9;
+	margin-block: 4rem;
+	width: 100vw;
+	height: auto;
+	margin-inline: 1rem;
+	border-radius: 10px;
+}
+
+
+.title-table {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-block: 5rem;
+	
+}
+
+.thead-table {
+	background-color: #214538;
+	color: #fff;
+	padding-block: 1rem;
+	margin-block: 6rem;
+	border-radius: 10px;
+}
+
+.tbody-table {
+	background-color: #B8D8BF;
+	padding-block: 1rem;
+	margin-block: 2rem;
+	border-radius: 10px;
+	
+}
+
+.tbody-table tr{
+	border-radius: 10px;
+	height: 2.5rem;
+}
+
+.tbody-table tr td{
+		
+}
+
