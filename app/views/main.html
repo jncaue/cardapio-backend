@@ -14,6 +14,8 @@
 	href="@{'/public/stylesheets/hero-listar.css'}">
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-login.css'}">
+	<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/hero-homecardapio.css'}">
 	
 	
 <link rel="stylesheet" media="screen"
@@ -40,7 +42,7 @@
 			<!-- 		se o cliente nao estiver na pagina home, ele terá acesso ao gerenciamento de produtos, pois só haverá atalho para gereciamento na pagina administrativa @(produtos.form)-->
 		    #{if title != 'Home'}
 		    <div class="container-size">
-	            <h1>Admnistração</h1>
+	            <h1>#{get 'title'/}</h1>
 	        </div>
 	        
 	        <div class="container-size">
