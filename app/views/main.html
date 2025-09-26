@@ -32,7 +32,7 @@
 	<div class="header">
 <!-- 	barra de navegação -->
 		<nav class="nav">
-			<div class="logo container-size">
+			<div class="logo">
 				<a href="@{Produtos.home}">
 					<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
 					<h1>MenuDev</h1>		
@@ -75,7 +75,7 @@
 								<li><a href="@{Usuarios.form}">Cadastre-se</a></li>
 								<li><a href="@{Login.form}">Login</a></li>								
 			            	</div>
-								<li><a href="@{Login.sair}">Sair</a></li>
+								<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
 						</ul>
 					</div>
         	#{/elseif}
@@ -95,7 +95,7 @@
         	
         	#{elseif title == 'Lista de produtos'}
 	        	 <div class="container-size">
-		            <h1>#{get 'title'/}</h1>
+		            <h1>Administração</h1>
 		        </div>
 		        
 		        <div class="container-size">
