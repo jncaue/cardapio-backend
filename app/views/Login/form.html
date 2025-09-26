@@ -1,15 +1,18 @@
 #{extends 'main.html' /} 
 #{set title:'Login de usuário' /}
 
-<!-- <h1>#{get 'title'/}</h1> -->
+#{if flash.success}
+	<div class="flash-success">
+		${flash.success}
+	</div>
+#{/if}
 
 <!-- 	LOGIN para estabelecer um usuario dentro de uma sessao -->
 <div class="container-flex-column">
-	
 <!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
 	<div class="container-center">
 	
-		<form class="login-form" action="@{Login.logar}">
+		<form class="login-form" action="@{Login.logar}" method="POST">
 			<div class="info-input">
 				<h1 class="info-h1">Login</h1>
 			</div>

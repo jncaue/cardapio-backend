@@ -8,7 +8,7 @@ import model.Status;
 import play.mvc.Controller;
 import play.mvc.With;
 
-@With(Segurancas.class)
+@With(Seguranca.class)
 
 public class Produtos extends Controller {
 

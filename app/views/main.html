@@ -39,36 +39,72 @@
 				</a>
 			</div>
 		
-			<!-- 		se o cliente nao estiver na pagina home, ele terá acesso ao gerenciamento de produtos, pois só haverá atalho para gereciamento na pagina administrativa @(produtos.form)-->
-		    #{if title != 'Home'}
-		    <div class="container-size">
-	            <h1>#{get 'title'/}</h1>
-	        </div>
-	        
-	        <div class="container-size">
-	            <ul class="ul-nav">
-					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
-					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
-				</ul>
-			</div>
-		</nav>
+			#{if title == 'Login de usuário'}
+			    <div class="container-size">
+		            <h1>#{get 'title'/}</h1>
+		        </div>
+		        
+		        <div class="container-size">
+		            <ul class="ul-nav">
+		            	<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuários</a></li>
+		            </ul>
+				</div>
+				</nav>
         	#{/if}
         	
-        	<!-- caso contrario e ele esteja na pagina home, ele n -->
-			#{else}
-			
-			<div class="container-size">
-				<h1>#{get 'title'/}</h1>	
-			</div>
-			
-			<div class="container-size">
-	            <ul class="ul-nav">
-					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admnistração</a></li>
-					<li class="li-ul"><a class="a-li" href="@{Login.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Login de usuário</a></li>
-					<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuário</a></li>
-				</ul>
-			</div>
-			#{/else}
+       		#{elseif title == 'Cadastro de usuario'}
+			    <div class="container-size">
+		            <h1>#{get 'title'/}</h1>
+		        </div>
+		        
+		        <div class="container-size">
+		            <ul class="ul-nav"></ul>
+				</div>
+				
+        	#{/elseif}
+        	
+        	#{elseif title == 'Home'}
+				    <div class="container-size">
+			            <h1>#{get 'title'/}</h1>
+			        </div>
+			        
+			        <div class="container-size">
+		            	<ul class="ul-nav">
+		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admin</a></li>
+			            	<div class="singup-container">
+								<li><a href="@{Usuarios.form}">Cadastre-se</a></li>
+								<li><a href="@{Login.form}">Login</a></li>								
+			            	</div>
+								<li><a href="@{Login.sair}">Sair</a></li>
+						</ul>
+					</div>
+        	#{/elseif}
+ 	
+ 	
+ 			#{elseif title == 'Cadastro de produto'}
+			    <div class="container-size">
+		            <h1>Administração</h1>
+		        </div>
+		        
+		        <div class="container-size">
+		            <ul class="ul-nav">
+						<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
+					</ul>
+				</div>
+        	#{/elseif}
+        	
+        	#{elseif title == 'Lista de produtos'}
+	        	 <div class="container-size">
+		            <h1>#{get 'title'/}</h1>
+		        </div>
+		        
+		        <div class="container-size">
+		            <ul class="ul-nav">
+						<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
+					</ul>
+				</div>
+        	#{/elseif}
+  		</nav>
 	</div>
 	
 	<!-- miolo da página, lugar para postagem de informações -->

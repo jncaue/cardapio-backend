@@ -1,6 +1,7 @@
 package jobs;
 
 import model.Categoria;
+import model.Perfil;
 import model.Produto;
 import model.Usuario;
 import play.jobs.Job;
@@ -40,6 +41,7 @@ public class Inicializador extends Job {
 //				inicia um usuario raiz para acesso ao site
 			if (Usuario.count() == 0) {
 				Usuario raiz = new Usuario("Raiz", "123123", "1234");
+				raiz.perfil = Perfil.ADMINISTRADOR;
 				raiz.save();
 				}
 			
