@@ -32,7 +32,7 @@
 	<div class="header">
 <!-- 	barra de navegação -->
 		<nav class="nav">
-			<div class="logo">
+			<div class="logo nav_item">
 				<a href="@{Produtos.home}">
 					<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
 					<h1>MenuDev</h1>		
@@ -40,11 +40,11 @@
 			</div>
 		
 			#{if title == 'Login de usuário'}
-			    <div class="container-size">
+			    <div class="container-size nav_item">
 		            <h1>#{get 'title'/}</h1>
 		        </div>
 		        
-		        <div class="container-size">
+		        <div class="container-size nav_item">
 		            <ul class="ul-nav">
 		            	<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuários</a></li>
 		            </ul>
@@ -53,40 +53,47 @@
         	#{/if}
         	
        		#{elseif title == 'Cadastro de usuario'}
-			    <div class="container-size">
+			    <div class="container-size nav_item">
 		            <h1>#{get 'title'/}</h1>
 		        </div>
 		        
-		        <div class="container-size">
+		        <div class="container-size nav_item">
 		            <ul class="ul-nav"></ul>
 				</div>
 				
         	#{/elseif}
         	
         	#{elseif title == 'Home'}
-				    <div class="container-size">
+				    <div class="container-size nav_item">
 			            <h1>#{get 'title'/}</h1>
 			        </div>
 			        
-			        <div class="container-size">
+			        <div class="container-size nav_item">
 		            	<ul class="ul-nav">
 		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admin</a></li>
 			            	<div class="singup-container">
 								<li><a href="@{Usuarios.form}">Cadastre-se</a></li>
 								<li><a href="@{Login.form}">Login</a></li>								
 			            	</div>
-								<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
+			            	
+			            	<div class="profile-container">
+				            	<ul>
+									<li class="logout">nome</li>
+									<li class="logout">matricula</li>
+				            	</ul>
+									<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
+			            	</div>
 						</ul>
 					</div>
         	#{/elseif}
  	
  	
  			#{elseif title == 'Cadastro de produto'}
-			    <div class="container-size">
+			    <div class="container-size nav_item">
 		            <h1>Administração</h1>
 		        </div>
 		        
-		        <div class="container-size">
+		        <div class="container-size nav_item">
 		            <ul class="ul-nav">
 						<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
 					</ul>
@@ -94,11 +101,11 @@
         	#{/elseif}
         	
         	#{elseif title == 'Lista de produtos'}
-	        	 <div class="container-size">
+	        	 <div class="container-size nav_item">
 		            <h1>Administração</h1>
 		        </div>
 		        
-		        <div class="container-size">
+		        <div class="container-size nav_item">
 		            <ul class="ul-nav">
 						<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
 					</ul>

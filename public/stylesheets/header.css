@@ -15,8 +15,15 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-inline: 1rem;
-	padding-block: 1rem;
 }
+
+.nav_item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 
 .logo a {
 	/* 	border: 1px solid black; */
@@ -47,7 +54,6 @@
 	font-weight: 600;
 }
 
-
 .ul-nav {
 	/* border: 1px solid black; */
 	display: flex;
@@ -55,10 +61,6 @@
 	gap: 2rem;
 	list-style: none;
 	margin-inline: 2rem;
-}
-
-.li-ul {
-	
 }
 
 .a-li {
@@ -70,7 +72,7 @@
 	color: #214538;
 	font-weight: 500;
 	font-size: 1.25rem;
-	padding-inline: 1rem;
+	/* 	padding-inline: 1rem; */
 }
 
 .a-li:hover {
@@ -88,7 +90,19 @@
 }
 
 .singup-container {
-	/* 	border: 1px solid black; */
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* 	justify-content: space-between; */
+	align-items: center;
+	padding-inline: 1rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.profile-container {
+	border: 1px solid black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -97,6 +111,14 @@
 	padding-inline: 1rem;
 	font-size: 0.9rem;
 	font-weight: 500;
+}
+
+.profile-container ul {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .singup-container li {
