@@ -18,6 +18,7 @@ public class Produtos extends Controller {
 		render(listaDeCategoria);
 	}	
 	
+
 	public static void home() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		render(listaDeCategoria);
