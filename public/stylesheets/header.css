@@ -4,18 +4,22 @@
 }
 
 .header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	background-color: rgba(46, 95, 46, 0.39);
-	/* 	height: 5rem; */
+	min-height: 5.5rem;
+	
 }
 
 .nav {
-	border: 1px solid black;
+/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	margin-inline: 1rem;
-	margin-block: 1rem;
+	margin-block: 0.250rem;
 }
 
 .nav_item {
@@ -58,9 +62,10 @@
 	/* border: 1px solid black; */
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	gap: 2rem;
 	list-style: none;
-	margin-inline: 2rem;
+	margin-inline: 0.4rem;
 }
 
 .a-li {
@@ -90,7 +95,7 @@
 }
 
 .singup-container {
-	border: 1px solid black;
+/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -102,25 +107,26 @@
 }
 
 .profile-container {
-	border: 1px solid black;
+/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	justify-content: space-between;
 	align-items: center;
-	padding-inline: 1rem;
 	font-weight: 500;
+	gap: 0.3rem;
 }
 
 .profile-container ul {
-	border: 1px solid black;
-	background-color: #D4EDDA;
+/* 	border: 1px solid black; */
+	background-color:#B8D8BF;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
-	padding-inline: 0.4rem;
+	border-radius: 7px;
+	padding-inline: 0.2rem;
+	padding-block: 0.125rem;
 	width: 14ch;
 	height: auto;
 }
@@ -129,19 +135,22 @@
 .profile-container ul li{
 	font-size: 0.85rem;
 	font-weight: 600;
+	color: #214538;
+	
+	
 }
 
 
 
 .singup-container li {
 	border-radius: 10px;
-	margin-inline: 1rem;
+	margin-inline: 0.1rem;
 }
 
 .singup-container li:hover {
 	text-decoration: underline;
 	border-radius: 10px;
-	margin-inline: 1rem;
+	margin-inline: 0.1rem;
 }
 
 .singup-container a {
@@ -156,7 +165,7 @@
 	justify-content: center;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 	font-weight: 500;
 }
 
