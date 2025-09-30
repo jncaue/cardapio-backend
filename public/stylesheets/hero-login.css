@@ -5,9 +5,10 @@
 	/* 	deixa o container flexivel */
 	display: flex;
 	/* 	direciona o conteudo do container horizontalmente */
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 0.5rem;
 }
 
 .login-form {
@@ -15,7 +16,6 @@
 	height: 20rem;
 	padding: 30px;
 	background-color: #B8D8BF;
-	
 	border-radius: 10px;
 	/* 	border: 1px solid black; */
 	display: flex;
@@ -24,6 +24,10 @@
 }
 
 .info-h1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	font-size: 2rem;
 	font-weight: 600;
 }

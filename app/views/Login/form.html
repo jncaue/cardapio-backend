@@ -12,11 +12,9 @@
 <!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
 	<div class="container-center">
 	
+	
 		<form class="login-form" action="@{Login.logar}" method="POST">
-			<div class="info-input">
-				<h1 class="info-h1">Login</h1>
-			</div>
-		
+			<h1 class="info-h1">Login</h1>
 			<div class="info-input">
 				<label class="label-form">Matricula:</label> 
 				<input class="input-form" type="text" name="matricula" />
@@ -31,7 +29,11 @@
 		
 			<button class="login-form-btn">Logar</button>
 		</form>
-		
-	</div>
+		#{if flash.error}
+			<div class="flash-error">	
+				${flash.error}
+		#{/if}
+			</div>
+	</div>		
 	
 </div>

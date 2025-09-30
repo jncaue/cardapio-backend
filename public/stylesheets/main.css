@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .flash-success {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: #d4edda;
 	color: #155724;
 	border: 1px solid #c3e6cb;
@@ -66,7 +70,21 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 2rem 2rem;
 	border-radius: 5px;
 	font-weight: bold;
+	width: fit-content;
+	height: auto;
+}
+
+.flash-error {
+	display: flex;
+	color: #fff;
+	background-color: #AA0001;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	font-weight: bold;
 	width: 30ch;
 	height: auto;
+	padding-block: 0.5rem;
 }
 /* linha de testes */

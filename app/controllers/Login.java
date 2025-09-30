@@ -16,7 +16,7 @@ public class Login extends Controller {
 
 		if (usu == null) {
 
-			flash.error("Login ou senha inválidos");
+			flash.error("Matrícula ou senha inválidos!");
 			form();
 
 		} else {
