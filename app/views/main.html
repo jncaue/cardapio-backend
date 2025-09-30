@@ -78,8 +78,8 @@
 			            	
 			            	<div class="profile-container">
 				            	<ul>
-									<li class="logout">nome</li>
-									<li class="logout">matricula</li>
+									<li class="profile logout">${session.get("usuario.nome")}</li>
+									<li class="profile logout">${session.get("usuario.matricula")}</li>
 				            	</ul>
 									<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
 			            	</div>

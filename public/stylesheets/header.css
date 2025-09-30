@@ -5,16 +5,17 @@
 
 .header {
 	background-color: rgba(46, 95, 46, 0.39);
-	height: 5rem;
+	/* 	height: 5rem; */
 }
 
 .nav {
-	/* border: 1px solid black; */
+	border: 1px solid black;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	margin-inline: 1rem;
+	margin-block: 1rem;
 }
 
 .nav_item {
@@ -24,6 +25,11 @@
 	align-items: center;
 }
 
+.nav h1 {
+	font-size: 1.5rem;
+	color: #214538;
+	font-weight: 500;
+}
 
 .logo a {
 	/* 	border: 1px solid black; */
@@ -39,12 +45,6 @@
 }
 
 .logo h1 {
-	color: #214538;
-	font-weight: 500;
-}
-
-.nav h1 {
-	font-size: 1.5rem;
 	color: #214538;
 	font-weight: 500;
 }
@@ -109,17 +109,29 @@
 	justify-content: space-between;
 	align-items: center;
 	padding-inline: 1rem;
-	font-size: 0.9rem;
 	font-weight: 500;
 }
 
 .profile-container ul {
 	border: 1px solid black;
+	background-color: #D4EDDA;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	border-radius: 10px;
+	padding-inline: 0.4rem;
+	width: 14ch;
+	height: auto;
 }
+
+
+.profile-container ul li{
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+
 
 .singup-container li {
 	border-radius: 10px;

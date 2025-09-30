@@ -11,21 +11,18 @@
 }
 
 body {
-	
-/* 	tirei a paleta de cores gradiente do papel de parede porque ta ficando bugado */
-/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
+	/* 	tirei a paleta de cores gradiente do papel de parede porque ta ficando bugado */
+	/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
 	background-color: #95bfaa;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	height: 100vh;
 	font-family: 'Poppins', serif;
-	
-/* 	tag para tirar o scroll da pagina */
+	/* 	tag para tirar o scroll da pagina */
 	overflow: hidden;
-/* 	                                   */
-	
-	}
+	/* 	                                   */
+}
 
 img, picture, video, canvas, svg {
 	display: block;
@@ -62,13 +59,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .flash-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    padding: 10px 20px;
-    margin: 2rem 2rem;
-    border-radius: 5px;
-    font-weight: bold;
+	background-color: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+	padding: 10px 20px;
+	margin: 2rem 2rem;
+	border-radius: 5px;
+	font-weight: bold;
+	width: 30ch;
+	height: auto;
 }
 /* linha de testes */
-
