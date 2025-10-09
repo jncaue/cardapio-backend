@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>projetoConclusaoCurso</name>
+	<name>cardapio-backend</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -15,7 +15,16 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-	<linkedResources><link><name>docviewer</name><type>2</type><location>C:/Users/Juan/OneDrive/Documentos/play-1.5.3/modules/docviewer/app</location></link>
-<link><name>public/docviewer</name><type>2</type><location>C:/Users/Juan/OneDrive/Documentos/play-1.5.3/modules/docviewer/public</location></link>
-</linkedResources>
+	<linkedResources>
+		<link>
+			<name>docviewer</name>
+			<type>2</type>
+			<location>C:/Users/Juan/OneDrive/Documentos/play-1.5.3/modules/docviewer/app</location>
+		</link>
+		<link>
+			<name>public/docviewer</name>
+			<type>2</type>
+			<location>D:/Users/20221064010034/Documents/play-1.5.3/modules/docviewer/public</location>
+		</link>
+	</linkedResources>
 </projectDescription>

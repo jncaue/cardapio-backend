@@ -1,5 +1,6 @@
 package controllers;
 
+import model.Perfil;
 import model.Usuario;
 import play.libs.Crypto;
 import play.mvc.Controller;
@@ -23,11 +24,17 @@ public class Login extends Controller {
 //			local onde os atributos de usuario logado estão sendo alocados dentro de uma sessao
 //			não se recomenda salvar senha, ainda mais em texto puro (sem criptografia)
 //			a sessao so salva String, não salva objetos
+			
 			session.put("usuario.matricula", usu.matricula);
 			session.put("usuario.nome", usu.nome);
 			session.put("usuarioPerfil", usu.perfil.name());
+			if (session.get("usuarioPerfil").equals(Perfil.ADMINISTRADOR.name())) {
+				session.put("admin", usu.perfil.name());
+			}
+ 			
 			flash.success("Logado com sucesso!");
 			Produtos.home();
+			
 		}
 	}
 
