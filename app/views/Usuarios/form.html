@@ -11,6 +11,17 @@
 <!-- mat: 123123 -->
 <!-- senha: 1234 -->
 
+#{ifErrors}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  <ul>
+		#{errors}
+			<li>${error.key} - ${error}</li>
+		#{/errors}
+	  </ul>
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+#{/ifErrors}
+   
 <div class="container-flex-column">
 <!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
 	<div class="container-center">
@@ -23,18 +34,21 @@
 			
 			<input type="hidden" name="usuario.id" value="${usuario?.id}" />
 			
-				<label class="label-form">Matricula:</label> 
-				<input class="input-form" type="text" name="usuario.matricula" value="${usuario?.matricula}" />
+				<label class="label-form">Matricula:</label>
+				<input class="input-form" type="text" name="usuario.matricula" value="${flash['usuario.matricula'] ? flash['usuario.matricula'] : usuario?.matricula}" />
+<!-- 				<span class="erro">#{error 'matricula'/}</span> -->
 			</div>
 			
 			<div class="info-input">
-				<label class="label-form">Nome:</label> 
-				<input class="input-form" type="text" name="usuario.nome" value="${usuario?.nome}" />
+				<label class="label-form">Nome:</label>
+				<input class="input-form" type="text" name="usuario.nome" value="${flash['usuario.nome'] ? flash['usuario.nome'] : usuario?.nome}" />
+<!-- 				<span class="erro">#{error 'nome'/}</span> -->
 			</div>
 		
 			<div class="info-input">
-				<label class="label-form">Senha:</label> 
-				<input class="input-form" type="password" name="senha" />
+				<label class="label-form">Senha:</label>
+				<input class="input-form" type="password" name="usuario.senha" value="${flash['usuario.senha']}" />
+<!-- 			<span class="erro">#{error 'senha'/}</span>  -->
 			</div>
 			
 			<p>Já tem cadastro? <a href="@{Login.form}">Clique aqui!</a></p>
@@ -45,3 +59,4 @@
 	</div>
 	
 </div>
+
