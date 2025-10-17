@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 
 import model.Categoria;
+import model.Perfil;
 import model.Produto;
 import model.Status;
 import play.mvc.Controller;
@@ -19,9 +20,16 @@ public class Produtos extends Controller {
 	}	
 	
 
-	public static void home() {
+	public static void home(String termo) {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
-		List<Categoria> listaDeProdutos= Produto.findAll();
+		List<Produto> listaDeProdutos	;
+		
+		if (termo == null) {
+			listaDeProdutos = Produto.find("status is null or status <> ?1", Status.INATIVO).fetch();
+		} else {
+			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
+					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
+		}
 		render(listaDeCategoria, listaDeProdutos);
 	}
 
