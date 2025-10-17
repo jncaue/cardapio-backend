@@ -9,11 +9,10 @@
 	justify-content: center;
 	background-color: rgba(46, 95, 46, 0.39);
 	min-height: 5.5rem;
-	
 }
 
 .nav {
-/* 	border: 1px solid black; */
+	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -81,12 +80,8 @@
 }
 
 .a-li:hover {
-	border: 1px solid #214538;
-	border-radius: 10px;
-	color: #214538;
-	text-decoration: none;
-	/* 	font-weight: 500; */
-	/* 	font-size: 1.3rem; */
+	color: #B8D8BF;
+	text-decoration: underline;
 }
 
 .icon-a {
@@ -95,7 +90,7 @@
 }
 
 .singup-container {
-/* 	border: 1px solid black; */
+	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -107,7 +102,7 @@
 }
 
 .profile-container {
-/* 	border: 1px solid black; */
+	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -118,8 +113,8 @@
 }
 
 .profile-container ul {
-/* 	border: 1px solid black; */
-	background-color:#B8D8BF;
+	/* 	border: 1px solid black; */
+	background-color: #B8D8BF;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -131,16 +126,11 @@
 	height: auto;
 }
 
-
-.profile-container ul li{
+.profile-container ul li {
 	font-size: 0.85rem;
 	font-weight: 600;
 	color: #214538;
-	
-	
 }
-
-
 
 .singup-container li {
 	border-radius: 10px;
