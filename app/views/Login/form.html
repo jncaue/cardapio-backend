@@ -1,18 +1,19 @@
 #{extends 'main.html' /} 
 #{set title:'Login de usuário' /}
 
-#{if flash.success}
-	<div class="flash-success">
-		${flash.success}
-	</div>
+#{if flash.error || flash.success}
+       <div id="flash-message" class="flash-message 
+           #{if flash.error} flash-error #{/if}
+           #{if flash.success} flash-success #{/if}">
+           ${flash.error ?: flash.success}
+       </div>
 #{/if}
 
 <!-- 	LOGIN para estabelecer um usuario dentro de uma sessao -->
 <div class="container-flex-column">
 <!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
 	<div class="container-center">
-	
-	
+
 		<form class="login-form" action="@{Login.logar}" method="POST">
 			<h1 class="info-h1">Login</h1>
 			<div class="info-input">
@@ -29,10 +30,10 @@
 		
 			<button class="login-form-btn">Logar</button>
 		</form>
-	#{if flash.error}
-		<div class="flash-error">	
-			${flash.error}
-	#{/if}
+<!-- 	#{if flash.error} -->
+<!-- 		<div class="flash-error">	 -->
+<!-- 			${flash.error} -->
+<!-- 	#{/if} -->
 		</div>
 	</div>		
 	
