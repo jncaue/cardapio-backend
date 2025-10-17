@@ -21,19 +21,13 @@
 		  </thead>
 		  
 		  <tbody class="tbody-table">
-		  
+			  #{list items: listaDeProdutos, as:'p'}
 		    <tr>
-		      	<td>batata</td>
-		      	<td>Lanche</td>
-		     	<td>R$ 15,00</td>
+		      	<td>${p.nome}</td>
+		      	<td>${p.categoria.nome}</td>
+		     	<td>R$ ${p.preco}</td>
 		    </tr>
-		    
-		    <tr>
-		      <td>Suco Natural</td>
-		      <td>Bebida</td>
-		      <td>R$ 8,00</td>
-		    </tr>
-		    
+		    #{/list}
 		</tbody>
 	</table>
 </div>

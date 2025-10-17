@@ -31,24 +31,29 @@ public class Inicializador extends Job {
 				pepsi.preco = 12;
 				pepsi.categoria = bebida;
 				pepsi.save();
-				
+
 				Produto hamburguer = new Produto();
 				hamburguer.nome = "Hamburguer ";
 				hamburguer.preco = 20;
 				hamburguer.categoria = comida;
 				hamburguer.save();
-				
+
 //				inicia um usuario raiz para acesso ao site
-			if (Usuario.count() == 0) {
-				Usuario Admin= new Usuario("admin", "123123", "1234");
-				Admin.perfil = Perfil.ADMINISTRADOR;
-				Admin.save();
-				
-				Usuario Cliente = new Usuario("cliente", "12312", "1234");
-				Cliente.perfil = Perfil.CLIENTE;
-				Cliente.save();
+				if (Usuario.count() == 0) {
+
+					Usuario Root = new Usuario("root", "1", "1111");
+					Root.perfil = Perfil.ADMINISTRADOR;
+					Root.save();
+
+					Usuario Admin = new Usuario("admin", "123123", "1234");
+					Admin.perfil = Perfil.ADMINISTRADOR;
+					Admin.save();
+
+					Usuario Cliente = new Usuario("cliente", "12312", "1234");
+					Cliente.perfil = Perfil.CLIENTE;
+					Cliente.save();
 				}
-			
+
 			}
 
 		}

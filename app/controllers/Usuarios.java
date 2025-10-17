@@ -12,6 +12,7 @@ public class Usuarios extends Controller {
 	public static void form() {
 		render();
 	}
+
 	public static void salvar(@Valid Usuario usuario) {
 		if (validation.hasErrors()) {
 			params.flash();
@@ -22,18 +23,20 @@ public class Usuarios extends Controller {
 		Login.form();
 		flash.success("Logado com sucesso!");
 	}
+
 	public static void editar(Long id) {
 		Usuario usuario = Usuario.findById(id);
 		renderTemplate("Usuarios/form.html", usuario);
 	}
+
 	public static void remover(Long id) {
 		Usuario usuario = Usuario.findById(id);
 		usuario.delete();
 		listar();
 	}
+
 	public static void listar() {
 		List<Usuario> usuarios = Usuario.findAll();
 		render(usuarios);
 	}
 }
-

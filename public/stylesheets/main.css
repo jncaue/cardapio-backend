@@ -87,4 +87,27 @@ h1, h2, h3, h4, h5, h6 {
 	height: auto;
 	padding-block: 0.5rem;
 }
+
+.errors {
+	background-color: #B8D8BF;
+	list-style-type: none;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.errors ul {
+	list-style-type: none;
+	
+}
+
+.errors ul li{
+	color: inherit;
+	
+	
+}
+
+.errors ul li span {
+	color: red;	
+	font-weight: 600;
+}
 /* linha de testes */
