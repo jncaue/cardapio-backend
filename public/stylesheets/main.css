@@ -58,36 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 	flex-direction: column;
 }
 
-.flash-success {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: #d4edda;
-	color: #155724;
-	border: 1px solid #c3e6cb;
-	padding: 10px 20px;
-	margin: 2rem 2rem;
-	border-radius: 5px;
-	font-weight: bold;
-	width: fit-content;
-	height: auto;
-}
-
-.flash-error {
-	display: flex;
-	color: #fff;
-	background-color: #AA0001;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-	font-weight: bold;
-	width: 30ch;
-	height: auto;
-	padding-block: 0.5rem;
-}
-
 .errors {
 	background-color: #B8D8BF;
 	list-style-type: none;
@@ -110,20 +80,22 @@ h1, h2, h3, h4, h5, h6 {
 	color: red;	
 	font-weight: 600;
 }
-/* linha de testes */
 
 .flash-message {
   position: fixed;       /* flutuante */
   top: 6rem;             /* distância do topo */
-  left: 20px;           /* canto superior direito */
+  left: 0;           /* canto superior direito */
   z-index: 9999;         /* fica por cima de tudo */
   padding: 15px 25px;
-  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   color: white;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 8px rgba(0,0,0,0.2);
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-125px);
   animation: showFlash 0.5s forwards, hideFlash 0.5s 3s forwards;
 }
 
