@@ -11,7 +11,7 @@
 	<div class="hero-left">
 		<section>
 			<h1>Como cadastrar o seu produto</h1>
-			<p>Cadastro de produto
+			<p>#{get 'title' /}, 
 	Nesta seção, você pode cadastrar novos itens no cardápio de forma prática e rápida. Preencha as informações com atenção, incluindo o nome do produto, o preço e a categoria correspondente. Manter o cardápio sempre atualizado é essencial para garantir uma boa experiência ao cliente. Utilize nomes claros e objetivos, informe corretamente os valores e certifique-se de que cada item está vinculado à categoria certa. Isso facilitará a organização e a visualização dos produtos na plataforma. A imagem ao lado serve como inspiração visual para destacar a importância de uma apresentação atrativa dos produtos no sistema.</p>
 		 </section>
 		
@@ -66,7 +66,7 @@
 			</form>
 			
 		#{if flash.success}
-		    <div class="flash-success">
+		    <div class="flash-success flash-message">
 		        ${flash.success}
 				<a href="@{Produtos.listar}">Conferir</a>
 		    </div>

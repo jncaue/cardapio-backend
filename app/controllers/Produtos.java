@@ -59,6 +59,7 @@ public class Produtos extends Controller {
 	public static void remover(Long id) {
 		Produto produto = Produto.findById(id);
 		produto.status = Status.INATIVO;
+		flash.success(produto.nome + " foi removido com sucesso.");
 		produto.save();
 		listar(null);
 	}
@@ -66,7 +67,7 @@ public class Produtos extends Controller {
 	public static void editar(Long id) {
 		Produto p = Produto.findById(id);
 		List<Categoria> listaDeCategoria = Categoria.findAll();
-
+		
 		renderTemplate("Produtos/form.html", p, listaDeCategoria);
 	}
 }

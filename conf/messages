@@ -2,4 +2,8 @@
 # For example, for French create a messages.fr file
 #
 
+required.nome = Preenchimento de nome obrigatório!
+required.matricula = Preenchimento de matrícula obrigatória!
+required.senha = Preenchimento de senha obrigatória!
+
 validation.required=Obrigatório

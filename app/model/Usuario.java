@@ -12,14 +12,14 @@ import play.libs.Crypto;
 @Entity
 public class Usuario extends Model {
 
-	@Required
-	public String nome;
-
-	@Required
+	@Required (message = "required.matricula")
 	public String matricula;
 
+	@Required (message = "required.nome")
+	public String nome;
+
 	@MinSize(4)
-	@Required
+	@Required (message = "required.senha")
 	public String senha;
 
 	public void Gerasenha(String s) {
