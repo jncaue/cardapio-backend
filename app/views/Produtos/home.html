@@ -8,36 +8,16 @@
 <!-- #{/if} -->
 
 
- #{if flash.error || flash.success}
+	#{if flash.error || flash.success}
         <div id="flash-message" class="flash-message 
             #{if flash.error} flash-error #{/if}
             #{if flash.success} flash-success #{/if}">
             ${flash.error ?: flash.success}
         </div>
-    #{/if}
+	#{/if}
 
 <div class="container-menu">
-	<table border="1" class="produtos-table">
-		<caption class="title-table">Cardapio</caption>
-		
-	 	<thead class="thead-table">
-			<tr class="tr-table">
-				<th class="">Produto</th>
-		      	<th class="">Categoria</th>
-		      	<th class="">Preço</th>
-			</tr>
-		  </thead>
-		  
-		  <tbody class="tbody-table">
-			  #{list items: listaDeProdutos, as:'p'}
-		    <tr>
-		      	<td>${p.nome}</td>
-		      	<td>${p.categoria.nome}</td>
-		     	<td>R$ ${p.preco}</td>
-		    </tr>
-		    #{/list}
-		</tbody>
-	</table>
+	.
 </div>
 
 
