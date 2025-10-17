@@ -17,13 +17,12 @@ public class Produtos extends Controller {
 	public static void form() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		render(listaDeCategoria);
-	}	
-	
+	}
 
 	public static void home(String termo) {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
-		List<Produto> listaDeProdutos	;
-		
+		List<Produto> listaDeProdutos;
+
 		if (termo == null) {
 			listaDeProdutos = Produto.find("status is null or status <> ?1", Status.INATIVO).fetch();
 		} else {
@@ -33,13 +32,13 @@ public class Produtos extends Controller {
 		render(listaDeCategoria, listaDeProdutos);
 	}
 
-
 	public static void detalhar(Produto produto) {
 		render(produto);
 	}
 
 	public static void salvar(Produto produto) {
 //		listar(null);
+
 		flash.success(produto.nome + " foi cadastrada com sucesso.");
 		produto.save();
 		form();
