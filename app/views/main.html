@@ -15,7 +15,7 @@
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-login.css'}">
 	<link rel="stylesheet" media="screen"
-	href="@{'/public/stylesheets/hero-homecardapio.css'}">
+	href="@{'/public/stylesheets/hero-cardapio.css'}">
 	
 	
 <link rel="stylesheet" media="screen"
@@ -33,7 +33,7 @@
 <!-- 	barra de navegação -->
 		<nav class="nav">
 			<div class="logo nav_item">
-				<a href="@{Produtos.home}">
+				<a href="@{Produtos.cardapio}">
 					<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
 					<h1>MenuDev</h1>		
 				</a>
@@ -63,7 +63,7 @@
 				
         	#{/elseif}
         	
-        	#{elseif title == 'Home'}
+        	#{elseif title == 'cardapio'}
 				    <div class="container-size nav_item">
 			            <h1>#{get 'title'/}</h1>
 			        </div>

@@ -19,9 +19,13 @@ public class Produtos extends Controller {
 		render(listaDeCategoria);
 	}
 
-	public static void home(String termo) {
+	public static void cardapio(String termo) {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		List<Produto> listaDeProdutos;
+		
+		List<Produto> listaDeComidas = Produto.find("categoria.nome = ?1 and status = ?2", "Comida", Status.ATIVO).fetch();
+		List<Produto> listaDeBebidas = Produto.find("categoria.nome = ?1 and status = ?2", "Bebida", Status.ATIVO).fetch();
+		List<Produto> listaDeSobremesas = Produto.find("categoria.nome = ?1 and status = ?2", "Sobremesa", Status.ATIVO).fetch();
 
 		if (termo == null) {
 			listaDeProdutos = Produto.find("status is null or status <> ?1", Status.INATIVO).fetch();
@@ -29,7 +33,7 @@ public class Produtos extends Controller {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-		render(listaDeCategoria, listaDeProdutos);
+		render(listaDeProdutos, listaDeCategoria, listaDeComidas, listaDeBebidas, listaDeSobremesas);
 	}
 
 	public static void detalhar(Produto produto) {

@@ -1,0 +1,50 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<!-- #{if flash.success} -->
+<!-- 	    <div class="flash-success"> -->
+<!-- 	        ${flash.success} -->
+<!-- 	    </div> -->
+<!-- #{/if} -->
+
+
+	#{if flash.error || flash.success}
+        <div id="flash-message" class="flash-message 
+            #{if flash.error} flash-error #{/if}
+            #{if flash.success} flash-success #{/if}">
+            ${flash.error ?: flash.success}
+        </div>
+	#{/if}
+
+<div class="menu-container">
+	<div class="items-container">
+		<div class="food-container item-card">
+			<h1>Comidas</h1>	
+			<ul>
+				#{list items: listaDeComidas, as:'c'}
+					<li class="card-li">${c.nome}</li>
+				#{/list}			
+			</ul>
+		</div>
+		
+		<div class="drink-container item-card">
+			<h1>Bebidas</h1>	
+			<ul>
+				#{list items: listaDeBebidas, as:'b'}
+					<li class="card-li">${b.nome}</li>
+				#{/list}			
+			</ul>
+		</div>
+		
+		<div class="dessert-container item-card">
+			<h1>Sobremesas</h1>	
+			<ul>
+				#{list items: listaDeSobremesas, as:'s'}
+					<li class="card-li">${s.nome}</li>
+				#{/list}			
+			</ul>
+		</div>
+	</div>
+</div>
+
+
