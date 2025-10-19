@@ -28,7 +28,7 @@
 
 .hero-left h1, .hero-right h1 {
 	font-weight: 600;
-	font-size: 1.5rem;	
+	font-size: 1.5rem;
 }
 
 /* lado esquerdo da hero */
@@ -86,23 +86,28 @@
 }
 
 .ul-li {
-	
 }
 
-.a-ul {
-	background-color: #7CAD8B;
-	color: #000;
-	font-weight: 500;
-	border: 1px solid #ADDFC6;
+.btn-a {
 	border-radius: 10px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 0.90rem;
+	list-style: none;
+	text-decoration: none;
 	margin: 0.5rem;
 	padding-block: 0.15rem;
 	padding-inline: 0.5rem;
-	font-size: 0.90rem;
+}
+
+.remove-btn {
+	 background-color: red !important; 
+}
+
+.edit-btn {
+	 background-color: gray !important; 
 }
 
 .sub-ul {
 	list-style-type: none;
 }
-
-

@@ -23,7 +23,6 @@
 			#{list items: listaDeProdutos, as:'p'}
 				<li class="hero-li">${p.nome}</li>
 			#{/list}
-			<button class="back-button" onclick="history.back()">Voltar</button>
 		</ol>		
 	</div>
 	
@@ -35,8 +34,8 @@
 		<ul class="hero-ul">
 			#{list items: listaDeProdutos, as:'p'}
 				<li class="ul-li">${p.nome} 
-				<a class="a-ul" href="@{Produtos.remover(p.id)}"><button>Remover</button></a> 
-				<a class="a-ul" href="@{Produtos.editar(p.id)}"><button>Editar</button></a> 
+					<a class="btn-a remove-btn" href="@{Produtos.remover(p.id)}">Remover</a>
+					<a class="btn-a edit-btn" href="@{Produtos.editar(p.id)}">Editar</a>
 					<ul class="sub-ul">
 						<li class="sub-li">${p.categoria.nome}</li>
 						<li class="sub-li">(R$ ${p.preco})</li>

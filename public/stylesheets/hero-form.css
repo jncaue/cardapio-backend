@@ -28,7 +28,6 @@
 
 /* lado esquerdo da hero */
 .hero-left {
-	/* border: 1px solid red; */
 	flex: 2;
 	color: #000;
 	display: flex;
@@ -38,15 +37,14 @@
 
 /* lado direito da hero */
 .hero-right {
-	/* border: 1px solid blue; */
 	flex: 1;
 }
 
 .loggon-form {
 	background: linear-gradient(to bottom, #ADDFC6, #c0edd7);
+	height: 100%;
 	/* 	background-color: #ADDFC6; */
 	color: #000;
-	border: 2px solid #000;
 	border-radius: 5px;
 	padding-block: 2rem;
 	padding-inline: 1rem;
