@@ -13,6 +13,7 @@ public class Produto extends Model {
 	public String nome;
 	public int preco;
 	public String tamanho;
+	public String descricao;
 //	public int quantidade;
 	
 	// Relacionamento produto --> categoria

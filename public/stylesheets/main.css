@@ -21,7 +21,7 @@ body {
 	height: 100vh;
 	font-family: 'Poppins', serif;
 	/* 	tag para tirar o scroll da pagina */
-	overflow: hidden;
+	/* 	overflow: hidden; */
 	/* 	                                   */
 }
 

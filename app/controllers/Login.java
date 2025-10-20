@@ -35,7 +35,7 @@ public class Login extends Controller {
 			}
 
 			flash.success("Logado com sucesso. " + "Bem vindo, " + usu.nome + "!");
-			redirect("Produtos.home");
+			redirect("Produtos.cardapio");
 
 		}
 	}

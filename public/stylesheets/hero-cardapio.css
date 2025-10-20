@@ -1,8 +1,78 @@
 .menu-container {
 	background-color: #bcd7c9;
 	display: flex;
-	justify-content: center;
+	/* 	justify-content: center; */
 	margin-top: 10rem;
 	margin-bottom: 5rem;
 }
 
+.items-container {
+	/* 	border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+	gap: 10rem;
+	margin: 3rem;
+	/* 	width: 100%; */
+}
+
+.item-card {
+	background-color: #fff;
+	border-radius: 10px;
+	padding-inline: 2rem;
+}
+
+.item-card h1 {
+	font-size: 2.2rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+/* ul - lista de itens */
+.item-card .list {
+	display: flex;
+	gap: 6rem;
+	list-style: none;
+	display: flex; /* transforma em flex container */
+	flex-wrap: wrap;
+}
+
+.card-li {
+	display: flex;
+	flex-direction: column;
+	background-color: #B8D8BF;
+	border-radius: 10px;
+	font-size: 1.25rem;
+	font-weight: 500;
+	padding: 1rem;
+	margin-bottom: 1.5rem;
+	height: 10rem;
+	width: 12rem;
+}
+
+.sub-list {
+	list-style: none;
+}
+
+.desc {
+	font-weight: 500;
+}
+
+.sub-list li {
+	font-size: 0.95rem;
+	font-weight: 400;
+}
+
+.food-container {
+	/* 	background-color: green; */
+	
+}
+
+.drink-container {
+	/* 	background-color: red; */
+	
+}
+
+.dessert-container {
+	/* 	background-color: blue; */
+	
+}
