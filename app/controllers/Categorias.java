@@ -40,6 +40,6 @@ public class Categorias extends Controller {
 	public static void editar(Long id) {
 		Categoria c = Categoria.findById(id);
 		List<Categoria> listaDeCategoria = Categoria.findAll();
-//		renderTemplate("Produtos/form.html", c, listaDeCategoria);
+		renderTemplate("Produtos/form.html", c, listaDeCategoria);
 	}
 }

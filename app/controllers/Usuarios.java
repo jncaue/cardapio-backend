@@ -36,7 +36,7 @@ public class Usuarios extends Controller {
 	}
 
 	public static void listar() {
-		List<Usuario> usuarios = Usuario.findAll();
-		render(usuarios);
+		List<Usuario> listaDeUsuarios = Usuario.findAll();
+		render(listaDeUsuarios);
 	}
 }

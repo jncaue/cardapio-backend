@@ -12,9 +12,13 @@ public class Produto extends Model {
 
 	public String nome;
 	public int preco;
-	public String tamanho;
+	
 	public String descricao;
 //	public int quantidade;
+	
+	// Relacionamento produto --> tamanho
+	@ManyToOne
+	public Tamanho tamanho;
 	
 	// Relacionamento produto --> categoria
 	@ManyToOne
@@ -29,10 +33,13 @@ public class Produto extends Model {
 		this.status = Status.ATIVO;
 	}
 
-	public Produto(String nome, int preco, Categoria categoria) {
+	public Produto(String nome, int preco, Categoria categoria, Tamanho tamanho, String descricao) {
 		this.nome = nome;
 		this.preco = preco;
 		this.categoria = categoria;
+		this.tamanho = tamanho;
+		this.descricao = descricao;
 	}
+	
 
 }

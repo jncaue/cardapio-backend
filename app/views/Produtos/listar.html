@@ -35,18 +35,17 @@
 			#{list items: listaDeProdutos, as:'p'}
 			<div class="m"></div>
 			<div class="space-bt">
-				<li class="ul-li food-title" >${p.nome}</li>
+				<li class="ul-li food-title" >${p.nome} (${p.tamanho.nome})</li>
 				<div class="btns">
 					<a class="btn-a remove-btn" href="@{Produtos.remover(p.id)}">Remover</a>
 					<a class="btn-a edit-btn" href="@{Produtos.editar(p.id)}">Editar</a>				
 				</div>
 			</div>
 				<ul class="sub-ul">
+					<li class="sub-li italic">${p.descricao}</li>
 					<li class="sub-li">${p.categoria.nome}</li>
 					<li class="sub-li">(R$ ${p.preco})</li>
 				</ul>
-				
-				
 			#{/list}
 		</ul>
 	</div>

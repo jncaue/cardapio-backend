@@ -63,7 +63,7 @@
 				
         	#{/elseif}
         	
-        	#{elseif title == 'Cardápio' || 'Cardapio'}
+        	#{elseif title == 'Cardapio'}
 				    <div class="container-size nav_item">
 <!-- 			            <h1>#{get 'title'/}</h1> -->
 			        </div>
@@ -74,11 +74,6 @@
 		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Administração</a></li>
 		            	#{/if}
 		            	
-<!-- 			            	<div class="singup-container"> -->
-<!-- 								<li><a href="@{Usuarios.form}">Cadastre-se</a></li> -->
-<!-- 								<li><a href="@{Login.form}">Login</a></li>								 -->
-<!-- 			            	</div> -->
-			            	
 			            	<div class="profile-container">
 				            	<ul>
 									<li class="profile logout">${session.get("usuario.nome")}</li>
@@ -89,7 +84,6 @@
 						</ul>
 					</div>
         	#{/elseif}
- 	
  	
  			#{elseif title == 'Cadastro de produto'}
 			    <div class="container-size nav_item">

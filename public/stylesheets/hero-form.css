@@ -28,7 +28,7 @@
 
 /* lado esquerdo da hero */
 .hero-left {
-	flex: 2;
+	flex: 5;
 	color: #000;
 	display: flex;
 	flex-direction: column;
@@ -37,7 +37,7 @@
 
 /* lado direito da hero */
 .hero-right {
-	flex: 1;
+	flex: 4;
 }
 
 .loggon-form {

@@ -22,7 +22,7 @@
 			<li>Preço: informe o valor numérico do produto, utilizando ponto (.) como separador decimal, se necessário.</li>
 			<li>Categoria: selecione a categoria correspondente ao tipo de produto. Isso ajuda na organização e facilita a busca pelos clientes.</li>
 		</ul>
-		<p>Após preencher todos os campos, clique no botão Cadastrar para salvar o produto. Certifique-se de que as informações estão corretas antes de enviar.</p>
+		<p>Após preencher todos os campos, clique no botão Cadastrar para salvar o produto. Certifique-se de que as informações estão corretas antes de enviar. </p>
 		</section>
 	</div>
 	
@@ -39,16 +39,39 @@
 						name="produto.nome" value="${p?.nome}" />
 				</div>
 				
+				
 				<div class="field-container">
 					<label class="label-form">Preço:</label>
 					<input class="input-form" type="text"
 						name="produto.preco" value="${p?.preco}" />
 				</div>
 				
+				
+				<div class="field-container">			
+					<input type="hidden" name="descricao.id" value="${p?.id}" />
+					
+					<label class="label-form">Descrição:</label>
+<!-- 					<input class="input-form" type="text" name="produto.nome" value="${p?.nome}" /> -->
+						
+					<textarea class="input-form" name="produto.descricao" value="${p?.nome}" rows="2" cols="20" placeholder="Digite a descrição"></textarea>
+						
+				</div>
+				<div class="select-container">
+					<label class="label-form">Tamanho:</label>
+					<select class="select-form" name="produto.tamanho.id">
+						#{list items:listaDeTamanhos, as:'t'}
+							<option class="option-select" value="${t.id}" 
+								${t.id == p?.tamanho?.id ? 'selected' : ''}>
+									${t.nome}
+							</option>
+						#{/list}
+					</select>
+				</div>
+				
 				<div class="select-container">
 					<label class="label-form">Categoria:</label>
 					<select class="select-form" name="produto.categoria.id">
-						#{list items:listaDeCategoria, as:'c'}
+						#{list items:listaDeCategorias, as:'c'}
 							<option class="option-select" value="${c.id}" 
 								${c.id == p?.categoria?.id ? 'selected' : ''}>
 									${c.nome}

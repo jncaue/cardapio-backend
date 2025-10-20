@@ -6,6 +6,7 @@ import model.Categoria;
 import model.Perfil;
 import model.Produto;
 import model.Status;
+import model.Tamanho;
 import play.mvc.Controller;
 import play.mvc.With;
 
@@ -15,12 +16,13 @@ public class Produtos extends Controller {
 
 	// Lista de categorias
 	public static void form() {
-		List<Categoria> listaDeCategoria = Categoria.findAll();
-		render(listaDeCategoria);
+		List<Categoria> listaDeCategorias = Categoria.findAll();
+		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
+		render(listaDeCategorias, listaDeTamanhos);
 	}
 
 	public static void cardapio(String termo) {
-		List<Categoria> listaDeCategoria = Categoria.findAll();
+		List<Categoria> listaDeCategorias = Categoria.findAll();
 		List<Produto> listaDeProdutos;
 		
 		List<Produto> listaDeComidas = Produto.find("categoria.nome = ?1 and status = ?2", "Comida", Status.ATIVO).fetch();
@@ -33,19 +35,22 @@ public class Produtos extends Controller {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-		render(listaDeProdutos, listaDeCategoria, listaDeComidas, listaDeBebidas, listaDeSobremesas);
+		render(listaDeProdutos, listaDeCategorias, listaDeComidas, listaDeBebidas, listaDeSobremesas);
 	}
 
 	public static void detalhar(Produto produto) {
 		render(produto);
 	}
 
-	public static void salvar(Produto produto) {
-//		listar(null);
-
-		flash.success(produto.nome + " foi cadastrada com sucesso.");
-		produto.save();
-		form();
+	public static void salvar(Produto produto, Tamanho tamanho) {
+		
+		if (tamanho == null) {
+			form();
+		} else {
+			flash.success(produto.nome + " foi cadastrada com sucesso.");
+			produto.save();
+			form();			
+		}
 	}
 
 	public static void listar(String termo) {
@@ -70,8 +75,8 @@ public class Produtos extends Controller {
 
 	public static void editar(Long id) {
 		Produto p = Produto.findById(id);
-		List<Categoria> listaDeCategoria = Categoria.findAll();
-		
-		renderTemplate("Produtos/form.html", p, listaDeCategoria);
+		List<Categoria> listaDeCategorias = Categoria.findAll();
+		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
+		renderTemplate("Produtos/form.html", p, listaDeCategorias, listaDeTamanhos);
 	}
 }
