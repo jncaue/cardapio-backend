@@ -1,4 +1,4 @@
-#{extends 'main.html' /} #{set title:'Cardapio' /} 
+#{extends 'main.html' /} #{set title:'Cardápio' /} 
 
 #{if flash.error || flash.success}
 <div id="flash-message"
@@ -7,6 +7,14 @@
            #{if flash.success} flash-success #{/if}">
 	${flash.error ?: flash.success}</div>
 #{/if}
+
+<div class="banner">
+	
+
+ </div>
+
+
+
 
 <div class="menu-container">
 	<div class="items-container">

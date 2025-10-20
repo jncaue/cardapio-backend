@@ -63,15 +63,15 @@
 				
         	#{/elseif}
         	
-        	#{elseif title == 'Cardapio'}
+        	#{elseif title == 'Cardápio' || 'Cardapio'}
 				    <div class="container-size nav_item">
-			            <h1>#{get 'title'/}</h1>
+<!-- 			            <h1>#{get 'title'/}</h1> -->
 			        </div>
 			        
 			        <div class="container-size nav_item">
 		            	<ul class="ul-nav">
 		            	#{if session['admin']}
-		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Admin</a></li>
+		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Administração</a></li>
 		            	#{/if}
 		            	
 <!-- 			            	<div class="singup-container"> -->

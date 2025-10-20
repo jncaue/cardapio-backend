@@ -77,15 +77,36 @@
 	flex: 1;
 }
 
+.space-bt {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 .hero-ul {
 	/* 	border: 1px solid black; */
 	list-style-type: decimal;
 	list-style-position: inside;
 	margin-inline: 1rem;
 	margin-top: 1rem;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.m {
+	margin-bottom: 2rem;
 }
 
 .ul-li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.food-title {
+	font-weight: 500;
+	font-size: 1.10rem;
 }
 
 .btn-a {
@@ -101,11 +122,11 @@
 }
 
 .remove-btn {
-	 background-color: red !important; 
+	background-color: red !important;
 }
 
 .edit-btn {
-	 background-color: gray !important; 
+	background-color: gray !important;
 }
 
 .sub-ul {
