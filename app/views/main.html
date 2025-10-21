@@ -49,7 +49,6 @@
 		            	<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuários</a></li>
 		            </ul>
 				</div>
-				</nav>
         	#{/if}
         	
        		#{elseif title == 'Cadastro de usuário'}
@@ -85,7 +84,7 @@
 					</div>
         	#{/elseif}
  	
- 			#{elseif title == 'Cadastro de produto'}
+ 			#{elseif title == 'Cadastro de produto' && 'Edicao de produto'}
 			    <div class="container-size nav_item">
 		            <h1>Administração</h1>
 		        </div>

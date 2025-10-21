@@ -16,11 +16,11 @@
 		<div class="food-container item-card">
 			<h1>Comidas</h1>
 			<ul class="list">
-				#{list items: listaDeComidas, as:'c'}
-				<li class="card-li">${c.nome}
+				#{list items: listaDeComidas, as:'p'}
+				<li class="card-li">${p.nome}
 					<ul class="sub-list">
-						<li class="desc">${c.descricao}</li>
-						<li>R$${c.preco},00</li>
+						<li class="desc italic">${p.descricao}</li>
+						<li>R$${p.preco},00</li>
 					</ul>
 				</li> 
 				#{/list}
@@ -30,11 +30,11 @@
 		<div class="drink-container item-card">
 			<h1>Bebidas</h1>
 			<ul class="list">
-				#{list items: listaDeBebidas, as:'b'}
-				<li class="card-li">${b.nome}
+				#{list items: listaDeBebidas, as:'p'}
+				<li class="card-li">${p.nome}
 					<ul class="sub-list">
-						<li class="desc">${b.descricao}</li>
-						<li>R$${b.preco},00</li>
+						<li class="desc italic">${p.descricao}</li>
+						<li>R$${p.preco},00</li>
 					</ul>
 				</li>
 				 #{/list}
@@ -44,11 +44,11 @@
 		<div class="dessert-container item-card">
 			<h1>Sobremesas</h1>
 			<ul class="list">
-				#{list items: listaDeSobremesas, as:'s'}
-				<li class="card-li">${s.nome}
+				#{list items: listaDeSobremesas, as:'p'}
+				<li class="card-li">${p.nome}
 					<ul class="sub-list">
-						<li class="desc">djkashak</li>
-						<li>R$${s.preco},00</li>
+						<li class="desc italic">${p.descricao}</li>
+						<li>R$${p.preco},00</li>
 					</ul>
 				</li>
 				#{/list}
