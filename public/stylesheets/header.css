@@ -9,7 +9,15 @@
 	justify-content: center;
 	background: linear-gradient(to bottom, #587064, #89B09D, #95BFAA);
 	min-height: 4.5rem;
-}
+	
+/* 	fixo */
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    }
+
 
 .nav {
 	/* 	border: 1px solid black; */

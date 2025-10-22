@@ -2,11 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	position: relative; /* cria um contexto para posicionar a outra */
+	margin-top: 6.5rem;
 }
 
 .banner-img {
 	background-color: #FDEBD4;
-	padding: 0.3rem; width : 100vw;
+	padding: 0.3rem;
+	width: 100vw;
 	height: 22rem;
 	border-radius: 20px;
 	width: 100vw;
@@ -16,17 +18,21 @@
 .banner-info {
 	background: #EBDAC5; /* cor branca/creme */
 	position: relative; /* mantém no fluxo, mas com margin negativa */
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	width: 150px;
-	margin: -18px auto 0; /* <--- sobe 18px sobre a imagem */
-	padding: 8px 10px;
-	border-radius: 6px;
+	display : flex; flex-direction : column; justify-content : center;
+	align-items : center; text-align : center; width : 150px; margin :
+	-18px auto 0; /* <--- sobe 18px sobre a imagem */ padding : 8px 10px;
+	border-radius : 6px;
 	box-shadow: 0 20px 18px rgba(0, 0, 0, 0.12);
 	z-index: 5;
+	border-radius: 6px;
+	padding: 8px 10px;
+	margin: -18px auto 0;
+	width: 150px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
 }
 
 .banner-info img {
@@ -52,13 +58,12 @@
 .menu-container {
 	background-color: #bcd7c9;
 	display: flex;
-	/* 	justify-content: center; */
 	margin-top: 10rem;
 	margin-bottom: 5rem;
+	margin-inline: 10rem;
 }
 
 .items-container {
-	/* 	border: 1px solid black; */
 	display: flex;
 	flex-direction: column;
 	gap: 10rem;
@@ -67,9 +72,11 @@
 }
 
 .item-card {
+	
 	background-color: #F4E3D3;
 	border-radius: 10px;
-	padding-inline: 2rem;
+	padding-inline: 1rem;
+	padding-block: 1rem;
 }
 
 .item-card h1 {
@@ -78,40 +85,45 @@
 	margin-bottom: 1rem;
 }
 
+
 /* ul - lista de itens */
-.item-card .list {
+.list {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 6rem;
 	list-style: none;
-	display: flex; /* transforma em flex container */
-	flex-wrap: wrap;
 }
 
 .card-li {
+	background-color: #B8D8BF;
 	display: flex;
 	flex-direction: column;
-	background-color: #B8D8BF;
+	justify-content: center;
 	border-radius: 10px;
 	font-size: 1.25rem;
 	font-weight: 500;
 	padding: 1rem;
-	margin-bottom: 1.5rem;
-	height: 10rem;
-	width: fit-content;
-	min-width: 20rem;
+	margin-bottom: 0.5rem;
+	min-height: 5rem;
+	max-height: 8rem;
+	max-width: 20ch;
+	min-width: 8rem;
 }
 
 .sub-list {
 	list-style: none;
 }
 
-.desc {
-	font-weight: 500;
+.sub-list li {
+	font-size: 0.850rem;
 }
 
-.sub-list li {
-	font-size: 0.95rem;
+.desc {
 	font-weight: 400;
+}
+
+.preco {
+	font-weight: 500;
 }
 
 .food-container {
