@@ -29,14 +29,19 @@ public class Produtos extends Controller {
 		List<Produto> listaDeComidas = Produto.find("categoria.nome = ?1 and status = ?2", "Comida", Status.ATIVO).fetch();
 		List<Produto> listaDeBebidas = Produto.find("categoria.nome = ?1 and status = ?2", "Bebida", Status.ATIVO).fetch();
 		List<Produto> listaDeSobremesas = Produto.find("categoria.nome = ?1 and status = ?2", "Sobremesa", Status.ATIVO).fetch();
+		
+		List<Produto> listaDePizzas = Produto.find("categoria.nome = ?1 and status = ?2", "Pizza", Status.ATIVO).fetch();
+		List<Produto> listaDeHamburguers= Produto.find("categoria.nome = ?1 and status = ?2", "Hamburguer", Status.ATIVO).fetch();
+		List<Produto> listaDeCalzones= Produto.find("categoria.nome = ?1 and status = ?2", "Calzone", Status.ATIVO).fetch();
+
 
 		if (termo == null) {
-			listaDeProdutos = Produto.find("status is null or status <> ?1", Status.INATIVO).fetch();
+			listaDeProdutos = Produto.find("status is null or status <> 	?1", Status.INATIVO).fetch();
 		} else {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-		render(listaDeProdutos, listaDeCategorias, listaDeComidas, listaDeBebidas, listaDeSobremesas);
+		render(listaDeComidas, listaDeProdutos, listaDeCategorias, listaDeBebidas, listaDeSobremesas, listaDePizzas, listaDeHamburguers, listaDeCalzones);
 	}
 
 	public static void detalhar(Produto produto) {
