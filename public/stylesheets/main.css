@@ -48,6 +48,15 @@ h1, h2, h3, h4, h5, h6 {
 	flex-direction: column;
 }
 
+/* div que centraliza */
+.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-inline: 6rem;
+	margin-block: 2rem;
+}
+
 /* caixa para deixar um container flexivel e em linha (horizontalizado) */
 .container-flex-row {
 	display: flex;

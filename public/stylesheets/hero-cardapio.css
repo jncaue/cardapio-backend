@@ -1,3 +1,54 @@
+.banner {
+	display: flex;
+	flex-direction: column;
+	position: relative; /* cria um contexto para posicionar a outra */
+}
+
+.banner-img {
+	background-color: #FDEBD4;
+	padding: 0.3rem; width : 100vw;
+	height: 22rem;
+	border-radius: 20px;
+	width: 100vw;
+	box-shadow: 0 20px 18px rgba(0, 0, 0, 0.12);
+}
+
+.banner-info {
+	background: #EBDAC5; /* cor branca/creme */
+	position: relative; /* mantém no fluxo, mas com margin negativa */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 150px;
+	margin: -18px auto 0; /* <--- sobe 18px sobre a imagem */
+	padding: 8px 10px;
+	border-radius: 6px;
+	box-shadow: 0 20px 18px rgba(0, 0, 0, 0.12);
+	z-index: 5;
+}
+
+.banner-info img {
+	width: 2rem;
+	height: auto;
+}
+
+.banner-info h1 {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #214538;
+}
+
+.banner-info button {
+	font-size: 0.7rem;
+	font-weight: 400;
+	color: #214538;
+	padding: 0.2rem;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
 .menu-container {
 	background-color: #bcd7c9;
 	display: flex;
@@ -16,7 +67,7 @@
 }
 
 .item-card {
-	background-color: #fff;
+	background-color: #F4E3D3;
 	border-radius: 10px;
 	padding-inline: 2rem;
 }

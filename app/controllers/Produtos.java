@@ -1,5 +1,6 @@
 package controllers;
 
+import java.time.LocalTime;
 import java.util.List;
 
 import model.Categoria;
@@ -79,4 +80,19 @@ public class Produtos extends Controller {
 		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
 		renderTemplate("Produtos/form.html", p, listaDeCategorias, listaDeTamanhos);
 	}
+	
+	public static void statusH() {
+        LocalTime agora = LocalTime.now();
+
+        // horário de funcionamento: das 19h até 22h
+        LocalTime inicio = LocalTime.of(19, 0);
+        LocalTime fim = LocalTime.of(22, 0);
+
+        
+        String status = (agora.isAfter(inicio) && agora.isBefore(fim)) ? "Aberto" : "Fechado";
+
+        return;
+    }
+
+	
 }
