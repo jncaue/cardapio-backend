@@ -15,7 +15,7 @@ public class Inicializador extends Job {
 	@Override
 	public void doJob() throws Exception {
 
-//		se o numero de categorias for 0, crie 3 categorias
+//		se o numero de categorias for 0, crie categorias
 		if (Categoria.count() == 0) {
 			Categoria comida = new Categoria("Comida");
 			comida.save();
@@ -26,21 +26,22 @@ public class Inicializador extends Job {
 			Categoria hamburguer = new Categoria("Hamburguer");
 			hamburguer.save();
 
-			Categoria cachorroQuente = new Categoria("Cachorro quente");
-			cachorroQuente.save();
-
 			Categoria bebida = new Categoria("Bebida");
 			bebida.save();
-
-			Categoria suco = new Categoria("Suco");
-			suco.save();
 
 			Categoria sobremesa = new Categoria("Sobremesa");
 			sobremesa.save();
 
+			Categoria calzone = new Categoria("Calzone");
+			calzone.save();
+			
 			// tamanhos dos produtos
 			if (Tamanho.count() == 0) {
 
+				//tamanho para comidas
+				Tamanho x = new Tamanho("");
+				x.save();
+				
 				Tamanho p = new Tamanho("P");
 				p.save();
 
@@ -49,6 +50,20 @@ public class Inicializador extends Job {
 
 				Tamanho g = new Tamanho("G");
 				g.save();
+				
+				//bebidas
+				
+				Tamanho ml1 = new Tamanho("350ml");
+				ml1.save();
+				
+				Tamanho ml2 = new Tamanho("500ml");
+				ml2.save();
+
+				Tamanho l1 = new Tamanho("1L");
+				l1.save();
+
+				Tamanho l2 = new Tamanho("2L");
+				l2.save();
 
 //			inicia produtos para auxilio de execucao do site
 				if (Produto.count() == 0) {
@@ -61,10 +76,10 @@ public class Inicializador extends Job {
 					pepsi.save();
 
 					Produto xbacon = new Produto();
-					xbacon.nome = "Xbacon ";
+					xbacon.nome = "Comida generica";
 					xbacon.preco = 20;
 					xbacon.tamanho = m;
-					xbacon.descricao = "Hamburguer 90g, bacon, cheddar, salada";
+					xbacon.descricao = "descricao generica";
 					xbacon.categoria = comida;
 					xbacon.save();
 
@@ -75,6 +90,30 @@ public class Inicializador extends Job {
 					açai.descricao = "Açaí 500g, banana, leite em pó, granola";
 					açai.categoria = sobremesa;
 					açai.save();
+					
+					Produto cheddarbacon = new Produto();
+					cheddarbacon.nome = "Cheddar bacon";
+					cheddarbacon.preco = 44;
+					cheddarbacon.tamanho = g;
+					cheddarbacon.descricao = "cheddar, bacon, pao gergelim, pimenta";
+					cheddarbacon.categoria = hamburguer;
+					cheddarbacon.save();
+					
+					Produto calzonef = new Produto();
+					calzonef.nome = "calzone frango com catupiry";
+					calzonef.preco = 22;
+					calzonef.tamanho = g;
+					calzonef.descricao = "frango com catupiry";
+					calzonef.categoria = calzone;
+					calzonef.save();
+					
+					Produto pizzaf = new Produto();
+					pizzaf.nome = "pizza frango com catupiry";
+					pizzaf.preco = 22;
+					pizzaf.tamanho = g;
+					pizzaf.descricao = "frango com catupiry";
+					pizzaf.categoria = pizza;
+					pizzaf.save();
 
 //				inicia usuarios 
 					if (Usuario.count() == 0) {
