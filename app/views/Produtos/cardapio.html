@@ -1,5 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Cardapio' /}
+
 #{if flash.error || flash.success}
 	<div id="flash-message"
 		class="flash-message 
@@ -12,58 +13,98 @@
 <div class="center">
 
 	<div class="banner">
-		<img class="banner-img" src="../../../public/images/ice-cream-5928048_1920.jpg">
+		<img class="banner-img"
+			src="../../../public/images/pizza-6478478_1280.jpg">
 		<div class="banner-info">
 			<img src="../../../public/images/icons/icons8-restaurante-48.png">
 			<h1>MenuDev</h1>
 			<button class="hour-btn">19h-23h30</button>
-		 </div>
-</div>
+		</div>
 	</div>
-	
-	<div class="menu-container">
-		<div class="items-container">
-	
-			<div class="drink-container item-card">
-				<h1>Hamburguers</h1>
-				<ul class="list">
-					#{list items: listaDeHamburguers, as:'p'}
+</div>
+
+<div class="menu-container">
+	<div class="items-container">
+		<div class="drink-container item-card">
+			<h1>Hamburguers</h1>
+			<ul class="list">
+				#{list items: listaDeHamburguers, as:'p'}
+				<a class="add" href="#">
 					<li class="card-li">${p.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${p.descricao}</li>
 							<li class="preco">R$${p.preco},00</li>
 						</ul>
 					</li>
-					 #{/list}
-				</ul>
-			</div>
-	
-			<div class="drink-container item-card">
-				<h1>Bebidas</h1>
-				<ul class="list">
-					#{list items: listaDeBebidas, as:'p'}
+				</a>
+				#{/list}
+			</ul>
+		</div>
+		
+		<div class="drink-container item-card">
+			<h1>Calzones</h1>
+			<ul class="list">
+				#{list items: listaDeCalzones, as:'p'}
+				<a class="add" href="#">
 					<li class="card-li">${p.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${p.descricao}</li>
 							<li class="preco">R$${p.preco},00</li>
 						</ul>
-					</li> #{/list}
-				</ul>
-			</div>
-	
-			<div class="dessert-container item-card">
-				<h1>Sobremesas</h1>
-				<ul class="list">
-					#{list items: listaDeSobremesas, as:'p'}
+					</li>
+				</a>
+				#{/list}
+			</ul>
+		</div>
+
+		<div class="drink-container item-card">
+			<h1>Pizzas</h1>
+			<ul class="list">
+				#{list items: listaDePizzas, as:'p'}
+				<a class="add" href="#">
 					<li class="card-li">${p.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${p.descricao}</li>
 							<li class="preco">R$${p.preco},00</li>
 						</ul>
-					</li> #{/list}
-				</ul>
-			</div>
+					</li>
+				</a>
+				#{/list}
+			</ul>
+		</div>
+
+		<div class="drink-container item-card">
+			<h1>Bebidas</h1>
+			<ul class="list">
+				#{list items: listaDeBebidas, as:'p'}
+				<a class="add" href="#">
+					<li class="card-li">${p.nome}
+						<ul class="sub-list">
+							<li class="desc italic">${p.descricao}</li>
+							<li class="preco">R$${p.preco},00</li>
+						</ul>
+					</li>
+				</a>
+				#{/list}
+			</ul>
+		</div>
+
+		<div class="dessert-container item-card">
+			<h1>Sobremesas</h1>
+			<ul class="list">
+				#{list items: listaDeSobremesas, as:'p'}
+				<a class="add" href="#">
+					<li class="card-li">${p.nome}
+						<ul class="sub-list">
+							<li class="desc italic">${p.descricao}</li>
+							<li class="preco">R$${p.preco},00</li>
+						</ul>
+					</li>
+				</a>
+				#{/list}
+			</ul>
 		</div>
 	</div>
+</div>
 
 

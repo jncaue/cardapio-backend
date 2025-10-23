@@ -1,3 +1,4 @@
+
 .banner {
 	display: flex;
 	flex-direction: column;
@@ -9,10 +10,9 @@
 	background-color: #FDEBD4;
 	padding: 0.3rem;
 	width: 100vw;
-	height: 22rem;
+	height: auto;
 	border-radius: 20px;
-	width: 100vw;
-	box-shadow: 0 20px 18px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 50px 18px rgba(0, 0, 0, 0.12);
 }
 
 .banner-info {
@@ -74,8 +74,19 @@
 	padding-block: 1rem;
 }
 
+.add {
+    background-color: #B8D8BF;
+    border-radius: 10px;
+	color: #000;
+	text-decoration: none;
+}
+
+.add:hover {
+	background-color: #D2F7DA;
+}
+
 .item-card h1 {
-	font-size: 2.2rem;
+	font-size: 2rem;
 	font-weight: 600;
 	margin-bottom: 1rem;
 }
@@ -83,24 +94,24 @@
 /* ul - lista de itens */
 .list {
 	display: flex;
-	flex-wrap: wrap; gap : 6rem;
+	flex-wrap: wrap; 
+	gap : 6rem;
 	list-style: none;
 	gap: 6rem;
 }
 
 .card-li {
-	background-color: #B8D8BF;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border-radius: 10px;
-	font-size: 1.25rem;
+	
+	font-size: 1rem;
 	font-weight: 500;
-	padding: 1rem;
-	margin-bottom: 0.5rem;
-	min-height: 5rem;
+	padding: 0.6rem;
+	margin-bottom: 0.3rem;
+	min-height: fit-content;
 	max-height: 8rem;
-	max-width: 20ch;
+	max-width: 18ch;
 	min-width: 8rem;
 }
 
@@ -109,14 +120,19 @@
 }
 
 .sub-list li {
-	font-size: 0.850rem;
+	font-size: 0.80rem;
 }
 
 .desc {
 	font-weight: 400;
+	text-align: justify;
+	letter-spacing: 0.001rem;
+	word-spacing: -0.05rem;
+	
 }
 
 .preco {
+	padding-top: 0.5rem;
 	font-weight: 500;
 }
 

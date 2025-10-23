@@ -15,7 +15,7 @@ import play.mvc.With;
 
 public class Produtos extends Controller {
 
-	// Lista de categorias
+	
 	public static void form() {
 		List<Categoria> listaDeCategorias = Categoria.findAll();
 		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
@@ -26,7 +26,6 @@ public class Produtos extends Controller {
 		List<Categoria> listaDeCategorias = Categoria.findAll();
 		List<Produto> listaDeProdutos;
 		
-		List<Produto> listaDeComidas = Produto.find("categoria.nome = ?1 and status = ?2", "Comida", Status.ATIVO).fetch();
 		List<Produto> listaDeBebidas = Produto.find("categoria.nome = ?1 and status = ?2", "Bebida", Status.ATIVO).fetch();
 		List<Produto> listaDeSobremesas = Produto.find("categoria.nome = ?1 and status = ?2", "Sobremesa", Status.ATIVO).fetch();
 		
@@ -34,14 +33,13 @@ public class Produtos extends Controller {
 		List<Produto> listaDeHamburguers= Produto.find("categoria.nome = ?1 and status = ?2", "Hamburguer", Status.ATIVO).fetch();
 		List<Produto> listaDeCalzones= Produto.find("categoria.nome = ?1 and status = ?2", "Calzone", Status.ATIVO).fetch();
 
-
 		if (termo == null) {
 			listaDeProdutos = Produto.find("status is null or status <> 	?1", Status.INATIVO).fetch();
 		} else {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-		render(listaDeComidas, listaDeProdutos, listaDeCategorias, listaDeBebidas, listaDeSobremesas, listaDePizzas, listaDeHamburguers, listaDeCalzones);
+		render(listaDeProdutos, listaDeCategorias, listaDeBebidas, listaDeSobremesas, listaDePizzas, listaDeHamburguers, listaDeCalzones);
 	}
 
 	public static void detalhar(Produto produto) {

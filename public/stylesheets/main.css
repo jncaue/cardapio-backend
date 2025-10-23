@@ -13,7 +13,7 @@
 
 body {
 	/* 	tirei a paleta de cores gradiente do papel de parede porque ta ficando bugado */
-	/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
+/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
 	background-color: #95bfaa;
 	display: flex;
 	flex-direction: column;
@@ -57,7 +57,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-inline: 6rem;
+	margin-inline: 4rem;
 	margin-block: 2rem;
 }
 
