@@ -95,13 +95,30 @@ public class Inicializador extends Job {
 					calzonef.categoria = calzone;
 					calzonef.save();
 					
-					Produto pizzaf = new Produto();
-					pizzaf.nome = "Frango com catupiry";
-					pizzaf.preco = "22";
-					pizzaf.tamanho = g;
-					pizzaf.descricao = "frango com catupiry, queijo musssarela, tomate, oregano e molho de tomate";
-					pizzaf.categoria = pizza;
-					pizzaf.save();
+//					PIZZAS
+					Produto pizzag = new Produto();
+					pizzag.nome = "Pizza";
+					pizzag.tamanho = g;
+					pizzag.preco = "40";
+					pizzag.descricao = "Pizza com até 2 sabores e 8 fatias";
+					pizzag.categoria = pizza;
+					pizzag.save();
+					
+					Produto pizzam = new Produto();
+					pizzam.nome = "Pizza";
+					pizzam.tamanho = m;
+					pizzam.preco = "40";
+					pizzam.descricao = "Pizza com até 2 sabores e 6 fatias";
+					pizzam.categoria = pizza;
+					pizzam.save();
+					
+					Produto pizzap = new Produto();
+					pizzap.nome = "Pizza";
+					pizzap.tamanho = m;
+					pizzap.preco = "40";
+					pizzap.descricao = "Pizza com até 2 sabores e 4 fatias";
+					pizzap.categoria = pizza;
+					pizzap.save();
 
 //					USUARIOS
 					if (Usuario.count() == 0) {

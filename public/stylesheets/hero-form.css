@@ -4,11 +4,9 @@
 }
 
 .hero {
-	flex: 1;
 }
 
 .container {
-	/* border: 1px solid black; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -19,11 +17,10 @@
 .hero-left, .hero-right {
 	background-color: #E1F1E4;
 	border-radius: 10px;
-	margin-block: 4rem;
-	padding-inline: 1rem;
-/* 	margin-top: 5rem; */
 	text-align: justify;
+	margin-block: 4rem;
 	padding-block: 1rem;
+	padding-inline: 1rem;
 }
 
 /* lado esquerdo da hero */

@@ -90,6 +90,7 @@
 .a-li:hover {
 	color: #B8D8BF;
 	text-decoration: underline;
+	transform: scale(1.02);
 }
 
 .icon-a {
@@ -176,4 +177,5 @@
 .logout a:hover {
 	color: #F74F4F;
 	text-decoration: underline;
+	transform: scale(1.09);
 }

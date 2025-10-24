@@ -82,6 +82,8 @@
 }
 
 .add:hover {
+	transform: scale(1.09);
+	border: 1px solid black;
 	background-color: #D2F7DA;
 }
 
