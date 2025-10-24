@@ -6,4 +6,9 @@ required.nome = Preenchimento de nome obrigatório!
 required.matricula = Preenchimento de matrícula obrigatória!
 required.senha = Preenchimento de senha obrigatória!
 
+required.categoria = Categoria obrigatória!
+required.tamanho = Tamanho obrigatório!
+required.preco =  Preço obrigatório!
+
+
 validation.required=Obrigatório

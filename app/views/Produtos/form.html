@@ -7,6 +7,7 @@
 	#{set title:'Cadastro de produto' /}
 #{/else}
 
+
 <div class="container">
 	<div class="hero-left">
 		<section>
@@ -35,47 +36,49 @@
 					<input type="hidden" name="produto.id" value="${p?.id}" />
 					
 					<label class="label-form">Nome:</label>
-					<input class="input-form" type="text" name="produto.nome" value="${p?.nome}" />
+					<input class="input-form" type="text" name="produto.nome" value="${flash['produto.nome'] ? flash['produto.nome'] : p?.nome}" />
 				</div>
+					<span class="span-error">#{error 'produto.nome' /}</span>
 				
 				
 				<div class="field-container">
 					<label class="label-form">Preço:</label>
-					<input class="input-form" type="text"
-						name="produto.preco" value="${p?.preco}" />
+					<input class="input-form" type="text" name="produto.preco" value="${flash['produto.preco'] ? flash['produto.preco'] : p?.preco}" />
 				</div>
-				
+					<span class="span-error">#{error 'produto.preco' /}</span>
 				
 				<div class="field-container">			
-					<input type="hidden" name="descricao.id" value="${p?.id}" />
-					
 					<label class="label-form">Descrição:</label>
-					<textarea class="input-form" name="produto.descricao" value="${produto?.descricao}" rows="2" cols="20" placeholder="Digite a descrição"></textarea>
-						
-				</div>
-				<div class="select-container">
-					<label class="label-form">Tamanho:</label>
-					<select class="select-form" name="produto.tamanho.id">
-						#{list items:listaDeTamanhos, as:'t'}
-							<option class="option-select" value="${t.id}" 
-								${t.id == p?.tamanho?.id ? 'selected' : ''}>
-									${t.nome}
-							</option>
-						#{/list}
-					</select>
+					<textarea class="input-form" name="produto.descricao" value="${flash['produto.descricao'] ? flash['produto.descricao'] : p?.descricao}"  rows="2" cols="20" placeholder="Digite a descrição"></textarea>
 				</div>
 				
 				<div class="select-container">
-					<label class="label-form">Categoria:</label>
-					<select class="select-form" name="produto.categoria.id">
-						#{list items:listaDeCategorias, as:'c'}
-							<option class="option-select" value="${c.id}" 
-								${c.id == p?.categoria?.id ? 'selected' : ''}>
-									${c.nome}
-							</option>
-						#{/list}
+				    <label class="label-form">Tamanho:</label>
+				    <select class="select-form" name="produto.tamanho.id">
+				        <option value=""></option>
+				        #{list items:listaDeTamanhos, as:'t'}
+				            <option value="${t.id}" 
+				                ${flash['produto.tamanho.id'] == t.id || t.id == p?.tamanho?.id ? 'selected' : ''}>
+				                ${t.nome}
+				            </option>
+				        #{/list}
+				    </select>
+				</div>
+				<span class="span-error">#{error 'produto.tamanho' /}</span>
+				
+				<div class="select-container">
+					 <label class="label-form">Categoria:</label>
+					 <select class="select-form" name="produto.categoria.id">
+					        <option value=""></option>
+					        #{list items:listaDeCategorias, as:'c'}
+					            <option value="${c.id}" 
+					                ${flash['produto.categoria.id'] == c.id || c.id == p?.categoria?.id ? 'selected' : ''}>
+					                ${c.nome}
+					            </option>
+					        #{/list}
 					</select>
 				</div>
+			    <span class="span-error">#{error 'produto.categoria' /}</span>
 				
 				<div class="submit-container">
 					<input class="input__submit-form" type="submit"

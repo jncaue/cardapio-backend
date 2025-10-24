@@ -38,8 +38,6 @@ public class Inicializador extends Job {
 			if (Tamanho.count() == 0) {
 
 //				TAMANHO PARA COMIDAS
-				Tamanho x = new Tamanho("");
-				x.save();
 				
 				Tamanho p = new Tamanho("P");
 				p.save();
@@ -67,7 +65,7 @@ public class Inicializador extends Job {
 				if (Produto.count() == 0) {
 					Produto pepsi = new Produto();
 					pepsi.nome = "Pepsi";
-					pepsi.preco = 12;
+					pepsi.preco = "12";
 					pepsi.tamanho = m;
 					pepsi.descricao = "Refrigerante";
 					pepsi.categoria = bebida;
@@ -75,7 +73,7 @@ public class Inicializador extends Job {
 
 					Produto açai = new Produto();
 					açai.nome = "Açaí";
-					açai.preco = 22;
+					açai.preco = "22";
 					açai.tamanho = g;
 					açai.descricao = "Açaí 500g, banana, leite em pó, granola";
 					açai.categoria = sobremesa;
@@ -83,7 +81,7 @@ public class Inicializador extends Job {
 					
 					Produto cheddarbacon = new Produto();
 					cheddarbacon.nome = "Cheddar bacon";
-					cheddarbacon.preco = 44;
+					cheddarbacon.preco = "44";
 					cheddarbacon.tamanho = g;
 					cheddarbacon.descricao = "cheddar, bacon, pao gergelim, pimenta";
 					cheddarbacon.categoria = hamburguer;
@@ -91,7 +89,7 @@ public class Inicializador extends Job {
 					
 					Produto calzonef = new Produto();
 					calzonef.nome = "Frango com catupiry";
-					calzonef.preco = 22;
+					calzonef.preco = "22";
 					calzonef.tamanho = g;
 					calzonef.descricao = "frango com catupiry, cebola crispy";
 					calzonef.categoria = calzone;
@@ -99,7 +97,7 @@ public class Inicializador extends Job {
 					
 					Produto pizzaf = new Produto();
 					pizzaf.nome = "Frango com catupiry";
-					pizzaf.preco = 22;
+					pizzaf.preco = "22";
 					pizzaf.tamanho = g;
 					pizzaf.descricao = "frango com catupiry, queijo musssarela, tomate, oregano e molho de tomate";
 					pizzaf.categoria = pizza;
