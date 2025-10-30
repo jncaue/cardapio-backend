@@ -51,6 +51,7 @@ public class Produtos extends Controller {
 	}
 
 	public static void detalhar(Produto produto) {
+//		nao possui interface ainda
 		render(produto);
 	}
 
@@ -87,6 +88,7 @@ public class Produtos extends Controller {
 		listar(null);
 	}
 
+	@Administrador
 	public static void editar(Long id) {
 		Produto p = Produto.findById(id);
 		List<Categoria> listaDeCategorias = Categoria.findAll();
