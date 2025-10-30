@@ -8,6 +8,7 @@ import model.Perfil;
 import model.Produto;
 import model.Status;
 import model.Tamanho;
+import notes.Administrador;
 import play.data.validation.Valid;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -15,12 +16,12 @@ import play.mvc.With;
 @With(Seguranca.class)
 
 public class Produtos extends Controller {
-
+	
+	@Administrador
 	public static void form() {
 		List<Categoria> listaDeCategorias = Categoria.findAll();
 		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
 		render(listaDeCategorias, listaDeTamanhos);
-
 	}
 
 	public static void cardapio(String termo) {
@@ -54,7 +55,6 @@ public class Produtos extends Controller {
 	}
 
 	public static void salvar(@Valid Produto produto) {
-
 		if (validation.hasErrors()) {
 			params.flash();
 			validation.keep();
@@ -65,7 +65,8 @@ public class Produtos extends Controller {
 			form();
 		}
 	}
-
+	
+	@Administrador
 	public static void listar(String termo) {
 		List<Produto> listaDeProdutos = null;
 

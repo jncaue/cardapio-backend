@@ -18,14 +18,13 @@ public class Produto extends Model {
 	public String preco;
 
 	public String descricao;
-//	public int quantidade;
 
-	// Relacionamento produto --> categoria
+	// Relacionamento varios produtos --> uma categoria
 	@Required(message = "required.categoria")
 	@ManyToOne
 	public Categoria categoria;
 
-	// Relacionamento produto --> tamanho
+	// Relacionamento varios produtos --> tamanho
 	@Required(message = "required.tamanho")
 	@ManyToOne
 	public Tamanho tamanho;

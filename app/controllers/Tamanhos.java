@@ -14,8 +14,8 @@ public class Tamanhos extends Controller {
 	public static void form() {
 		List<Tamanho> listaDeTamanhos = Tamanho.findAll();
 		render(listaDeTamanhos);
-	}	
-	
+	}
+
 	public static void detalhar(Tamanho tamanho) {
 		render(tamanho);
 	}

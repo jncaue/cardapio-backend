@@ -21,6 +21,9 @@ public class Usuario extends Model {
 	@MinSize(4)
 	@Required (message = "required.senha")
 	public String senha;
+	
+	@Enumerated(EnumType.STRING)
+	public Perfil perfil;
 
 	public void Gerasenha(String s) {
 		senha = Crypto.passwordHash(s);
@@ -34,11 +37,8 @@ public class Usuario extends Model {
 		this.senha = senha;
 	}
 
-	@Enumerated(EnumType.STRING)
-	public Perfil perfil;
 
 	public Usuario() {
 		this.perfil = Perfil.CLIENTE;
-
 	}
 }

@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 
 import model.Usuario;
+import notes.Administrador;
 import play.data.validation.Valid;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -13,6 +14,7 @@ public class Usuarios extends Controller {
 		render();
 	}
 
+	@Administrador
 	public static void salvar(@Valid Usuario usuario) {
 		if (validation.hasErrors()) {
 			params.flash();
