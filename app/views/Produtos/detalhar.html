@@ -1,5 +1,18 @@
 #{extends 'main.html' /}
 #{set title:'Detalhar' /}
 
-<p>${produto.nome}</p>
-<p>${produto.preco}</p>
+
+<div class="center">
+	<div class="margin">
+		<div class="carrinho">
+			<ul>
+				<h2>${produto.categoria.nome}</h2>
+				<li class="">${produto.nome} (${produto.tamanho.nome})</li>
+				<li class="">${produto.preco}</li>
+				<li class="">${produto.descricao}</li>
+			</ul>
+
+		</div>
+
+	</div>
+</div>

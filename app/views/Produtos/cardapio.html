@@ -28,12 +28,12 @@
 		<div class="drink-container item-card">
 			<h1>Hamburguers</h1>
 			<ul class="list">
-				#{list items: listaDeHamburguers, as:'p'}
-				<a class="add" href="#">
-					<li class="card-li">${p.nome}
+				#{list items: listaDeHamburguers, as:'produto'}
+				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
-							<li class="desc italic">${p.descricao}</li>
-							<li class="preco">R$${p.preco},00</li>
+							<li class="desc italic">${produto.descricao}</li>
+							<li class="preco">R$${produto.preco},00</li>
 						</ul>
 					</li>
 				</a>

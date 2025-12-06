@@ -17,6 +17,10 @@
 	<link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-cardapio.css'}">
 	
+	<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/hero-detalhar__carrinho.css'}">
+	
+	stylesheets/hero-detalhar__carrinho.css
 	
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/footer.css'}">
@@ -107,6 +111,19 @@
 					</ul>
 				</div>
         	#{/elseif}
+        	
+        	#{elseif title == 'Detalhar'}
+	        	 <div class="container-size nav_item">
+		            <h1>Carrinho</h1>
+		        </div>
+		        
+		        <div class="container-size nav_item">
+		            <ul class="ul-nav">
+						<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
+					</ul>
+				</div>
+        	#{/elseif}
+        	
   		</nav>
 	</div>
 	
