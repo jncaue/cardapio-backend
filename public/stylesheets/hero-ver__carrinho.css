@@ -1,0 +1,78 @@
+.margin {
+	/* 	border: 1px solid black; */
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.carrinho {
+	background-color: #bcd7c9;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 40rem;
+	height: 40rem;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.carrinho h1 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.carrinho ul {
+	list-style: none;
+}
+
+.line {
+	border: 1px solid black;
+	margin-block: 10px
+}
+
+.produtos {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1rem;
+}
+
+.item {
+	/* 	border: 1px solid black; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 1.25rem;
+}
+
+.more-btns {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+
+.btnsoma {
+	color: green;
+}
+
+.btnsub {
+	color: red;
+}
+
+.more-btns a {
+	text-decoration: none;
+	font-size: 1rem;
+	background-color: gray;
+	border-radius: 10px;
+	padding-inline: 0.5rem;
+}
+
+.subtotal {
+	font-size: 0.85rem;
+	padding-left: 0.25rem;
+}
+
+ul h2 {
+	font-size: 1.25rem;
+}

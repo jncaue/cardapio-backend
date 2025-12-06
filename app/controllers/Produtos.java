@@ -2,6 +2,7 @@ package controllers;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -136,9 +137,45 @@ public class Produtos extends Controller {
 		session.put("carrinho", listaParaString(carrinho));
 
 		flash.success(produto.nome + " adicionado ao carrinho.");
-
+		
 //		detalhar(produto.id);
 		cardapio(null);
+	}
+	
+	
+	public static void adicionarItemCarrinho(Long id) {
+		if (id == null) {
+			error("ID inválido.");
+		}
+
+		// busca o produto no banco
+		Produto produto = Produto.findById(id);
+		if (produto == null) {
+			notFound("Produto não encontrado.");
+		}
+
+		// recuperar carrinho (string)
+		String carrinhoStr = session.get("carrinho");
+
+		// converter para lista
+		List<Long> carrinho = new ArrayList<>();
+
+		if (carrinhoStr != null && !carrinhoStr.isEmpty()) {
+			for (String s : carrinhoStr.split(",")) {
+				carrinho.add(Long.parseLong(s));
+			}
+		}
+
+		// adicionar item
+		carrinho.add(produto.id);
+
+		// converter de volta para string
+		session.put("carrinho", listaParaString(carrinho));
+
+		flash.success(produto.nome + " adicionado ao carrinho.");
+		
+//		detalhar(produto.id);
+		verCarrinho();
 	}
 
 
@@ -214,6 +251,26 @@ public class Produtos extends Controller {
 	public static void limparCarrinho() {
 	    session.remove("carrinho");
 	    flash.success("Carrinho esvaziado.");
+	    verCarrinho();
+	}
+	
+	public static void removerUm(Long id) {
+	    String carrinhoStr = session.get("carrinho");
+
+	    if (carrinhoStr == null || carrinhoStr.trim().isEmpty()) {
+	        verCarrinho();
+	        return;
+	    }
+
+	    List<String> ids = new ArrayList<>(Arrays.asList(carrinhoStr.split(",")));
+
+	    // remove apenas uma ocorrência
+	    ids.remove(id.toString());
+
+	    // regrava sessão
+	    String novoCarrinho = String.join(",", ids);
+	    session.put("carrinho", novoCarrinho);
+	    flash.success("Item foi removido com sucesso.");
 	    verCarrinho();
 	}
 

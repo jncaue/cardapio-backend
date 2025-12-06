@@ -1,25 +1,45 @@
 #{extends 'main.html' /}
-#{set title:'Detalhar' /}
+#{set title:'Carrinho' /}
 
-
+#{if flash.error || flash.success}
+	<div id="flash-message"
+		class="flash-message 
+	           #{if flash.error} flash-error #{/if}
+	           #{if flash.success} flash-success #{/if}">
+		${flash.error ?: flash.success}
+	</div>
+#{/if}
 
 
 <div class="center">
 	<div class="margin">
 		<div class="carrinho">
-			<ul class="produto">
-			    #{list items: itensAgrupados, as:'item'}
-			        <li>- ${item.produto.nome} (${item.quantidade}x) </li>
-			    #{/list}
+			<h1>Carrinho</h1>
+			<div class="line"></div>
+			<ul class="produtos">
+				#{list items: itensAgrupados, as:'item'}
+				
+				<li class="item">${item.produto.nome} (${item.quantidade}x) 
+					<div class="more-btns">
+						<a href="@{Produtos.removerUm(item.produto.id)}" class="btns btnsub">-</a>
+						<a href="@{Produtos.adicionarItemCarrinho(item.produto.id)}" class="btns btnsoma">+</a>
+					</div>
+				</li>
+				<li class="subtotal">Valor unitário: R$${item.produto.preco},00</li>
+				
+				#{/list}
 			</ul>
-				<h2>Total: R$ ${total}</h2>
+			
+			<div class="line"></div>			
+			
+			<h2>Total: R$ ${total}</h2>
 
-			<div class="btns">
-				<a href="@{Produtos.cardapio}" class="btn">Voltar</a>
-				<a href="@{Produtos.limparCarrinho()}" class="btn btn-danger">Esvaziar Carrinho</a>
+			<div class="botoes">
+				<a href="@{Produtos.cardapio}" class="btn-a edit-btn">Voltar</a> 
+				<a href="@{Produtos.limparCarrinho()}" class="btn-a edit-btn">Esvaziar carrinho</a>
 			</div>
-		
 		</div>
+
 
 	</div>
 </div>
