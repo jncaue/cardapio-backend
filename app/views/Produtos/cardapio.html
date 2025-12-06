@@ -19,6 +19,8 @@
 			<img src="../../../public/images/icons/icons8-restaurante-48.png">
 			<h1>MenuDev</h1>
 			<button class="hour-btn">19h-23h30</button>
+			
+			<a href="@{Produtos.verCarrinho}">Carrinho</a>
 		</div>
 	</div>
 </div>
@@ -44,12 +46,12 @@
 		<div class="drink-container item-card">
 			<h1>Calzones</h1>
 			<ul class="list">
-				#{list items: listaDeCalzones, as:'p'}
-				<a class="add" href="#">
-					<li class="card-li">${p.nome}
+				#{list items: listaDeCalzones, as:'produto'}
+				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
-							<li class="desc italic">${p.descricao}</li>
-							<li class="preco">R$${p.preco},00</li>
+							<li class="desc italic">${produto.descricao}</li>
+							<li class="preco">R$${produto.preco},00</li>
 						</ul>
 					</li>
 				</a>
@@ -60,12 +62,12 @@
 		<div class="drink-container item-card">
 			<h1>Pizzas</h1>
 			<ul class="list">
-				#{list items: listaDePizzas, as:'p'}
-				<a class="add" href="#">
-					<li class="card-li">Pizza ${p.tamanho.nome}
+				#{list items: listaDePizzas, as:'produto'}
+				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+					<li class="card-li">Pizza ${produto.tamanho.nome}
 						<ul class="sub-list">
-							<li class="desc italic">${p.descricao}</li>
-							<li class="preco">R$${p.preco},00</li>
+							<li class="desc italic">${produto.descricao}</li>
+							<li class="preco">R$${produto.preco},00</li>
 						</ul>
 					</li>
 				</a>
@@ -76,12 +78,12 @@
 		<div class="drink-container item-card">
 			<h1>Bebidas</h1>
 			<ul class="list">
-				#{list items: listaDeBebidas, as:'p'}
-				<a class="add" href="#">
-					<li class="card-li">${p.nome}
+				#{list items: listaDeBebidas, as:'produto'}
+				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
-							<li class="desc italic">${p.descricao}</li>
-							<li class="preco">R$${p.preco},00</li>
+							<li class="desc italic">${produto.descricao}</li>
+							<li class="preco">R$${produto.preco},00</li>
 						</ul>
 					</li>
 				</a>
@@ -92,12 +94,12 @@
 		<div class="dessert-container item-card">
 			<h1>Sobremesas</h1>
 			<ul class="list">
-				#{list items: listaDeSobremesas, as:'p'}
-				<a class="add" href="#">
-					<li class="card-li">${p.nome}
+				#{list items: listaDeSobremesas, as:'produto'}
+				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
-							<li class="desc italic">${p.descricao}</li>
-							<li class="preco">R$${p.preco},00</li>
+							<li class="desc italic">${produto.descricao}</li>
+							<li class="preco">R$${produto.preco},00</li>
 						</ul>
 					</li>
 				</a>

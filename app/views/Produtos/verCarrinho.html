@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Detalhar' /}
+
+
+
+
+<div class="center">
+	<div class="margin">
+		<div class="carrinho">
+			<ul class="produto">
+			    #{list items: itensAgrupados, as:'item'}
+			        <li>- ${item.produto.nome} (${item.quantidade}x) </li>
+			    #{/list}
+			</ul>
+				<h2>Total: R$ ${total}</h2>
+
+			<div class="btns">
+				<a href="@{Produtos.cardapio}" class="btn">Voltar</a>
+				<a href="@{Produtos.limparCarrinho()}" class="btn btn-danger">Esvaziar Carrinho</a>
+			</div>
+		
+		</div>
+
+	</div>
+</div>

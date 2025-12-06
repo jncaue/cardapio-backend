@@ -1,17 +1,27 @@
-#{extends 'main.html' /}
-#{set title:'Detalhar' /}
+#{extends 'main.html' /} #{set title:'Detalhar' /}
 
 
 <div class="center">
 	<div class="margin">
 		<div class="carrinho">
-			<ul>
+			<ul class="produto">
 				<h2>${produto.categoria.nome}</h2>
-				<li class="">${produto.nome} (${produto.tamanho.nome})</li>
+				<li class="">${produto.nome} <span>(${produto.tamanho.nome})</span></li>
 				<li class="">${produto.preco}</li>
 				<li class="">${produto.descricao}</li>
 			</ul>
-
+			<div class="btns">
+				<a href="#" class="btn">Adicionar ao carrinho</a>
+				<a href="@{Produtos.cardapio}" class="btn">Voltar</a>
+			</div>
+			
+	<ul>
+    	#{list items:itensCarrinho, as:'item'}
+  	      <li>${item.nome} - <a href="@{Produtos.removerItemCarrinho(item.id)}">Remover</a></li>
+  	      <li>R$ ${item.preco}</li>
+    	#{/list}
+	</ul>
+			
 		</div>
 
 	</div>
