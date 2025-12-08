@@ -1,0 +1,36 @@
+#{extends 'main.html' /} #{set title:'Pagamento' /}
+
+
+<div class="bar"></div>
+<div class="center">
+	<div class="container-pay">
+		<div class="left-p">
+			<h1>Pagamento</h1>
+			<h2>Selecione a sua forma de pagamento</h2>
+			<div class="line"></div>
+			<div class="pay-shapes">
+				<a href="" class="pay-card">Especie</a> 
+				<a href="" class="pay-card">Pix</a>
+				<a href="" class="pay-card">Cartão</a>
+			</div>
+		</div>
+		<div class="right-p">
+			<h1>Resumo da compra</h1>
+
+			<ul class="resume-ul">
+				#{list items: itensAgrupados, as: 'item'}
+				<li class="resume-item">${item.produto.nome}
+					<p class="item-qtd">(${item.quantidade}x)</p>
+					<p class="item-price">R$${item.produto.preco},00</p>
+				</li> 
+				
+				
+				
+				#{/list}
+			</ul>
+
+			<h3>Total: R$ ${total}</h3>
+		</div>
+
+	</div>
+</div>

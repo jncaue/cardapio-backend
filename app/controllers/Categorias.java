@@ -14,8 +14,8 @@ public class Categorias extends Controller {
 	public static void form() {
 		List<Categoria> listaDeCategoria = Categoria.findAll();
 		render(listaDeCategoria);
-	}	
-	
+	}
+
 	public static void detalhar(Categoria categoria) {
 		render(categoria);
 	}

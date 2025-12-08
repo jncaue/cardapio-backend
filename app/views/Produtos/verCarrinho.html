@@ -14,7 +14,9 @@
 <div class="center">
 	<div class="margin">
 		<div class="carrinho">
-			<h1>Carrinho</h1>
+			<h1>Carrinho <a href="@{Produtos.limparCarrinho()}" class="btn-a edit-btn">Esvaziar carrinho</a></h1>
+			
+			
 			<div class="line"></div>
 			<ul class="produtos">
 				#{list items: itensAgrupados, as:'item'}
@@ -32,11 +34,11 @@
 			
 			<div class="line"></div>			
 			
-			<h2>Total: R$ ${total}</h2>
-
-			<div class="botoes">
-				<a href="@{Produtos.cardapio}" class="btn-a edit-btn">Voltar</a> 
-				<a href="@{Produtos.limparCarrinho()}" class="btn-a edit-btn">Esvaziar carrinho</a>
+			<h2 class="total">Total: R$ ${total}</h2>
+			
+			<div class="payment">
+				<a href="@{Produtos.cardapio}" class="payment-btn">Voltar</a> 
+				<a href="@{Produtos.pagamento}" class="payment-btn">Finalizar pagamento</a>
 			</div>
 		</div>
 

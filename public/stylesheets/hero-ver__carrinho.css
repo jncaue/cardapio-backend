@@ -12,7 +12,7 @@
 	flex-direction: column;
 	padding: 1rem;
 	width: 40rem;
-	height: 40rem;
+	height: auto;
 	padding: 1rem;
 	border-radius: 10px;
 }
@@ -51,7 +51,6 @@
 	gap: 0.5rem;
 }
 
-
 .btnsoma {
 	color: green;
 }
@@ -73,6 +72,42 @@
 	padding-left: 0.25rem;
 }
 
+.total {
+	font-size: 1.35rem;
+	font-weight: 500;
+	margin-block: 1rem;
+}
+
 ul h2 {
 	font-size: 1.25rem;
+}
+
+.payment {
+	margin-top: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.payment-btn {
+	border-radius: 10px;
+	background-color: #214538;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 500;
+	padding-inline: 0.75rem;
+	padding-block: 0.45rem;
+	margin-block: 1rem;
+}
+
+.payment-btn:hover {
+	border-radius: 10px;
+	background-color: #95BFAA;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 500;
+	padding-inline: 0.75rem;
+	padding-block: 0.45rem;
 }

@@ -106,7 +106,7 @@ public class Produtos extends Controller {
 		// envia produto E itensCarrinho para o HTML
 		render(produto, itensCarrinho);
 	}
-	
+
 	public static void adicionarItem(Long id) {
 		if (id == null) {
 			error("ID inválido.");
@@ -137,12 +137,11 @@ public class Produtos extends Controller {
 		session.put("carrinho", listaParaString(carrinho));
 
 		flash.success(produto.nome + " adicionado ao carrinho.");
-		
+
 //		detalhar(produto.id);
 		cardapio(null);
 	}
-	
-	
+
 	public static void adicionarItemCarrinho(Long id) {
 		if (id == null) {
 			error("ID inválido.");
@@ -173,46 +172,44 @@ public class Produtos extends Controller {
 		session.put("carrinho", listaParaString(carrinho));
 
 		flash.success(produto.nome + " adicionado ao carrinho.");
-		
+
 //		detalhar(produto.id);
 		verCarrinho();
 	}
 
-
 	public static void verCarrinho() {
-	    String carrinhoStr = session.get("carrinho");
+		String carrinhoStr = session.get("carrinho");
 
-	    Map<Long, Integer> mapa = new HashMap<>();
-	    Map<Long, Produto> produtosMap = new HashMap<>();
+		Map<Long, Integer> mapa = new HashMap<>();
+		Map<Long, Produto> produtosMap = new HashMap<>();
 
-	    double total = 0.0;
+		double total = 0.0;
 
-	    if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
+		if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
 
-	        for (String s : carrinhoStr.split(",")) {
-	            if (s == null || s.trim().isEmpty()) continue;
+			for (String s : carrinhoStr.split(",")) {
+				if (s == null || s.trim().isEmpty())
+					continue;
 
-	            Long id = Long.parseLong(s.trim());
-	            Produto p = Produto.findById(id);
+				Long id = Long.parseLong(s.trim());
+				Produto p = Produto.findById(id);
 
-	            
-	            if (p != null) {
-	                mapa.put(id, mapa.getOrDefault(id, 0) + 1);
-	                produtosMap.put(id, p);
-	                total += Double.parseDouble(p.preco);
-	                
-	                
-	            }
-	        }
-	    }
+				if (p != null) {
+					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
+					produtosMap.put(id, p);
+					total += Double.parseDouble(p.preco);
+					
+				}
+			}
+		}
 
-	    // Transformar em lista de ItemCarrinho
-	    List<ItemCarrinho> itensAgrupados = new ArrayList<>();
-	    for (Long id : mapa.keySet()) {
-	        itensAgrupados.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
-	    }
+		// Transformar em lista de ItemCarrinho
+		List<ItemCarrinho> itensAgrupados = new ArrayList<>();
+		for (Long id : mapa.keySet()) {
+			itensAgrupados.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
+		}
 
-	    render(itensAgrupados, total);
+		render(itensAgrupados, total);
 	}
 
 	public static void removerItemCarrinho(Long id) {
@@ -247,31 +244,63 @@ public class Produtos extends Controller {
 
 		verCarrinho();
 	}
-	
+
 	public static void limparCarrinho() {
-	    session.remove("carrinho");
-	    flash.success("Carrinho esvaziado.");
-	    verCarrinho();
+		session.remove("carrinho");
+		flash.success("Carrinho esvaziado.");
+		verCarrinho();
 	}
-	
+
 	public static void removerUm(Long id) {
-	    String carrinhoStr = session.get("carrinho");
+		String carrinhoStr = session.get("carrinho");
 
-	    if (carrinhoStr == null || carrinhoStr.trim().isEmpty()) {
-	        verCarrinho();
-	        return;
-	    }
+		if (carrinhoStr == null || carrinhoStr.trim().isEmpty()) {
+			verCarrinho();
+			return;
+		}
 
-	    List<String> ids = new ArrayList<>(Arrays.asList(carrinhoStr.split(",")));
+		List<String> ids = new ArrayList<>(Arrays.asList(carrinhoStr.split(",")));
 
-	    // remove apenas uma ocorrência
-	    ids.remove(id.toString());
+		// remove apenas uma ocorrência
+		ids.remove(id.toString());
 
-	    // regrava sessão
-	    String novoCarrinho = String.join(",", ids);
-	    session.put("carrinho", novoCarrinho);
-	    flash.success("Item foi removido com sucesso.");
-	    verCarrinho();
+		// regrava sessão
+		String novoCarrinho = String.join(",", ids);
+		session.put("carrinho", novoCarrinho);
+		flash.success("Item foi removido com sucesso.");
+		verCarrinho();
+	}
+
+	public static void pagamento() {
+
+		// carrinho e total (sua lógica atual)
+		String carrinhoStr = session.get("carrinho");
+		Map<Long, Integer> mapa = new HashMap<>();
+		Map<Long, Produto> produtosMap = new HashMap<>();
+		double total = 0.0;
+
+		if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
+			for (String s : carrinhoStr.split(",")) {
+				if (s.trim().isEmpty())
+					continue;
+
+				Long id = Long.parseLong(s.trim());
+				Produto p = Produto.findById(id);
+
+				if (p != null) {
+					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
+					produtosMap.put(id, p);
+					total += Double.parseDouble(p.preco);
+				}
+			}
+		}
+
+		List<ItemCarrinho> itensAgrupados = new ArrayList<>();
+		for (Long id : mapa.keySet()) {
+			itensAgrupados.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
+		}
+
+		render(itensAgrupados, total);
 	}
 
 	public static String listaParaString(List<Long> lista) {
