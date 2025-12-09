@@ -7,7 +7,7 @@ import play.mvc.Controller;
 
 public class Seguranca extends Controller {
 
-	@Before(unless = { "Usuarios.form", "Login.form", "Usuarios.salvar" })
+	@Before(unless = {"Usuarios.form", "Login.form", "Usuarios.salvar" })
 	static void verificar() {
 		if (!session.contains("usuarioPerfil")) {
 			flash.error("Você precisa fazer o login");

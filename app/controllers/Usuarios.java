@@ -14,7 +14,6 @@ public class Usuarios extends Controller {
 		render();
 	}
 
-	@Administrador
 	public static void salvar(@Valid Usuario usuario) {
 		if (validation.hasErrors()) {
 			params.flash();
