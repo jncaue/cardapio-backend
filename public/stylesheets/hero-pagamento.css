@@ -45,9 +45,9 @@
 }
 
 .left-p {
-	 position: relative;
-	 display: flex;
-	 flex-direction: column;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 	flex: 2;
 }
 
@@ -177,4 +177,20 @@
 
 .pay-info-area p {
 	font-size: 0.8rem;
+}
+
+.pay-sec {
+	display: flex;
+	flex-direction: row;
+	color: #2DACE9;
+	background-color: #fff;
+	padding: 0.5rem;
+	border-radius: 10px;
+	font-weight: 500;
+}
+
+.pay-sec img {
+	width: 1.5rem;
+	height: auto;
+	text-align: center;
 }

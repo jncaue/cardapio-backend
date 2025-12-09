@@ -18,20 +18,24 @@
 			
 			
 			<div class="line"></div>
+				
 			<ul class="produtos">
 				#{list items: itensAgrupados, as:'item'}
+				<div class="row-dp" data-id="${item.produto.id}">
+				    <li>${item.produto.nome} (<span id="qtd-${item.produto.id}">${item.quantidade}</span>x)</li>
+				    
+				    <li class="more-btns">
+				        <a data-id="${item.produto.id}" class="btns btnsub btn-remove">-</a>
+				        <a data-id="${item.produto.id}" class="btns btnsoma btn-add">+</a>
+				    </li>				
+				</div>
 				
-				<li class="item">${item.produto.nome} (${item.quantidade}x) 
-					<div class="more-btns">
-						<a href="@{Produtos.removerUm(item.produto.id)}" class="btns btnsub">-</a>
-						<a href="@{Produtos.adicionarItemCarrinho(item.produto.id)}" class="btns btnsoma">+</a>
-					</div>
+				<li class="subtotal preco" data-preco="${item.produto.preco}">
+				    Valor unitário: R$ ${item.produto.preco},00
 				</li>
-				<li class="subtotal">Valor unitário: R$${item.produto.preco},00</li>
-				
 				#{/list}
-			</ul>
-			
+				</ul>
+				
 			<div class="line"></div>			
 			
 			<h2 class="total">Total: R$ ${total}</h2>
@@ -45,3 +49,80 @@
 
 	</div>
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // + (Adicionar)
+    document.querySelectorAll(".btn-add").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const id = this.dataset.id;
+
+            fetch("@{Produtos.adicionarItemAjaxCarrinho()}" + "?id=" + id)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.ok) {
+                        document.querySelector("#qtd-" + id).innerText = data.qtd;
+                        atualizarTotal();
+                    }
+                });
+        });
+    });
+
+    // - (Remover)
+    document.querySelectorAll(".btn-remove").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const id = this.dataset.id;
+
+            fetch("@{Produtos.removerUmAjax()}" + "?id=" + id)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.ok) {
+                        const qtdSpan = document.querySelector("#qtd-" + id);
+                        qtdSpan.innerText = data.qtd;
+
+                        if (data.qtd === 0) {
+                            // remove a linha do item
+                            this.closest(".row-dp").nextElementSibling.remove(); // remove o <li subtotal>
+                            this.closest(".row-dp").remove();
+                        }
+
+                        atualizarTotal();
+                    }
+                });
+        });
+    });
+
+});
+
+function atualizarTotal() {
+    let total = 0;
+
+    document.querySelectorAll(".row-dp").forEach(row => {
+
+        const id = row.dataset.id;
+
+        // pega o li do subtotal correspondente (o próximo elemento)
+        const subtotalEl = row.nextElementSibling;
+
+        // pega o preço via atributo data-preco
+        const preco = parseFloat(subtotalEl.dataset.preco);
+
+        const qtd = parseInt(document.querySelector("#qtd-" + id).innerText);
+
+        const sub = preco * qtd;
+
+        // atualiza o texto do subtotal
+        subtotalEl.innerText = "Valor unitário: R$" + preco + ",00 (Subtotal: R$" + sub + ",00)";
+
+        total += sub;
+    });
+
+    document.querySelector(".total").innerText = "Total: R$ " + total + ",00";
+}
+</script>
+
+

@@ -110,6 +110,41 @@ public class Produtos extends Controller {
 		render(produto, itensCarrinho);
 	}
 
+	public static void verCarrinho() {
+		String carrinhoStr = session.get("carrinho");
+
+		Map<Long, Integer> mapa = new HashMap<>();
+		Map<Long, Produto> produtosMap = new HashMap<>();
+
+		double total = 0.0;
+
+		if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
+
+			for (String s : carrinhoStr.split(",")) {
+				if (s == null || s.trim().isEmpty())
+					continue;
+
+				Long id = Long.parseLong(s.trim());
+				Produto p = Produto.findById(id);
+
+				if (p != null) {
+					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
+					produtosMap.put(id, p);
+					total += Double.parseDouble(p.preco);
+
+				}
+			}
+		}
+
+		// Transformar em lista de ItemCarrinho
+		List<ItemCarrinho> itensAgrupados = new ArrayList<>();
+		for (Long id : mapa.keySet()) {
+			itensAgrupados.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
+		}
+
+		render(itensAgrupados, total);
+	}
+
 	public static void adicionarItem(Long id) {
 		if (id == null) {
 			error("ID inválido.");
@@ -179,42 +214,7 @@ public class Produtos extends Controller {
 //		detalhar(produto.id);
 		verCarrinho();
 	}
-
-	public static void verCarrinho() {
-		String carrinhoStr = session.get("carrinho");
-
-		Map<Long, Integer> mapa = new HashMap<>();
-		Map<Long, Produto> produtosMap = new HashMap<>();
-
-		double total = 0.0;
-
-		if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
-
-			for (String s : carrinhoStr.split(",")) {
-				if (s == null || s.trim().isEmpty())
-					continue;
-
-				Long id = Long.parseLong(s.trim());
-				Produto p = Produto.findById(id);
-
-				if (p != null) {
-					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
-					produtosMap.put(id, p);
-					total += Double.parseDouble(p.preco);
-
-				}
-			}
-		}
-
-		// Transformar em lista de ItemCarrinho
-		List<ItemCarrinho> itensAgrupados = new ArrayList<>();
-		for (Long id : mapa.keySet()) {
-			itensAgrupados.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
-		}
-
-		render(itensAgrupados, total);
-	}
-
+	
 	public static void removerItemCarrinho(Long id) {
 		if (id == null) {
 			error("ID inválido.");
@@ -275,7 +275,6 @@ public class Produtos extends Controller {
 	}
 
 	public static void pagamento() throws Exception {
-
 		String carrinhoStr = session.get("carrinho");
 		Map<Long, Integer> mapa = new HashMap<>();
 		Map<Long, Produto> produtosMap = new HashMap<>();
@@ -304,16 +303,6 @@ public class Produtos extends Controller {
 		}
 
 		render(itensAgrupados, total);
-	}
-
-	public static String listaParaString(List<Long> lista) {
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < lista.size(); i++) {
-			sb.append(lista.get(i));
-			if (i < lista.size() - 1)
-				sb.append(",");
-		}
-		return sb.toString();
 	}
 
 	public static void remover(Long id) {
@@ -357,17 +346,64 @@ public class Produtos extends Controller {
 	    renderJSON("{\"ok\": true, \"msg\": \"" + produto.nome + " adicionado ao carrinho.\"}");
 	}
 
-	
-	public static void statusH() {
-		LocalTime agora = LocalTime.now();
+	public static void adicionarItemAjaxCarrinho(Long id) {
+	    if (id == null) {
+	        renderJSON("{\"ok\": false, \"erro\": \"ID inválido\"}");
+	    }
 
-		// horário de funcionamento: das 19h até 22h
-		LocalTime inicio = LocalTime.of(19, 0);
-		LocalTime fim = LocalTime.of(22, 0);
+	    Produto produto = Produto.findById(id);
+	    if (produto == null) {
+	        renderJSON("{\"ok\": false, \"erro\": \"Produto não encontrado\"}");
+	    }
 
-		String status = (agora.isAfter(inicio) && agora.isBefore(fim)) ? "Aberto" : "Fechado";
+	    String carrinhoStr = session.get("carrinho");
+	    List<Long> carrinho = new ArrayList<>();
 
-		return;
+	    if (carrinhoStr != null && !carrinhoStr.isEmpty()) {
+	        for (String s : carrinhoStr.split(",")) {
+	            carrinho.add(Long.parseLong(s));
+	        }
+	    }
+
+	    carrinho.add(produto.id);
+	    session.put("carrinho", listaParaString(carrinho));
+
+	    // nova quantidade
+	    int qtd = (int) carrinho.stream().filter(x -> x.equals(produto.id)).count();
+
+	    renderJSON("{\"ok\": true, \"qtd\": " + qtd + "}");
 	}
 
+	public static void removerUmAjax(Long id) {
+
+	    String carrinhoStr = session.get("carrinho");
+	    if (carrinhoStr == null || carrinhoStr.trim().isEmpty()) {
+	        renderJSON("{\"ok\": false, \"erro\": \"Carrinho vazio\"}");
+	    }
+
+	    List<String> ids = new ArrayList<>(Arrays.asList(carrinhoStr.split(",")));
+
+	    ids.remove(id.toString()); // remove 1 unidade
+
+	    String novoCarrinho = String.join(",", ids);
+	    session.put("carrinho", novoCarrinho);
+
+	    int qtd = (int) ids.stream().filter(x -> x.equals(id.toString())).count();
+
+	    renderJSON("{\"ok\": true, \"qtd\": " + qtd + "}");
+	}
+
+	
+	
+	
+	
+	public static String listaParaString(List<Long> lista) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < lista.size(); i++) {
+			sb.append(lista.get(i));
+			if (i < lista.size() - 1)
+				sb.append(",");
+		}
+		return sb.toString();
+	}
 }
