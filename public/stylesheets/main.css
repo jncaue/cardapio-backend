@@ -20,6 +20,7 @@ body {
 	min-height: 100vh;
 	height: 100vh;
 	font-family: 'Poppins', serif;
+    animation: fadeInUp .0.3s ease-out;
 }
 
 img, picture, video, canvas, svg {
@@ -144,9 +145,6 @@ a:hover {
     opacity: .6;
 }
 
-.container-center {
-    animation: fadeInUp .5s ease-out;
-}
 
 @keyframes fadeInUp {
     from {
@@ -185,12 +183,12 @@ a:hover {
 
 
 /* Sombras animadas nos cards, carrinho e containers */
-.carrinho, .card, .container-center {
+.carrinho, .card{
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.carrinho:hover, .card:hover, .container-center:hover{
+.carrinho:hover, .card:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 }

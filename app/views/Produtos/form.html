@@ -7,6 +7,12 @@
 	#{set title:'Cadastro de produto' /}
 #{/else}
 
+#{if flash.success}
+    <div class="flash-success flash-message">
+        ${flash.success}
+		<a href="@{Produtos.listar}">Conferir</a>
+    </div>
+#{/if}
 
 <div class="container">
 	<div class="hero-left fade-in">
@@ -87,12 +93,7 @@
 				
 			</form>
 			
-		#{if flash.success}
-		    <div class="flash-success flash-message">
-		        ${flash.success}
-				<a href="@{Produtos.listar}">Conferir</a>
-		    </div>
-		#{/if}
+		
 	</div>
 </div>
 	
