@@ -111,3 +111,19 @@ ul h2 {
 	padding-inline: 0.75rem;
 	padding-block: 0.45rem;
 }
+
+.cart-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 35px;
+  color: #000;          /* cor do ícone */
+  background: none;     /* sem fundo */
+  border: none;         /* sem bordas */
+  cursor: pointer;
+  z-index: 9999;        /* sempre por cima */
+}
+
+.cart-float:hover {
+  transform: scale(1.1);
+}

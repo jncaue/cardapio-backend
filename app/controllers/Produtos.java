@@ -332,6 +332,32 @@ public class Produtos extends Controller {
 		renderTemplate("Produtos/form.html", p, listaDeCategorias, listaDeTamanhos);
 	}
 
+	public static void adicionarItemAjax(Long id) {
+	    if (id == null) {
+	        error("ID inválido.");
+	    }
+
+	    Produto produto = Produto.findById(id);
+	    if (produto == null) {
+	        notFound("Produto não encontrado.");
+	    }
+
+	    String carrinhoStr = session.get("carrinho");
+	    List<Long> carrinho = new ArrayList<>();
+
+	    if (carrinhoStr != null && !carrinhoStr.isEmpty()) {
+	        for (String s : carrinhoStr.split(",")) {
+	            carrinho.add(Long.parseLong(s));
+	        }
+	    }
+
+	    carrinho.add(produto.id);
+	    session.put("carrinho", listaParaString(carrinho));
+
+	    renderJSON("{\"ok\": true, \"msg\": \"" + produto.nome + " adicionado ao carrinho.\"}");
+	}
+
+	
 	public static void statusH() {
 		LocalTime agora = LocalTime.now();
 

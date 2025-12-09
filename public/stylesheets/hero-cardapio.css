@@ -51,10 +51,12 @@
 }
 
 .menu-container {
-	background-color: #bcd7c9;
+	background-color: #92B1A1;
 	display: flex;
 	margin-bottom: 5rem;
 	margin-inline: 10rem;
+	padding: 1rem;
+	border-radius: 5px;
 }
 
 .items-container {

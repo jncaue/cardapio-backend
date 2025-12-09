@@ -9,7 +9,6 @@
 	justify-content: center;
 	background: linear-gradient(to bottom, #587064, #89B09D, #95BFAA);
 	min-height: 4.5rem;
-	
 /* 	fixo */
 /* 	position: fixed; */
 /*     top: 0; */
@@ -56,8 +55,11 @@
 }
 
 .logo h1 {
+	background: -webkit-linear-gradient(136deg,rgba(0, 0, 0, 0) 0%, rgba(42, 84, 62, 1) 59%, rgb(33, 69, 56) 20%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	color: #214538;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .container-size h1 {
@@ -85,11 +87,13 @@
 	font-weight: 500;
 	font-size: 1.25rem;
 	/* 	padding-inline: 1rem; */
+	background: -webkit-linear-gradient(100deg,rgba(0, 0, 0, 0) 0%, rgba(42, 84, 62, 1) 50%, rgb(33, 69, 56) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	
 }
 
 .a-li:hover {
-	color: #B8D8BF;
-	text-decoration: underline;
 	transform: scale(1.02);
 }
 
@@ -128,14 +132,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border-radius: 7px;
-	padding-inline: 0.2rem;
+	border-radius: 50px;
+	padding-inline: 1rem;
 	padding-block: 0.125rem;
-	width: 14ch;
 	height: auto;
+	
 }
 
 .profile-container ul li {
+	text-align: center;
 	font-size: 0.85rem;
 	font-weight: 600;
 	color: #214538;
@@ -164,8 +169,9 @@
 	justify-content: center;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	font-weight: 500;
+	text-transform:lowercase; 
 }
 
 .logout a {
@@ -177,5 +183,5 @@
 .logout a:hover {
 	color: #F74F4F;
 	text-decoration: underline;
-	transform: scale(1.09);
+	transform: scale(1.10);
 }

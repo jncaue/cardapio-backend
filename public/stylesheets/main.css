@@ -13,8 +13,8 @@
 
 body {
 	/* 	tirei a paleta de cores gradiente do papel de parede porque ta ficando bugado */
-/* 	background: linear-gradient(to bottom, #ADDFC6, #95bfaa); */
-	background-color: #95bfaa;
+	background: #95BFAA;
+	background: radial-gradient(circle, rgba(149, 191, 170, 1) 0%, rgba(193, 222, 206, 1) 69%, rgba(230, 245, 234, 1) 100%);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 form {
-	box-shadow: 0 20px 18px rgba(0, 0, 0, 0.12);
+	box-shadow:  18px 20px 10px rgba(0, 0, 0, 0.12);
 }
 
 .page-container {

@@ -20,7 +20,6 @@
 			<h1>MenuDev</h1>
 			<button class="hour-btn">19h-23h30</button>
 			
-			<a href="@{Produtos.verCarrinho}"> <img alt="" src="../../../public/images/icons/icons8-carrinho-100.png"> </a>
 		</div>
 	</div>
 
@@ -29,13 +28,12 @@
 
 <div class="menu-container">
 
-
 	<div class="items-container">
 		<div class="drink-container item-card">
 			<h1>Hamburguers</h1>
 			<ul class="list">
 				#{list items: listaDeHamburguers, as:'produto'}
-				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
@@ -51,7 +49,7 @@
 			<h1>Calzones</h1>
 			<ul class="list">
 				#{list items: listaDeCalzones, as:'produto'}
-				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
@@ -67,7 +65,7 @@
 			<h1>Pizzas</h1>
 			<ul class="list">
 				#{list items: listaDePizzas, as:'produto'}
-				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">Pizza ${produto.tamanho.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
@@ -83,7 +81,7 @@
 			<h1>Bebidas</h1>
 			<ul class="list">
 				#{list items: listaDeBebidas, as:'produto'}
-				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
@@ -99,7 +97,7 @@
 			<h1>Sobremesas</h1>
 			<ul class="list">
 				#{list items: listaDeSobremesas, as:'produto'}
-				<a class="add" href="@{Produtos.adicionarItem(produto.id)}">
+				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
@@ -113,6 +111,40 @@
 	</div>
 </div>
 
+<a href="@{Produtos.verCarrinho}" class="cart-float">
+    <img src="../../../public/images/icons/icons8-carrinho-100.png" class="fa fa-shopping-cart"></img>
+</a>
+
 
 
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".add").forEach(a => {
+        a.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.dataset.id;
+
+            fetch("@{Produtos.adicionarItemAjax()}" + "?id=" + id, {
+                method: "GET",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                // Mostra a mensagem de sucesso
+                const msg = document.createElement("div");
+                msg.className = "flash-message flash-success";
+                msg.innerText = data.msg;
+
+                document.body.appendChild(msg);
+
+                setTimeout(() => msg.remove(), 2000);
+            });
+        });
+    });
+});
+</script>

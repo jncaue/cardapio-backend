@@ -6,7 +6,7 @@
 <!-- 	container que age como box maior, ocupando toda a tela e centralizando o formulario dentro da pagina -->
 	<div class="container-center">
 	
-	#{ifErrors}
+#{ifErrors}
 	<div class="errors" role="alert">
 		<ul>
 		#{errors}
@@ -16,6 +16,8 @@
 	</div>
 #{/ifErrors}
 	
+	
+		<h1 class="login-form-h1">Faça já o cadastro da sua conta!</h1>
 		<form class="login-form" action="@{Usuarios.salvar}">
 		
 			<h1 class="info-h1">Cadastro</h1>
