@@ -79,6 +79,8 @@
 	border-radius: 10px;
 	color: #000;
 	text-decoration: none;
+	max-width: 15ch;
+	min-width: 10ch;
 }
 
 .add:hover {
@@ -126,8 +128,8 @@
 
 .desc {
 	font-weight: 400;
-	text-align: justify;
-	letter-spacing: 0.001rem;
+	text-align: left;
+	letter-spacing: -0.025rem;
 	word-spacing: -0.05rem;
 }
 

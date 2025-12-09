@@ -46,9 +46,9 @@
 		</div>
 		
 		<div class="drink-container item-card">
-			<h1>Calzones</h1>
+			<h1>Coxinhas</h1>
 			<ul class="list">
-				#{list items: listaDeCalzones, as:'produto'}
+				#{list items: listaDeCoxinhas, as:'produto'}
 				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
 					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
@@ -62,11 +62,11 @@
 		</div>
 
 		<div class="drink-container item-card">
-			<h1>Pizzas</h1>
+			<h1>Pastéis</h1>
 			<ul class="list">
-				#{list items: listaDePizzas, as:'produto'}
+				#{list items: listaDePasteis, as:'produto'}
 				<a class="add" data-id="${produto.id}" href="@{Produtos.adicionarItem(produto.id)}">
-					<li class="card-li">Pizza ${produto.tamanho.nome}
+					<li class="card-li">${produto.nome}
 						<ul class="sub-list">
 							<li class="desc italic">${produto.descricao}</li>
 							<li class="preco">R$${produto.preco},00</li>

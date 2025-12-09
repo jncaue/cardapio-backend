@@ -41,11 +41,11 @@ public class Produtos extends Controller {
 		List<Produto> listaDeSobremesas = Produto.find("categoria.nome = ?1 and status = ?2", "Sobremesa", Status.ATIVO)
 				.fetch();
 
-		List<Produto> listaDePizzas = Produto.find("categoria.nome = ?1 and status = ?2", "Pizza", Status.ATIVO)
+		List<Produto> listaDePasteis = Produto.find("categoria.nome = ?1 and status = ?2", "Pastel", Status.ATIVO)
 				.fetch();
 		List<Produto> listaDeHamburguers = Produto
 				.find("categoria.nome = ?1 and status = ?2", "Hamburguer", Status.ATIVO).fetch();
-		List<Produto> listaDeCalzones = Produto.find("categoria.nome = ?1 and status = ?2", "Calzone", Status.ATIVO)
+		List<Produto> listaDeCoxinhas = Produto.find("categoria.nome = ?1 and status = ?2", "Coxinha", Status.ATIVO)
 				.fetch();
 
 		if (termo == null) {
@@ -54,8 +54,8 @@ public class Produtos extends Controller {
 			listaDeProdutos = Produto.find("(lower(nome) like ?1 " + "or lower(categoria) like ?1) and status <> ?2",
 					"%" + termo.toLowerCase() + "%", Status.INATIVO).fetch();
 		}
-		render(listaDeProdutos, listaDeCategorias, listaDeBebidas, listaDeSobremesas, listaDePizzas, listaDeHamburguers,
-				listaDeCalzones);
+		render(listaDeProdutos, listaDeCategorias, listaDeBebidas, listaDeSobremesas, listaDePasteis, listaDeHamburguers,
+				listaDeCoxinhas);
 	}
 
 	public static void salvar(@Valid Produto produto) {
