@@ -1,0 +1,27 @@
+#{extends 'main.html' /} #{set title:'Pedido registrado' /}
+
+<div class="center">
+	<div class="centralize-b">
+
+		<div class="enviado ">
+			<div class="enviado-msg">
+				<h1>Pedido registrado!</h1>
+				<p>Seu pedido foi enviado para a cozinha. Aguarde o preparo.</p>
+
+			</div>
+			<div class="enviado-info">
+				<h2>Total: R$ ${total}</h2>
+				<h3>Itens:</h3>
+				<ul>
+					#{list items: itens, as:'item'}
+					<li>${item.produto.nome} — ${item.quantidade}x</li> #{/list}
+				</ul>
+				<div class="line"></div>
+				<a href="@{Produtos.cardapio()}" class="payment-btn">Voltar ao
+					cardápio</a>
+			</div>
+
+
+		</div>
+	</div>
+</div>

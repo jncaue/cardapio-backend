@@ -4,6 +4,7 @@
 <div class="bar"></div>
 <div class="light-bar"></div>
 <div class="light-bbar"></div>
+
 <div class="center centralize">
 	<div class="container-pay">
 		<div class="left-p">
@@ -23,6 +24,7 @@
 			<div class="nav-btns">
 				<a href="@{Produtos.verCarrinho}" class="back-btn">Voltar</a>
 				<a href="@{Produtos.cardapio}" class="back-btn">Cardápio</a>
+				
 			</div>
 		</div>
 		<div class="right-p">
@@ -55,6 +57,7 @@
 	  info.innerHTML = `
 	    <h3>Pagamento em Espécie</h3>
 	    <p>Aguarde seu pedido e pague no caixa.</p>
+	    <a href="@{Produtos.registrarPedido()}" style="color: red; background-color: white;" class="back-btn">Confirmar pedido</a>
 	  `;
 	};
 
@@ -65,6 +68,7 @@
 	  info.innerHTML = `
 	    <h3>Pagamento com Cartão</h3>
 	    <p>Aguarde seu pedido e pague no caixa.</p>
+	    <a href="@{Produtos.registrarPedido()}" style="color: red; background-color: white;" class="back-btn">Confirmar pedido</a>
 	  `;
 	};
 
@@ -77,6 +81,7 @@
 	    <p>Escaneie o QR Code abaixo:</p>
 	    <img src="/public/images/meu_qr_code.jpeg" style="width:260px;">
 	    <p>Se preferir, pague no caixa também.</p>
+	    <a href="@{Produtos.registrarPedido()}" style="color: red; background-color: white;" class="back-btn">Confirmar pedido</a>
 	  `;
 	};
 </script>

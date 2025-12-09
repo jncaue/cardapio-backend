@@ -20,6 +20,11 @@
 	href="@{'/public/stylesheets/hero-ver__carrinho.css'}">
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/hero-pagamento.css'}">
+	<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/listarPedidos.css'}">
+	
+	<link rel="stylesheet" media="screen"
+	href="@{'/public/stylesheets/registrado.css'}">
 <link rel="stylesheet" media="screen"
 	href="@{'/public/stylesheets/footer.css'}">
 <link
@@ -103,12 +108,14 @@
 				<h1>Administração</h1>
 			</div>
 
-			<div class="container-size nav_item">
+			<div class="container-size nav_item flex2">
 				<ul class="ul-nav">
 					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img
 							class="icon-a"
-							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem
-							de produtos</a></li>
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Produtos</a></li>
+							<li class="li-ul"><a class="a-li" href="@{Pedidos.listar}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Pedidos</a></li>
 				</ul>
 			</div>
 			#{/elseif} #{elseif title == 'Lista de produtos'}

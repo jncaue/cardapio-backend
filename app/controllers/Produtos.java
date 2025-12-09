@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 
 import model.Categoria;
 import model.ItemCarrinho;
+import model.Pedido;
 import model.Perfil;
 import model.Produto;
 import model.Status;
@@ -393,9 +394,48 @@ public class Produtos extends Controller {
 	    renderJSON("{\"ok\": true, \"qtd\": " + qtd + "}");
 	}
 
-	
-	
-	
+	public static void registrarPedido() {
+
+	    String carrinhoStr = session.get("carrinho");
+
+	    Map<Long, Integer> mapa = new HashMap<>();
+	    Map<Long, Produto> produtosMap = new HashMap<>();
+	    double total = 0.0;
+
+	    if (carrinhoStr != null && !carrinhoStr.trim().isEmpty()) {
+
+	        for (String s : carrinhoStr.split(",")) {
+	            if (s.trim().isEmpty()) continue;
+
+	            Long id = Long.parseLong(s.trim());
+	            Produto p = Produto.findById(id);
+
+	            if (p != null) {
+	                mapa.put(id, mapa.getOrDefault(id, 0) + 1);
+	                produtosMap.put(id, p);
+	                total += Double.parseDouble(p.preco);
+	            }
+	        }
+	    }
+
+	    // monta itens agrupados
+	    List<ItemCarrinho> itens = new ArrayList<>();
+	    for (Long id : mapa.keySet()) {
+	        itens.add(new ItemCarrinho(produtosMap.get(id), mapa.get(id)));
+	    }
+
+	    // cria o pedido e guarda
+	    Pedido pedido = new Pedido(itens, total, LocalTime.now().toString());
+	    Pedido.registrar(pedido);
+
+	    // limpa carrinho
+	    session.remove("carrinho");
+
+	    flash.success("Pedido registrado com sucesso!");
+
+	    // renderiza a página de "aguarde"
+	    renderTemplate("Pedidos/registrado.html", itens, total);
+	}
 	
 	public static String listaParaString(List<Long> lista) {
 		StringBuilder sb = new StringBuilder();

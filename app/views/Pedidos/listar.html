@@ -1,0 +1,29 @@
+ #{extends 'main.html' /} #{set title:'Listagem de pedidos' /}
+
+<div class="center">
+	<div class="centralize-b">
+		<div class="pedidos-container">
+		
+			<div class="pedidos-msg">
+				<h1>Pedidos registrados <a class="back-btn" href="@{Pedidos.limparPedidos}">Limpar pedidos</a><a class="back-btn" href="@{Produtos.form}">Voltar</a></h1>
+				#{if pedidos.isEmpty()}
+				<p>Nenhum pedido registrado ainda.</p>
+				#{/if}
+				
+			</div>
+			<div class="pedidos-info">
+				#{list items: pedidos, as:'p'}
+				<div class="pedido-box">
+					<h3>Pedido - ${p.horario}</h3>
+					<ul>
+						#{list items: p.itens, as:'item'}
+						<li>${item.produto.nome}(${item.quantidade}x) — R$${item.produto.preco}</li> 
+						#{/list}
+					</ul>
+					<h3>Total: R$ ${p.total}</h3>
+				</div>
+				#{/list}
+			</div>
+		</div>
+	</div>
+</div>

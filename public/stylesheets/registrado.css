@@ -1,0 +1,55 @@
+.centralize-b {
+	display: flex;
+	justify-content: center; /* centraliza horizontalmente */
+	align-items: center; /* centraliza verticalmente */
+	height: 100vh; /* ocupa a tela inteira */
+	position: relative;
+}
+
+.enviado {
+	display: flex;
+	flex-direction: column;
+	background-color: #BCD7C9;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.enviado-msg {
+	display: flex;
+	flex-direction: column;
+}
+
+.enviado-msg h1 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.enviado-msg p {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.enviado-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.enviado-info h2 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.enviado-info h3 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.enviado-info ul {
+	list-style: none;
+}
+
+.enviado-info li {
+	font-size: 0.8rem;
+	font-weight: 400;
+	font-style: italic;
+}
