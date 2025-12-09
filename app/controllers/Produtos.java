@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import model.Categoria;
 import model.ItemCarrinho;
 import model.Perfil;
@@ -198,7 +201,7 @@ public class Produtos extends Controller {
 					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
 					produtosMap.put(id, p);
 					total += Double.parseDouble(p.preco);
-					
+
 				}
 			}
 		}
@@ -271,9 +274,8 @@ public class Produtos extends Controller {
 		verCarrinho();
 	}
 
-	public static void pagamento() {
+	public static void pagamento() throws Exception {
 
-		// carrinho e total (sua lógica atual)
 		String carrinhoStr = session.get("carrinho");
 		Map<Long, Integer> mapa = new HashMap<>();
 		Map<Long, Produto> produtosMap = new HashMap<>();
@@ -291,6 +293,7 @@ public class Produtos extends Controller {
 					mapa.put(id, mapa.getOrDefault(id, 0) + 1);
 					produtosMap.put(id, p);
 					total += Double.parseDouble(p.preco);
+					
 				}
 			}
 		}

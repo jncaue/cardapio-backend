@@ -1,8 +1,20 @@
 .bar {
+	background-color: #214538;
 	width: 100vw;
 	height: 2rem;
-	background-color: #214538;
-	margin-blck: 1rem;
+	margin-top: 2rem;
+}
+
+.light-bar {
+	background-color: #568473;
+	width: 100vw;
+	height: 1rem;
+}
+
+.light-bbar {
+	background-color: #94b7aa;
+	width: 100vw;
+	height: 0.5rem;
 }
 
 .px {
@@ -10,18 +22,32 @@
 	flex-direction: row;
 }
 
+.centralize {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px; /* qualquer altura fixa */
+}
+
 .container-pay {
+	background-color: #BCD7C9;
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
-	background-color: #BCD7C9;
 	border-radius: 10px;
 	margin-inline: 18rem;
 	padding: 1rem;
+	min-width: 50rem;
+	min-height: 25rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .left-p {
-	border: 1px solid red;
+	 position: relative;
+	 display: flex;
+	 flex-direction: column;
 	flex: 2;
 }
 
@@ -36,57 +62,119 @@
 }
 
 .right-p {
-	border: 1px solid blue;
-	flex: 1;
 	display: flex;
+	flex: 1;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
 }
 
 .right-p h1 {
 	font-size: 1.25rem;
 	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.resume {
+	background-color: #3F912F;
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	border-radius: 10px;
+	min-height: 12rem;
+	min-width: 8rem;
+	padding: 1rem;
 }
 
 .resume-ul {
-	list-style-type: none;
 	
 }
 
 .resume-item {
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
 	align-items: center;
-	border: 1px solid black;
 	margin-block: 0.35rem;
-}
-
-.item-qtd {
 	font-size: 0.8rem;
 }
 
+.item-qtd {
+	font-size: 0.7rem;
+	font-style: italic;
+	margin-right: 0.8rem;
+}
+
 .item-price {
-	font-size: 1rem;
+	font-size: 0.8rem;
+}
+
+.resume h3 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	font-style: italic;
+	margin-top: 0;
 }
 
 .pay-shapes {
-	border: 1px solid black;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 }
 
+.nav-btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0; /* ou right: 0 */
+	margin-top: 5rem;
+}
+
+.back-btn {
+	background-color: #3F912F;
+	border-radius: 10px;
+	margin-inline: 0.5rem;
+	color: #fff;
+	text-decoration: none;
+	padding: 0.25rem;
+	margin-inline: 0.5rem;
+}
+
 .pay-card {
-	background-color: #dcede4;
-	margin-block: 0.25rem;
-	padding: 0.5rem;
-	width: 8rem;
-	height: 8rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	text-align: center;
+	align-items: center;
+	background-color: #dcede4;
+	margin-block: 0.25rem;
+	padding: 0.5rem;
+	width: 5rem;
+	height: 5rem;
 	text-decoration: none;
 	color: #214538;
 	font-weight: 500;
-	font-size: 1.0125rem;
+	font-size: 0.8rem;
+	border-radius: 10px;
+}
+
+.pay-info-area {
+	background-color: #3F912F;
+	color: #fff;
+	display: none;
+	flex-direction: column;
+	padding: 1rem;
+	border-radius: 10px;
+	max-width: 15rem;
+	text-align: center;
+}
+
+.pay-info-area h3 {
+	font-size: 1.025rem;
+}
+
+.pay-info-area p {
+	font-size: 0.8rem;
 }

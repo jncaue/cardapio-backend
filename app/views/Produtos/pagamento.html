@@ -2,35 +2,84 @@
 
 
 <div class="bar"></div>
-<div class="center">
+<div class="light-bar"></div>
+<div class="light-bbar"></div>
+<div class="center centralize">
 	<div class="container-pay">
 		<div class="left-p">
 			<h1>Pagamento</h1>
 			<h2>Selecione a sua forma de pagamento</h2>
 			<div class="line"></div>
 			<div class="pay-shapes">
-				<a href="" class="pay-card">Especie</a> 
-				<a href="" class="pay-card">Pix</a>
-				<a href="" class="pay-card">Cartão</a>
+				<a href="#" id="pay-especie" class="pay-card"> <img
+					class="icon-pay"
+					src="../../../public/images/icons/icons8-dinheiro-40.png">Espécie
+				</a> <a href="#" id="pay-cartao" class="pay-card"> <img
+					src="../../../public/images/icons/icons8-magnetic-card-40.png">Cartão
+				</a> <a href="#" id="pay-pix" class="pay-card"> <img
+					src="../../../public/images/icons/icons8-foto-40.png">Pix
+				</a>
+			</div>
+			<div class="nav-btns">
+				<a href="@{Produtos.verCarrinho}" class="back-btn">Voltar</a>
+				<a href="@{Produtos.cardapio}" class="back-btn">Cardápio</a>
 			</div>
 		</div>
 		<div class="right-p">
-			<h1>Resumo da compra</h1>
+			<div class="resume">
+				<h1>Resumo da compra</h1>
 
-			<ul class="resume-ul">
-				#{list items: itensAgrupados, as: 'item'}
-				<li class="resume-item">${item.produto.nome}
-					<p class="item-qtd">(${item.quantidade}x)</p>
-					<p class="item-price">R$${item.produto.preco},00</p>
-				</li> 
-				
-				
-				
-				#{/list}
-			</ul>
+				<ul class="resume-ul">
+					#{list items: itensAgrupados, as: 'item'}
+					<li class="resume-item">-${item.produto.nome}
+						<p class="item-qtd">(${item.quantidade}x)</p>
+						<p class="item-price">R$${item.produto.preco},00</p>
+					</li> #{/list}
+				</ul>
+				<h3>Total: R$ ${total}</h3>
 
-			<h3>Total: R$ ${total}</h3>
+			</div>
+			<div id="pay-info" class="pay-info-area"></div>
 		</div>
 
 	</div>
 </div>
+
+<script type="text/javascript">
+	const info = document.getElementById("pay-info");
+	
+	//PAGAMENTO EM ESPÉCIE
+	document.getElementById("pay-especie").onclick = function(e) {
+	  e.preventDefault();
+	  info.style.display = "flex";
+	  info.innerHTML = `
+	    <h3>Pagamento em Espécie</h3>
+	    <p>Aguarde seu pedido e pague no caixa.</p>
+	  `;
+	};
+
+	//PAGAMENTO NO CARTÃO
+	document.getElementById("pay-cartao").onclick = function(e) {
+	  e.preventDefault();
+	  info.style.display = "flex";
+	  info.innerHTML = `
+	    <h3>Pagamento com Cartão</h3>
+	    <p>Aguarde seu pedido e pague no caixa.</p>
+	  `;
+	};
+
+	//PAGAMENTO VIA PIX
+	document.getElementById("pay-pix").onclick = function(e) {
+	  e.preventDefault();
+	  info.style.display = "flex";
+	  info.innerHTML = `
+	    <h3>Pagamento via PIX</h3>
+	    <p>Escaneie o QR Code abaixo:</p>
+	    <img src="/public/images/meu_qr_code.jpeg" style="width:260px;">
+	    <p>Se preferir, pague no caixa também.</p>
+	  `;
+	};
+</script>
+
+
+
