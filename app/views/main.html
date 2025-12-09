@@ -41,128 +41,181 @@
 </head>
 <body>
 
-<!-- cabeçalho da pagina  -->
+	<!-- cabeçalho da pagina  -->
 	<div class="header">
-<!-- 	barra de navegação -->
-		<nav class="nav">
+		<!-- 	barra de navegação -->
+		<nav class="nav fade-in">
 			<div class="logo nav_item">
-				<a href="@{Produtos.cardapio}">
-					<img class="logo-nav" src="@{'/public/images/icons/icons8-restaurante-48.png'}" alt="Icone logo" >
-					<h1>MenuDev</h1>		
+				<a href="@{Produtos.cardapio}"> <img class="logo-nav fade-in" 
+					src="@{'/public/images/icons/icons8-restaurante-48.png'}"
+					alt="Icone logo">
+					<h1>MenuDev</h1>
 				</a>
 			</div>
-		
+
 			#{if title == 'Login de usuário'}
-			    <div class="container-size nav_item">
-		            <h1>#{get 'title'/}</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		            <ul class="ul-nav">
-		            	<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de usuários</a></li>
-		            </ul>
-				</div>
-        	#{/if}
-        	
-       		#{elseif title == 'Cadastro de usuário'}
-			    <div class="container-size nav_item">
-		            <h1>#{get 'title'/}</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		            <ul class="ul-nav"></ul>
-				</div>
-				
-        	#{/elseif}
-        	
-        	#{elseif title == 'Cardapio'}
-				    <div class="container-size nav_item">
-<!-- 			            <h1>#{get 'title'/}</h1> -->
-			        </div>
-			        
-			        <div class="container-size nav_item">
-		            	<ul class="ul-nav">
-		            	#{if session['admin']}
-		            	<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Administração</a></li>
-		            	#{/if}
-		            	
-			            	<div class="profile-container">
-				            	<ul>
-									<li class="profile logout">${session.get("usuario.nome")}</li>
-									<li class="profile logout">${session.get("usuario.matricula")}</li>
-				            	</ul>
-									<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
-			            	</div>
+			<div class="container-size nav_item">
+				<h1>#{get 'title'/}</h1>
+			</div>
+
+			<div class="container-size nav_item">
+				<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Usuarios.form}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro
+							de usuários</a></li>
+				</ul>
+			</div>
+			#{/if} #{elseif title == 'Cadastro de usuário'}
+			<div class="container-size nav_item">
+				<h1>#{get 'title'/}</h1>
+			</div>
+
+			<div class="container-size nav_item">
+				<ul class="ul-nav"></ul>
+			</div>
+
+			#{/elseif} #{elseif title == 'Cardapio'}
+			<div class="container-size nav_item">
+				<!-- 			            <h1>#{get 'title'/}</h1> -->
+			</div>
+
+			<div class="container-size nav_item">
+				<ul class="ul-nav">
+					#{if session['admin']}
+					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Administração</a></li>
+					#{/if}
+
+					<div class="profile-container">
+						<ul>
+							<li class="profile logout">${session.get("usuario.nome")}</li>
+							<li class="profile logout">${session.get("usuario.matricula")}</li>
 						</ul>
+						<li class="logout"><a href="@{Login.sair}">Sair da sessão</a></li>
 					</div>
-        	#{/elseif}
- 	
- 			#{elseif title == 'Cadastro de produto' && 'Edicao de produto'}
-			    <div class="container-size nav_item">
-		            <h1>Administração</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		            <ul class="ul-nav">
-						<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem de produtos</a></li>
-					</ul>
-				</div>
-        	#{/elseif}
-        	
-        	#{elseif title == 'Lista de produtos'}
-	        	 <div class="container-size nav_item">
-		            <h1>Administração</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		            <ul class="ul-nav">
-						<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro de produtos</a></li>
-					</ul>
-				</div>
-        	#{/elseif}
-        	
-        	#{elseif title == 'Carrinho'}
-	        	 <div class="container-size nav_item">
-		            <h1>Carrinho</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		        
-		            <ul class="ul-nav">
-						<li class="li-ul"><a class="a-li" href="@{Produtos.cardapio}"><img class="icon-a" src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cardápio</a></li>
-					</ul>
-					
-				</div>
-        	#{/elseif}
-        	
-        	#{elseif title == 'Pagamento'}
-	        	 <div class="container-size nav_item">
-		            <h1>Finalização do pedido</h1>
-		        </div>
-		        
-		        <div class="container-size nav_item">
-		        
-		            <ul class="ul-nav">
-						<li class="pay-sec">Pagamento com segurança<img src="../../public/images/icons/icons8-verificado.apng"></li>
-					</ul>
-					
-				</div>
-        	#{/elseif}
-        	
-  		</nav>
+				</ul>
+			</div>
+			#{/elseif} #{elseif title == 'Cadastro de produto' && 'Edicao de
+			produto'}
+			<div class="container-size nav_item">
+				<h1>Administração</h1>
+			</div>
+
+			<div class="container-size nav_item">
+				<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Produtos.listar}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Listagem
+							de produtos</a></li>
+				</ul>
+			</div>
+			#{/elseif} #{elseif title == 'Lista de produtos'}
+			<div class="container-size nav_item">
+				<h1>Administração</h1>
+			</div>
+
+			<div class="container-size nav_item">
+				<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Produtos.form}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cadastro
+							de produtos</a></li>
+				</ul>
+			</div>
+			#{/elseif} #{elseif title == 'Carrinho'}
+			<div class="container-size nav_item">
+				<h1>Carrinho</h1>
+			</div>
+
+			<div class="container-size nav_item">
+
+				<ul class="ul-nav">
+					<li class="li-ul"><a class="a-li" href="@{Produtos.cardapio}"><img
+							class="icon-a"
+							src="@{'/public/images/icons/icons8-sobremesa-50.png'}">Cardápio</a></li>
+				</ul>
+
+			</div>
+			#{/elseif} #{elseif title == 'Pagamento'}
+			<div class="container-size nav_item">
+				<h1>Finalização do pedido</h1>
+			</div>
+
+			<div class="container-size nav_item">
+
+				<ul class="ul-nav">
+					<li class="pay-sec">Pagamento com segurança<img
+						src="../../public/images/icons/icons8-verificado.apng"></li>
+				</ul>
+
+			</div>
+			#{/elseif}
+
+		</nav>
 	</div>
-	
+
 	<!-- miolo da página, lugar para postagem de informações -->
-	
-	<div class="hero">
-			#{doLayout /}
-	</div>
-	
-<!-- estrutura de final da página -->
-<!-- <div class="footer"></div> -->
 
+	<div class="hero">#{doLayout /}</div>
+	<canvas id="bgParticles"></canvas>
 
+	<!-- estrutura de final da página -->
+	<div class="footer"></div>
+
+	<script>
+	const canvas = document.getElementById("bgParticles");
+	const ctx = canvas.getContext("2d");
+
+	function resize() {
+	    canvas.width = window.innerWidth;
+	    canvas.height = window.innerHeight;
+	}
+	resize();
+	window.onresize = resize;
+
+	const particles = Array.from({ length: 40 }, () => ({
+	    x: Math.random() * canvas.width,
+	    y: Math.random() * canvas.height,
+	    size: Math.random() * 2 + 1,
+	    speedX: (Math.random() - 0.5) * 0.3,
+	    speedY: (Math.random() - 0.5) * 0.3
+	}));
+
+	function animate() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	    particles.forEach(p => {
+	        p.x += p.speedX;
+	        p.y += p.speedY;
+
+	        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+	        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+	        ctx.beginPath();
+	        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+	        // cor ESCURA
+	        ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+
+	        ctx.fill();
+	    });
+
+	    requestAnimationFrame(animate);
+	}
+	animate();
 	
+	const reveals = document.querySelectorAll(".reveal");
+	window.addEventListener("scroll", () => {
+	  for (let r of reveals) {
+	    const top = r.getBoundingClientRect().top;
+	    if (top < window.innerHeight - 100) r.classList.add("active");
+	  }
+	});
+
+</script>
+
 	#{get 'moreScripts' /}
 </body>
 </html>

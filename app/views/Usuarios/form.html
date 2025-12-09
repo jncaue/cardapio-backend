@@ -7,19 +7,20 @@
 	
 #{ifErrors}
 	<div class="errors" role="alert">
-		<ul>
+		<ul style="list-style: none">
 		#{errors}
 			<li>${error}</li>
 		#{/errors}
 		</ul>
 	</div>
 #{/ifErrors}
-	
-	
+
 		<h1 class="login-form-h1">Faça já o cadastro da sua conta!</h1>
 		<form class="login-form" action="@{Usuarios.salvar}">
-		
-			<h1 class="info-h1">Cadastro</h1>
+		<div>
+			<h1 class="lginfo-h1">Cadastro</h1>
+			<h2 class="lginfo-h2">Insira seus dados</h2>
+		</div>
 			<div class="info-input">
 			<input type="hidden" name="usuario.id" value="${usuario?.id}" />
 			

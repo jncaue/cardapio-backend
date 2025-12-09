@@ -141,6 +141,12 @@
 	text-decoration: none;
 	padding: 0.25rem;
 	margin-inline: 0.5rem;
+	transition: transform .15s ease, background .15s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    background: #95BFAA; /* qualquer cor que tu queira */
 }
 
 .pay-card {

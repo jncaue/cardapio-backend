@@ -68,6 +68,7 @@
 	border-radius: 5px;
 	/* 	deixa a margem de texto */
 	padding-left: 0.6rem;
+	
 }
 
 .select-container {
@@ -84,6 +85,7 @@
 	border-radius: 5px;
 	transition: 3s rotate;
 	cursor: pointer;
+	
 }
 
 .submit-container {
@@ -97,26 +99,23 @@
 
 .input__submit-form {
 	background-color: #ADDFC6;
-	border: 1px solid #2B603A;
 	border-radius: 5px;
-	color: #000000;
 	font-size: 1rem;
 	padding-inline: 0.8rem;
+	transition: transform .15s ease, background .15s ease;
 }
 
 .input__submit-form:hover {
-	cursor: pointer;
-	background-color: #C3FADE;
-	border: 1px solid #5CCCA4;
-	border-radius: 5px;
-	color: #000;
-	transform: scale(1.05);
+	transform: translateY(-3px);
+	background: #214538;
+	color: #fff;
 }
 
-.input__submit-form:active {
-	background-color: #ADDFC6;
+.input-form {
+    transition: box-shadow .2s ease, transform .2s ease;
 }
 
-.input__submit-form:focus {
-	background-color: #ADDFC6;
+.input-form:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, .5);
+    transform: scale(1.02);
 }

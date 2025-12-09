@@ -3,7 +3,7 @@
 
 #{if flash.error || flash.success}
 	<div id="flash-message"
-		class="flash-message 
+		class="flash-message
 	           #{if flash.error} flash-error #{/if}
 	           #{if flash.success} flash-success #{/if}">
 		${flash.error ?: flash.success}
@@ -12,7 +12,7 @@
 
 <div class="center">
 
-	<div class="banner">
+	<div class="banner fade-in">
 		<img class="banner-img"
 			src="../../../public/images/pizza-6478478_1280.jpg">
 		<div class="banner-info">
@@ -26,10 +26,10 @@
 <h1 class="info-h1">Clique no item desejado para adicionar ao carrinho!</h1>
 <h2 class="info-h2">Boas compras e bom apetite!</h2>
 
-<div class="menu-container">
+<div class="menu-container fade-in" >
 
-	<div class="items-container">
-		<div class="drink-container item-card">
+	<div class="items-container fade-in">
+		<div class="drink-container item-card fade-in">
 			<h1>Hamburguers</h1>
 			<ul class="list">
 				#{list items: listaDeHamburguers, as:'produto'}
@@ -112,7 +112,7 @@
 </div>
 
 <a href="@{Produtos.verCarrinho}" class="cart-float">
-    <img src="../../../public/images/icons/icons8-carrinho-100.png" class="fa fa-shopping-cart"></img>
+    <img src="/public/images/icons/icons8-carrinho.apng" class="fa fa-shopping-cart"></img>
 </a>
 
 

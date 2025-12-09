@@ -15,14 +15,24 @@ public class Usuarios extends Controller {
 	}
 
 	public static void salvar(@Valid Usuario usuario) {
-		if (validation.hasErrors()) {
-			params.flash();
-			validation.keep();
-			form();
-		}
-		usuario.save();
-		Login.form();
-		flash.success("Logado com sucesso!");
+
+	    // Verificar matrícula repetida
+	    Usuario existente = Usuario.find("matricula = ?1", usuario.matricula).first();
+
+	    if (existente != null && (usuario.id == null || !existente.id.equals(usuario.id))) {
+	        validation.addError("usuario.matricula", "Matrícula já cadastrada, escolha outra ou faça login");
+	    }
+
+	    // Se houver qualquer erro (inclusiva matrícula repetida)
+	    if (validation.hasErrors()) {
+	        params.flash();
+	        validation.keep();
+	        form();
+	    }
+
+	    usuario.save();
+	    flash.success("Cadastrado com sucesso!");
+	    Login.form();
 	}
 
 	public static void editar(Long id) {

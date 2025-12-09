@@ -7,8 +7,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: linear-gradient(to bottom, #587064, #89B09D, #95BFAA);
+	background: #E0F2E6;
+	background: linear-gradient(258deg, rgba(224, 242, 230, 1) 20%, rgba(183, 215, 198, 1) 39%, rgba(170, 206, 187, 1) 59%, rgba(183, 215, 198, 1) 83%, rgba(224, 241, 229, 1) 100%);
 	min-height: 4.5rem;
+/* 	background: none; */
 /* 	fixo */
 /* 	position: fixed; */
 /*     top: 0; */
@@ -144,6 +146,7 @@
 	font-size: 0.85rem;
 	font-weight: 600;
 	color: #214538;
+	text-transform: capitalize;
 }
 
 .singup-container li {

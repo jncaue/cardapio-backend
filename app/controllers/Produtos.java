@@ -175,7 +175,7 @@ public class Produtos extends Controller {
 		session.put("carrinho", listaParaString(carrinho));
 
 		flash.success(produto.nome + " adicionado ao carrinho.");
-
+		flash.success("Adicionado!");
 //		detalhar(produto.id);
 		cardapio(null);
 	}
